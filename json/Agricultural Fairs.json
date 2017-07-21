@@ -1,0 +1,1064 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "wcwd-s5vt",
+      "name" : "Agricultural Fairs in New York State",
+      "attribution" : "New York State Department of Agriculture and Markets",
+      "attributionLink" : "http://www.agriculture.ny.gov/AD/Agricultural-Fair-List.pdf",
+      "averageRating" : 0,
+      "category" : "Recreation",
+      "createdAt" : 1403024664,
+      "description" : "Directory of New York State agricultural fairs for the current year, provided by the NYS Department of Agriculture and Markets.  The dataset includes the address and county of the fair, the fair’s begin and end dates and the website address for each fair.",
+      "displayType" : "table",
+      "downloadCount" : 812,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1499701229,
+      "locale" : "",
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 26335085,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1499701118,
+      "publicationGroup" : 1619592,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1499464835,
+      "rowsUpdatedBy" : "xzik-pf59",
+      "tableId" : 14314566,
+      "totalTimesRated" : 0,
+      "viewCount" : 62969,
+      "viewLastModified" : 1499701118,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 310002639,
+        "name" : "Fair Name",
+        "dataTypeName" : "text",
+        "description" : "Name of county fair",
+        "fieldName" : "fair_name",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313287,
+        "width" : 254,
+        "cachedContents" : {
+          "largest" : "Yates County Fair",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Long Island Fair",
+            "count" : 20
+          }, {
+            "item" : "Putnam County 4-H Fair",
+            "count" : 19
+          }, {
+            "item" : "Remember the Big Six Picnic & Youth Fair",
+            "count" : 18
+          }, {
+            "item" : "Saratoga County Fair",
+            "count" : 17
+          }, {
+            "item" : "Schaghticoke Fair",
+            "count" : 16
+          }, {
+            "item" : "Schoharie County Sunshine Fair",
+            "count" : 15
+          }, {
+            "item" : "Seneca County Fair",
+            "count" : 14
+          }, {
+            "item" : "Steuben County Fair",
+            "count" : 13
+          }, {
+            "item" : "Tioga County Fair",
+            "count" : 12
+          }, {
+            "item" : "Trumansburg Fair (Tompkins County)",
+            "count" : 11
+          }, {
+            "item" : "Ulster County Fair",
+            "count" : 10
+          }, {
+            "item" : "Warren County Youth Fair",
+            "count" : 9
+          }, {
+            "item" : "Washington County Fair",
+            "count" : 8
+          }, {
+            "item" : "Wayne County Fair",
+            "count" : 7
+          }, {
+            "item" : "Wyoming County Fair",
+            "count" : 6
+          }, {
+            "item" : "Yates County Fair",
+            "count" : 5
+          } ],
+          "smallest" : "Afton Fair"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 310002640,
+        "name" : "Street Address ",
+        "dataTypeName" : "text",
+        "description" : "Street address for the fair",
+        "fieldName" : "street_address",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313288,
+        "width" : 247,
+        "cachedContents" : {
+          "largest" : "West Main Street",
+          "non_null" : 56,
+          "null" : 1,
+          "top" : [ {
+            "item" : "1303 Round Swamp Rd",
+            "count" : 20
+          }, {
+            "item" : "6880 NYS Rt. 38A",
+            "count" : 19
+          }, {
+            "item" : "162 Prospect Street",
+            "count" : 18
+          }, {
+            "item" : "69 Stillwater Bridge Road",
+            "count" : 17
+          }, {
+            "item" : "113 Sunshine Drive",
+            "count" : 16
+          }, {
+            "item" : "100 Swift Street",
+            "count" : 15
+          }, {
+            "item" : "15 East Washington Street",
+            "count" : 14
+          }, {
+            "item" : "West Main Street",
+            "count" : 13
+          }, {
+            "item" : "2470 State Route 96",
+            "count" : 12
+          }, {
+            "item" : "249 Libertyville Road",
+            "count" : 11
+          }, {
+            "item" : "Schroon River Road",
+            "count" : 10
+          }, {
+            "item" : "392 Old Schuylerville Road",
+            "count" : 9
+          }, {
+            "item" : "300 W. Jaskson Street",
+            "count" : 8
+          }, {
+            "item" : "Main Street",
+            "count" : 7
+          }, {
+            "item" : "2370 Old 14A",
+            "count" : 6
+          } ],
+          "smallest" : "100 Swift Street"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 310002641,
+        "name" : "City ",
+        "dataTypeName" : "text",
+        "description" : "City/town associated with street address",
+        "fieldName" : "city",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313289,
+        "width" : 128,
+        "cachedContents" : {
+          "largest" : "Whitney Point",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Old Bethpage",
+            "count" : 20
+          }, {
+            "item" : "Syracuse",
+            "count" : 19
+          }, {
+            "item" : "Auburn",
+            "count" : 18
+          }, {
+            "item" : "Ballston Spa",
+            "count" : 17
+          }, {
+            "item" : "Schaghticoke",
+            "count" : 16
+          }, {
+            "item" : "Cobleskill",
+            "count" : 15
+          }, {
+            "item" : "Waterloo",
+            "count" : 14
+          }, {
+            "item" : "Bath",
+            "count" : 13
+          }, {
+            "item" : "Owego",
+            "count" : 12
+          }, {
+            "item" : "Trumansburg",
+            "count" : 11
+          }, {
+            "item" : "New Platz",
+            "count" : 10
+          }, {
+            "item" : "Warrensburg",
+            "count" : 9
+          }, {
+            "item" : "Greenwich",
+            "count" : 8
+          }, {
+            "item" : "Palmyra",
+            "count" : 7
+          }, {
+            "item" : "Pike",
+            "count" : 6
+          }, {
+            "item" : "Penn Yann",
+            "count" : 5
+          } ],
+          "smallest" : "Afton"
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 310002642,
+        "name" : "State ",
+        "dataTypeName" : "text",
+        "description" : "State where fair is located - New York",
+        "fieldName" : "state",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313290,
+        "width" : 115,
+        "cachedContents" : {
+          "largest" : "NY",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "NY",
+            "count" : 20
+          } ],
+          "smallest" : "NY"
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002643,
+        "name" : "Zip",
+        "dataTypeName" : "number",
+        "description" : "Zip code of city/town",
+        "fieldName" : "zip",
+        "position" : 5,
+        "renderTypeName" : "number",
+        "tableColumnId" : 20313291,
+        "width" : 101,
+        "cachedContents" : {
+          "largest" : "14886",
+          "non_null" : 57,
+          "average" : "13292.64912280702",
+          "null" : 0,
+          "top" : [ {
+            "item" : "11804",
+            "count" : 20
+          }, {
+            "item" : "13209",
+            "count" : 19
+          }, {
+            "item" : "13021",
+            "count" : 18
+          }, {
+            "item" : "12020",
+            "count" : 17
+          }, {
+            "item" : "12154",
+            "count" : 16
+          }, {
+            "item" : "12043",
+            "count" : 15
+          }, {
+            "item" : "13165",
+            "count" : 14
+          }, {
+            "item" : "14810",
+            "count" : 13
+          }, {
+            "item" : "13827",
+            "count" : 12
+          }, {
+            "item" : "14886",
+            "count" : 11
+          }, {
+            "item" : "12561",
+            "count" : 10
+          }, {
+            "item" : "12885",
+            "count" : 9
+          }, {
+            "item" : "12834",
+            "count" : 8
+          }, {
+            "item" : "14522",
+            "count" : 7
+          }, {
+            "item" : "14427",
+            "count" : 6
+          }, {
+            "item" : "14527",
+            "count" : 5
+          } ],
+          "smallest" : "10512",
+          "sum" : "757681"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "true",
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002644,
+        "name" : " Start  Date",
+        "dataTypeName" : "calendar_date",
+        "description" : "First day of the fair",
+        "fieldName" : "start_date",
+        "position" : 6,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 20313292,
+        "width" : 151,
+        "cachedContents" : {
+          "largest" : "2017-09-22T00:00:00",
+          "non_null" : 56,
+          "null" : 1,
+          "top" : [ {
+            "item" : "2017-07-06T00:00:00",
+            "count" : 20
+          }, {
+            "item" : "2017-07-17T00:00:00",
+            "count" : 19
+          }, {
+            "item" : "2017-08-15T00:00:00",
+            "count" : 18
+          }, {
+            "item" : "2017-07-25T00:00:00",
+            "count" : 17
+          }, {
+            "item" : "2017-07-31T00:00:00",
+            "count" : 16
+          }, {
+            "item" : "2017-07-28T00:00:00",
+            "count" : 15
+          }, {
+            "item" : "2017-07-24T00:00:00",
+            "count" : 14
+          }, {
+            "item" : "2017-08-01T00:00:00",
+            "count" : 13
+          }, {
+            "item" : "2017-08-08T00:00:00",
+            "count" : 12
+          }, {
+            "item" : "2017-07-18T00:00:00",
+            "count" : 11
+          }, {
+            "item" : "2017-08-30T00:00:00",
+            "count" : 10
+          }, {
+            "item" : "2017-07-04T00:00:00",
+            "count" : 9
+          }, {
+            "item" : "2017-08-14T00:00:00",
+            "count" : 8
+          }, {
+            "item" : "2017-08-22T00:00:00",
+            "count" : 7
+          }, {
+            "item" : "2017-08-09T00:00:00",
+            "count" : 6
+          }, {
+            "item" : "2017-08-16T00:00:00",
+            "count" : 5
+          }, {
+            "item" : "2017-08-04T00:00:00",
+            "count" : 4
+          }, {
+            "item" : "2017-07-01T00:00:00",
+            "count" : 3
+          }, {
+            "item" : "2017-08-17T00:00:00",
+            "count" : 2
+          }, {
+            "item" : "2017-07-27T00:00:00",
+            "count" : 1
+          } ],
+          "smallest" : "2017-07-01T00:00:00"
+        },
+        "format" : {
+          "view" : "date_monthdy",
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002645,
+        "name" : "End  Date",
+        "dataTypeName" : "calendar_date",
+        "description" : "Last day of the fair",
+        "fieldName" : "end_date",
+        "position" : 7,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 20313293,
+        "width" : 147,
+        "cachedContents" : {
+          "largest" : "2017-10-04T00:00:00",
+          "non_null" : 56,
+          "null" : 1,
+          "top" : [ {
+            "item" : "2017-07-09T00:00:00",
+            "count" : 20
+          }, {
+            "item" : "2017-07-22T00:00:00",
+            "count" : 19
+          }, {
+            "item" : "2017-08-20T00:00:00",
+            "count" : 18
+          }, {
+            "item" : "2017-07-30T00:00:00",
+            "count" : 17
+          }, {
+            "item" : "2017-08-06T00:00:00",
+            "count" : 16
+          }, {
+            "item" : "2017-08-13T00:00:00",
+            "count" : 15
+          }, {
+            "item" : "2017-07-21T00:00:00",
+            "count" : 14
+          }, {
+            "item" : "2017-09-04T00:00:00",
+            "count" : 13
+          }, {
+            "item" : "2017-07-08T00:00:00",
+            "count" : 12
+          }, {
+            "item" : "2017-08-19T00:00:00",
+            "count" : 11
+          }, {
+            "item" : "2017-08-27T00:00:00",
+            "count" : 10
+          }, {
+            "item" : "2017-07-04T00:00:00",
+            "count" : 9
+          }, {
+            "item" : "2017-07-16T00:00:00",
+            "count" : 8
+          }, {
+            "item" : "2017-10-04T00:00:00",
+            "count" : 7
+          }, {
+            "item" : "2017-09-17T00:00:00",
+            "count" : 6
+          }, {
+            "item" : "2017-09-24T00:00:00",
+            "count" : 5
+          }, {
+            "item" : "2017-08-07T00:00:00",
+            "count" : 4
+          }, {
+            "item" : "2017-07-29T00:00:00",
+            "count" : 3
+          }, {
+            "item" : "2017-07-31T00:00:00",
+            "count" : 2
+          }, {
+            "item" : "2017-07-23T00:00:00",
+            "count" : 1
+          } ],
+          "smallest" : "2017-07-04T00:00:00"
+        },
+        "format" : {
+          "view" : "date_monthdy",
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002646,
+        "name" : "Fair Location",
+        "dataTypeName" : "text",
+        "description" : "City/town where fair is physically located",
+        "fieldName" : "fair_location",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313294,
+        "width" : 156,
+        "cachedContents" : {
+          "largest" : "Whitney Point",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Old Bethpage",
+            "count" : 20
+          }, {
+            "item" : "Syracuse",
+            "count" : 19
+          }, {
+            "item" : "Auburn",
+            "count" : 18
+          }, {
+            "item" : "Ballston Spa",
+            "count" : 17
+          }, {
+            "item" : "Schaghticoke",
+            "count" : 16
+          }, {
+            "item" : "Cobleskill",
+            "count" : 15
+          }, {
+            "item" : "Waterloo",
+            "count" : 14
+          }, {
+            "item" : "Bath",
+            "count" : 13
+          }, {
+            "item" : "Owego",
+            "count" : 12
+          }, {
+            "item" : "Trumansburg",
+            "count" : 11
+          }, {
+            "item" : "New Paltz",
+            "count" : 10
+          }, {
+            "item" : "Warrensburg",
+            "count" : 9
+          }, {
+            "item" : "Greenwich",
+            "count" : 8
+          }, {
+            "item" : "Palmyra",
+            "count" : 7
+          }, {
+            "item" : "Pike",
+            "count" : 6
+          }, {
+            "item" : "Penn Yann",
+            "count" : 5
+          } ],
+          "smallest" : "10/6/2017"
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002647,
+        "name" : "County ",
+        "dataTypeName" : "text",
+        "description" : "County where fair is located",
+        "fieldName" : "county",
+        "position" : 9,
+        "renderTypeName" : "text",
+        "tableColumnId" : 20313295,
+        "width" : 143,
+        "cachedContents" : {
+          "largest" : "Yates",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Chenango",
+            "count" : 20
+          }, {
+            "item" : "Cayuga",
+            "count" : 19
+          }, {
+            "item" : "Orange",
+            "count" : 18
+          }, {
+            "item" : "Nassau",
+            "count" : 17
+          }, {
+            "item" : "Onondaga",
+            "count" : 16
+          }, {
+            "item" : "Seneca",
+            "count" : 15
+          }, {
+            "item" : "Steuben",
+            "count" : 14
+          }, {
+            "item" : "Tioga",
+            "count" : 13
+          }, {
+            "item" : "Tompkins",
+            "count" : 12
+          }, {
+            "item" : "Ulster",
+            "count" : 11
+          }, {
+            "item" : "Warren",
+            "count" : 10
+          }, {
+            "item" : "Washington",
+            "count" : 9
+          }, {
+            "item" : "Wayne",
+            "count" : 8
+          }, {
+            "item" : "Wyoming",
+            "count" : 7
+          }, {
+            "item" : "Yates",
+            "count" : 6
+          } ],
+          "smallest" : "Albany"
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002648,
+        "name" : "Web Site ",
+        "dataTypeName" : "url",
+        "description" : "Web address for the fair - visit for the most up-to-date fair information",
+        "fieldName" : "web_site",
+        "position" : 10,
+        "renderTypeName" : "url",
+        "tableColumnId" : 20313296,
+        "width" : 290,
+        "cachedContents" : {
+          "largest" : {
+            "url" : "https://www.rememberthebig6.com/"
+          },
+          "non_null" : 56,
+          "null" : 1,
+          "top" : [ {
+            "item" : {
+              "url" : "http://www.lifair.org"
+            },
+            "count" : 20
+          }, {
+            "item" : {
+              "url" : "https://www.rememberthebig6.com/"
+            },
+            "count" : 19
+          }, {
+            "item" : {
+              "url" : "http://www.saratogacountyfair.org"
+            },
+            "count" : 18
+          }, {
+            "item" : {
+              "url" : "http://www.schaghticokefair.org"
+            },
+            "count" : 17
+          }, {
+            "item" : {
+              "url" : "http://www.sunshinefair.org"
+            },
+            "count" : 16
+          }, {
+            "item" : {
+              "url" : "http://www.senecacountyfairny.com"
+            },
+            "count" : 15
+          }, {
+            "item" : {
+              "url" : "http://www.steubencountyfair.org"
+            },
+            "count" : 14
+          }, {
+            "item" : {
+              "url" : "http://tiogacountyfair.com"
+            },
+            "count" : 13
+          }, {
+            "item" : {
+              "url" : "http://www.trumansburgfair.info"
+            },
+            "count" : 12
+          }, {
+            "item" : {
+              "url" : "http://ulstercountyfair.com"
+            },
+            "count" : 11
+          }, {
+            "item" : {
+              "url" : "http://www.warren.cce.cornell.edu"
+            },
+            "count" : 10
+          }, {
+            "item" : {
+              "url" : "http://www.washingtoncountyfair.com"
+            },
+            "count" : 9
+          }, {
+            "item" : {
+              "url" : "http://www.waynecountyfair.org"
+            },
+            "count" : 8
+          }, {
+            "item" : {
+              "url" : "http://www.wyomingcountyfair.org"
+            },
+            "count" : 7
+          }, {
+            "item" : {
+              "url" : "http://www.yatescountyfair.org/"
+            },
+            "count" : 6
+          } ],
+          "smallest" : {
+            "url" : "http://cceniagaracounty.org/"
+          }
+        },
+        "format" : {
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "url", "description" ]
+      }, {
+        "id" : 310002649,
+        "name" : "Type of Fair",
+        "dataTypeName" : "text",
+        "description" : "Fair can be listed as county or youth. A county fair offers activities tailored for any age and interest. Youth fairs offer activities tailored to youth and 4-H",
+        "fieldName" : "type_of_fair",
+        "position" : 11,
+        "renderTypeName" : "text",
+        "tableColumnId" : 35787356,
+        "width" : 156,
+        "cachedContents" : {
+          "largest" : "youth",
+          "non_null" : 57,
+          "null" : 0,
+          "top" : [ {
+            "item" : "county",
+            "count" : 20
+          }, {
+            "item" : "youth",
+            "count" : 19
+          }, {
+            "item" : "http://www.livingstoncountyfair.org",
+            "count" : 18
+          } ],
+          "smallest" : "county"
+        },
+        "format" : {
+          "displayStyle" : "plain",
+          "align" : "center"
+        }
+      }, {
+        "id" : 310002650,
+        "name" : "Location 1",
+        "dataTypeName" : "location",
+        "fieldName" : "location_1",
+        "position" : 12,
+        "renderTypeName" : "location",
+        "tableColumnId" : 20313297,
+        "width" : 220,
+        "cachedContents" : {
+          "largest" : {
+            "latitude" : "44.340154",
+            "human_address" : "{\"address\":\"85 E Barney Street\",\"city\":\"Gouverneur\",\"state\":\"NY\",\"zip\":\"13642\"}",
+            "longitude" : "-75.466898"
+          },
+          "non_null" : 49,
+          "null" : 8,
+          "top" : [ {
+            "item" : {
+              "latitude" : "40.774971",
+              "human_address" : "{\"address\":\"1303 Round Swamp Rd\",\"city\":\"Old Bethpage\",\"state\":\"NY\",\"zip\":\"11804\"}",
+              "longitude" : "-73.447684"
+            },
+            "count" : 20
+          }, {
+            "item" : {
+              "latitude" : "42.912276",
+              "human_address" : "{\"address\":\"100 Swift Street\",\"city\":\"Waterloo\",\"state\":\"NY\",\"zip\":\"13165\"}",
+              "longitude" : "-76.854567"
+            },
+            "count" : 19
+          }, {
+            "item" : {
+              "latitude" : "42.336793",
+              "human_address" : "{\"address\":\"15 East Washington Street\",\"city\":\"Bath\",\"state\":\"NY\",\"zip\":\"14810\"}",
+              "longitude" : "-77.314245"
+            },
+            "count" : 18
+          }, {
+            "item" : {
+              "human_address" : "{\"address\":\"2470 State Route\",\"city\":\"Trumansburg\",\"state\":\"NY\",\"zip\":\"14886\"}"
+            },
+            "count" : 17
+          }, {
+            "item" : {
+              "latitude" : "41.722184",
+              "human_address" : "{\"address\":\"249 Libertyville Road\",\"city\":\"New Platz\",\"state\":\"NY\",\"zip\":\"12561\"}",
+              "longitude" : "-74.122504"
+            },
+            "count" : 16
+          }, {
+            "item" : {
+              "latitude" : "43.09538",
+              "human_address" : "{\"address\":\"392 Old Schuylerville Road\",\"city\":\"Greenwich\",\"state\":\"NY\",\"zip\":\"12834\"}",
+              "longitude" : "-73.544535"
+            },
+            "count" : 15
+          }, {
+            "item" : {
+              "latitude" : "43.060983",
+              "human_address" : "{\"address\":\"300 W Jaskson Street\",\"city\":\"Palmyra\",\"state\":\"NY\",\"zip\":\"14522\"}",
+              "longitude" : "-77.238527"
+            },
+            "count" : 14
+          }, {
+            "item" : {
+              "human_address" : "{\"address\":\"2370 Old\",\"city\":\"Penn Yann\",\"state\":\"NY\",\"zip\":\"14527\"}"
+            },
+            "count" : 13
+          } ],
+          "smallest" : {
+            "latitude" : "43.055989",
+            "human_address" : "{\"address\":\"1 Speedway Drive\",\"city\":\"Weedsport\",\"state\":\"NY\",\"zip\":\"13166\"}",
+            "longitude" : "-76.546967"
+          }
+        },
+        "format" : {
+          "view" : "coords",
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "jsonQuery" : {
+          "order" : [ {
+            "ascending" : true,
+            "columnFieldName" : "fair_name"
+          } ]
+        },
+        "rdfSubject" : "0",
+        "attachments" : [ {
+          "filename" : "AGM_AgriculturalFairs_Overview.pdf",
+          "assetId" : "1f19056a-9bfc-4f23-81c3-37dee6c7dec3",
+          "blobId" : "",
+          "name" : "AGM_AgriculturalFairs_Overview.pdf"
+        }, {
+          "filename" : "AGM_AgriculturalFairs_DataDictionary.pdf",
+          "assetId" : "8e084238-6511-4f8f-94f0-5c0431b9272c",
+          "blobId" : "",
+          "name" : "AGM_AgriculturalFairs_DataDictionary.pdf"
+        } ],
+        "custom_fields" : {
+          "Dataset Summary" : {
+            "Posting Frequency" : "Annually",
+            "Organization" : "Agricultural Development",
+            "Contact Information" : "Carly.Hewitt@agriculture.ny.gov",
+            "Time Period" : "Current",
+            "Coverage" : "Statewide",
+            "Granularity" : "County"
+          },
+          "Common Core" : {
+            "Contact Email" : "opendata@its.ny.gov",
+            "Contact Name" : "Open Data NY",
+            "Publisher" : "State of New York"
+          },
+          "Local Data" : {
+            "County_Column" : "county",
+            "County Filter" : "Yes",
+            "Municipality_Column" : "city",
+            "Municipality Filter" : "Yes"
+          },
+          "Additional Resources" : {
+            "See Also " : "http://www.nyfairs.org/",
+            "See Also  " : "http://www.agriculture.ny.gov/",
+            "See Also" : "http://www.nysfair.org/about-us/ny-county-fairs/"
+          },
+          "Disclaimers" : {
+            "Limitations" : "Consumers are strongly encouraged to contact the specific county fair (or visit the fair's website) for specific questions related to these attractions."
+          },
+          "Dataset Information" : {
+            "Agency" : "Agriculture and Markets, Department of"
+          }
+        },
+        "rowLabel" : "Row",
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        }
+      },
+      "owner" : {
+        "id" : "xzik-pf59",
+        "displayName" : "NY Open Data",
+        "profileImageUrlLarge" : "/api/users/xzik-pf59/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/xzik-pf59/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/xzik-pf59/profile_images/TINY",
+        "roleName" : "publisher",
+        "screenName" : "NY Open Data",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_nominations", "approve_nominations", "moderate_comments", "manage_stories", "feature_items", "change_configurations", "view_domain", "view_others_datasets", "create_pages", "edit_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "manage_provenance", "view_story", "view_unpublished_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "query" : {
+        "orderBys" : [ {
+          "ascending" : true,
+          "expression" : {
+            "columnId" : 310002639,
+            "type" : "column"
+          }
+        } ]
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "xzik-pf59",
+        "displayName" : "NY Open Data",
+        "profileImageUrlLarge" : "/api/users/xzik-pf59/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/xzik-pf59/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/xzik-pf59/profile_images/TINY",
+        "roleName" : "publisher",
+        "screenName" : "NY Open Data",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_nominations", "approve_nominations", "moderate_comments", "manage_stories", "feature_items", "change_configurations", "view_domain", "view_others_datasets", "create_pages", "edit_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "manage_provenance", "view_story", "view_unpublished_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "tags" : [ "agriculture", "horticulture", "exhibits", "fairs" ],
+      "flags" : [ "default", "restorable", "restorePossibleForType" ]
+    }
+  },
+  "data" : [ [ 5, "9AFA273B-D2DE-4B84-BE0B-555EE8017231", 5, 1499464822, "708543", 1499464822, "708543", null, "Broome County Fair", "2939 Rt 11", "Whitney Point", "NY", "13862", "2017-07-25T00:00:00", "2017-07-30T00:00:00", "Whitney Point", "Broome", [ "http://www.broomecountyfairny.com", null ], "county", [ "{\"address\":\"2939 Rt\",\"city\":\"Whitney Point\",\"state\":\"NY\",\"zip\":\"13862\"}", null, null, null, true ] ]
+, [ 14, "E5804976-E5E0-4E93-8356-DAA41B821132", 14, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Fairgrounds Blvd, Cortland, NY, 13045\"\n  }\n}", "Cortland County Junior Fair", "Fairgrounds Blvd", "Cortland", "NY", "13045", "2017-07-04T00:00:00", "2017-07-08T00:00:00", "Cortland", "Cortland", [ "http://www.cortlandfair.org", null ], "youth", [ null, null, null, null, null ] ]
+, [ 15, "FBD72025-DA0E-4DB4-AF55-0A8D8322E75C", 15, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Fair Street, Walton, NY, 13856\"\n  }\n}", "Delaware County Fair", "Fair Street", "Walton", "NY", "13856", "2017-08-14T00:00:00", "2017-08-19T00:00:00", "Walton", "Delaware", [ "http://www.delawarecountyfair.org", null ], "county", [ null, null, null, null, null ] ]
+, [ 24, "00DA95DD-77F9-4C35-8A43-35B555E73BF9", 24, 1499464822, "708543", 1499464822, "708543", null, "Grahamsville Little World's Fair", "8230 State Route 55", "Grahamsville", "NY", "12740", "2017-08-17T00:00:00", "2017-08-20T00:00:00", "Grahamsville", "Sullivan", [ "http://www.grahamsvillefair.com", null ], "youth", [ "{\"address\":\"8230 State Route\",\"city\":\"Grahamsville\",\"state\":\"NY\",\"zip\":\"12740\"}", null, null, null, true ] ]
+, [ 25, "F5D3ECF2-C15C-4DD6-8744-052D17CBAD21", 25, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Angelo Canna Town Park, Cairo, NY, 12413\"\n  }\n}", "Greene County Youth Fair", "Angelo Canna Town Park", "Cairo", "NY", "12413", "2017-07-27T00:00:00", "2017-07-30T00:00:00", "Cairo", "Greene", [ "http://www.thegreenecountyyouthfair.com/", null ], "youth", [ null, null, null, null, null ] ]
+, [ 33, "409FE18D-D9D6-43C4-A009-E5716EABD6E0", 33, 1499464822, "708543", 1499464822, "708543", null, "Madison County Fair", "1968 Fairgrounds Road", "Brookfield", "NY", "13314", "2017-07-06T00:00:00", "2017-07-09T00:00:00", "Brookfield", "Madison", [ "http://www.madisoncountyfairny.com", null ], "county", [ "{\"address\":\"1968 Fairgrounds Road\",\"city\":\"Brookfield\",\"state\":\"NY\",\"zip\":\"13314\"}", null, null, null, true ] ]
+, [ 34, "4315470C-5B0F-4F07-AA51-239D30286B39", 34, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Northhampton Park, Spencerport, NY, 14559\"\n  }\n}", "Monroe County Fair", "Northhampton Park", "Spencerport", "NY", "14559", "2017-08-04T00:00:00", "2017-08-07T00:00:00", "Spencerport", "Monroe", [ "http://www.mcfair.com/", null ], "county", [ null, null, null, null, null ] ]
+, [ 37, "405C681C-E617-40E9-BA2A-FCA7827C44E7", 37, 1499464822, "708543", 1499464822, "708543", null, "Onondaga County 4H Youth Fair", null, "Syracuse", "NY", "13209", "2017-07-28T00:00:00", "2017-07-30T00:00:00", "Syracuse", "Onondaga", [ "http://www.extendonondaga.org", null ], "youth", [ null, null, null, null, null ] ]
+, [ 38, "6B86C08D-6C96-4018-A7AA-A122B672E8EE", 38, 1499464822, "708543", 1499464822, "708543", null, "Ontario County Fair", "2820 County Road 10", "Canandaigua", "NY", "14424", "2017-07-25T00:00:00", "2017-07-29T00:00:00", "Canandaigua", "Ontario", [ "http://www.ontariocountyfair.org", null ], "county", [ "{\"address\":\"2820 County Road\",\"city\":\"Canandaigua\",\"state\":\"NY\",\"zip\":\"14424\"}", null, null, null, true ] ]
+, [ 40, "328A7BE8-886E-4BEF-A9C7-1DE47F96BB9C", 40, 1499464822, "708543", 1499464822, "708543", null, "Orleans County 4-H Fair", "12690 State Route 31", "Albion", "NY", "14411", "2017-07-24T00:00:00", "2017-07-29T00:00:00", "Albion", "Orleans", [ "http://www.orleans4-hfair.com", null ], "youth", [ "{\"address\":\"12690 State Route\",\"city\":\"Albion\",\"state\":\"NY\",\"zip\":\"14411\"}", null, null, null, true ] ]
+, [ 44, "D05D531D-17AE-493C-BA2E-3DD914EF4AF7", 44, 1499464822, "708543", 1499464822, "708543", null, "Remember the Big Six Picnic & Youth Fair", "6880 NYS Rt. 38A", "Auburn", "NY", "13021", "2017-07-27T00:00:00", "2017-07-29T00:00:00", "Auburn", "Cayuga", [ "https://www.rememberthebig6.com/", null ], "youth", [ "{\"address\":\"6880 NYS\",\"city\":\"Auburn\",\"state\":\"NY\",\"zip\":\"13021\"}", null, null, null, true ] ]
+, [ 50, "AB65224E-3468-471C-812C-E66DD6D2A67F", 50, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"West Main Street, Owego, NY, 13827\"\n  }\n}", "Tioga County Fair", "West Main Street", "Owego", "NY", "13827", "2017-07-09T00:00:00", "2017-07-12T00:00:00", "Owego", "Tioga", [ "http://tiogacountyfair.com", null ], "county", [ null, null, null, null, null ] ]
+, [ 51, "F65A8DDC-A4AD-4AE7-B310-A4ABE6387D6E", 51, 1499464822, "708543", 1499464822, "708543", null, "Trumansburg Fair (Tompkins County)", "2470 State Route 96", "Trumansburg", "NY", "14886", "2017-08-22T00:00:00", "2017-08-27T00:00:00", "Trumansburg", "Tompkins", [ "http://www.trumansburgfair.info", null ], "county", [ "{\"address\":\"2470 State Route\",\"city\":\"Trumansburg\",\"state\":\"NY\",\"zip\":\"14886\"}", null, null, null, true ] ]
+, [ 53, "AFD17492-7BA4-4C80-87AB-104C4071B31C", 53, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Schroon River Road, Warrensburg, NY, 12885\"\n  }\n}", "Warren County Youth Fair", "Schroon River Road", "Warrensburg", "NY", "12885", "2017-08-12T00:00:00", "2017-08-12T00:00:00", "Warrensburg", "Warren", [ "http://www.warren.cce.cornell.edu", null ], "youth", [ null, null, null, null, null ] ]
+, [ 56, "298D8045-F215-4201-8012-AB5522FCB1C5", 56, 1499464822, "708543", 1499464822, "708543", "{\n  \"invalidCells\" : {\n    \"20313297\" : \"Main Street, Pike, NY, 14427\"\n  }\n}", "Wyoming County Fair", "Main Street", "Pike", "NY", "14427", "2017-08-12T00:00:00", "2017-08-19T00:00:00", "Pike", "Wyoming", [ "http://www.wyomingcountyfair.org", null ], "county", [ null, null, null, null, null ] ]
+, [ 57, "E4D30EB4-93C8-4BB6-9B8F-DC72C2BBB18D", 57, 1499464822, "708543", 1499464822, "708543", null, "Yates County Fair", "2370 Old 14A", "Penn Yann", "NY", "14527", "2017-07-11T00:00:00", "2017-07-15T00:00:00", "Penn Yann", "Yates", [ "http://www.yatescountyfair.org/", null ], "county", [ "{\"address\":\"2370 Old\",\"city\":\"Penn Yann\",\"state\":\"NY\",\"zip\":\"14527\"}", null, null, null, true ] ]
+, [ 13, "036609F1-F173-41D1-9855-221244A7624D", 13, 1499464822, "708543", 1499464835, "708543", null, "Columbia County Fair", "32 Church Street", "Chatham", "NY", "12037", "2017-08-30T00:00:00", "2017-09-04T00:00:00", "Chatham", "Columbia", [ "http://www.columbiafair.com", null ], "county", [ "{\"address\":\"32 Church Street\",\"city\":\"Chatham\",\"state\":\"NY\",\"zip\":\"12037\"}", "42.357112", "-73.603393", null, false ] ]
+, [ 20, "03CB2949-8D1D-43D3-8121-94D042DA8119", 20, 1499464822, "708543", 1499464835, "708543", null, "Franklin County Fair", "606 East Main Street", "Malone", "NY", "12953", "2017-08-04T00:00:00", "2017-08-13T00:00:00", "Malone", "Franklin", [ "http://www.frcofair.com", null ], "county", [ "{\"address\":\"606 East Main Street\",\"city\":\"Malone\",\"state\":\"NY\",\"zip\":\"12953\"}", "44.85017", "-74.278608", null, false ] ]
+, [ 21, "04E750AC-0BF8-42CF-8ADD-8E875C809807", 21, 1499464822, "708543", 1499464835, "708543", null, "Genesee County Fair", "5056 East Main Street Road", "Batavia", "NY", "14020", "2017-07-17T00:00:00", "2017-07-22T00:00:00", "Batavia", "Genesee", [ "http://www.gcfair.com", null ], "county", [ "{\"address\":\"5056 East Main Street Road\",\"city\":\"Batavia\",\"state\":\"NY\",\"zip\":\"14020\"}", "42.991913", "-78.145793", null, false ] ]
+, [ 26, "070192D2-43BF-46F9-BC8F-1E4ACCB96CFD", 26, 1499464822, "708543", 1499464835, "708543", null, "Hemlock Fair", "7370 Water Street", "Hemlock", "NY", "14466", "2017-07-18T00:00:00", "2017-07-22T00:00:00", "Hemlock", "Livingston", [ "http://www.hemlockfair.org", null ], "county", [ "{\"address\":\"7370 Water Street\",\"city\":\"Hemlock\",\"state\":\"NY\",\"zip\":\"14466\"}", "42.794257", "-77.609109", null, false ] ]
+, [ 42, "095D2ABA-952C-48BC-97B2-C7B0439A9DED", 42, 1499464822, "708543", 1499464835, "708543", null, "Otsego County Fair", "48 Mills Street", "Morris", "NY", "13808", "2017-08-01T00:00:00", "2017-08-06T00:00:00", "Morris", "Otsego", [ "http://www.otsegocountyfair.org", null ], "county", [ "{\"address\":\"48 Mills Street\",\"city\":\"Morris\",\"state\":\"NY\",\"zip\":\"13808\"}", "42.54806", "-75.237423", null, false ] ]
+, [ 45, "1065B730-31A2-44DE-A1A6-473D77D7ECBD", 45, 1499464822, "708543", 1499464835, "708543", null, "Saratoga County Fair", "162 Prospect Street", "Ballston Spa", "NY", "12020", "2017-07-18T00:00:00", "2017-07-23T00:00:00", "Ballston Spa", "Saratoga", [ "http://www.saratogacountyfair.org", null ], "county", [ "{\"address\":\"162 Prospect Street\",\"city\":\"Ballston Spa\",\"state\":\"NY\",\"zip\":\"12020\"}", "43.00757", "-73.856308", null, false ] ]
+, [ 36, "15FFC874-A1A9-4498-961A-2B0D126F992E", 36, 1499464822, "708543", 1499464835, "708543", null, "Niagara County Youth Fair", "4487 Lake Ave", "Lockport", "NY", "14094", "2017-08-02T00:00:00", "2017-08-06T00:00:00", "Lockport", "Niagara", [ "http://cceniagaracounty.org/", null ], "youth", [ "{\"address\":\"4487 Lake Ave\",\"city\":\"Lockport\",\"state\":\"NY\",\"zip\":\"14094\"}", "43.193168", "-78.675481", null, false ] ]
+, [ 30, "1BDA1AB9-3629-4046-98F6-25C600EE8825", 30, 1499464822, "708543", 1499464835, "708543", "{\n  \"invalidCells\" : {\n    \"20313296\" : \"Livingston\"\n  }\n}", "Livingston County Fair at Caledonia", "310 Leicester Street", "Caledonia", "NY", "14423", "2017-08-07T00:00:00", "2017-10-04T00:00:00", "10/6/2017", "Caledonia", [ null, null ], "http://www.livingstoncountyfair.org", [ "{\"address\":\"310 Leicester Street\",\"city\":\"Caledonia\",\"state\":\"NY\",\"zip\":\"14423\"}", "42.97183", "-77.861736", null, false ] ]
+, [ 52, "20DB266D-F96B-423F-B009-F4117D6E8C00", 52, 1499464822, "708543", 1499464835, "708543", null, "Ulster County Fair", "249 Libertyville Road", "New Platz", "NY", "12561", "2017-08-01T00:00:00", "2017-08-06T00:00:00", "New Paltz", "Ulster", [ "http://ulstercountyfair.com", null ], "county", [ "{\"address\":\"249 Libertyville Road\",\"city\":\"New Platz\",\"state\":\"NY\",\"zip\":\"12561\"}", "41.722184", "-74.122504", null, false ] ]
+, [ 11, "35A6A8A7-881B-4220-9C79-4027FE7FE9FF", 11, 1499464822, "708543", 1499464835, "708543", null, "Chenango County Fair", "168 E. Main Street", "Norwich", "NY", "13815", "2017-08-08T00:00:00", "2017-08-13T00:00:00", "Norwich", "Chenango", [ "http://www.chenangocountyfair.homestead.com", null ], "county", [ "{\"address\":\"168 E Main Street\",\"city\":\"Norwich\",\"state\":\"NY\",\"zip\":\"13815\"}", "42.532405", "-75.508918", null, false ] ]
+, [ 9, "41DA7057-DBD4-4A64-BA3F-36582C2D4C92", 9, 1499464822, "708543", 1499464835, "708543", null, "Chautauqua County Fair", "1089 Central Ave", "Dunkirk", "NY", "14048", "2017-07-24T00:00:00", "2017-07-30T00:00:00", "Dunkirk", "Chautauqua", [ "http://www.chautauquacountyfair.org", null ], "county", [ "{\"address\":\"1089 Central Ave\",\"city\":\"Dunkirk\",\"state\":\"NY\",\"zip\":\"14048\"}", "42.460618", "-79.333755", null, false ] ]
+, [ 18, "51C2D352-123F-4730-B8B7-040A2FF0AF2D", 18, 1499464822, "708543", 1499464835, "708543", null, "Essex County Fair", "3 Sisco Street", "Westport", "NY", "12993", "2017-08-16T00:00:00", "2017-08-20T00:00:00", "Westport", "Essex", [ "http://www.essexcountyfair.org", null ], "county", [ "{\"address\":\"3 Sisco Street\",\"city\":\"Westport\",\"state\":\"NY\",\"zip\":\"12993\"}", "44.185226", "-73.445504", null, false ] ]
+, [ 16, "55549D1B-2282-4758-88BD-C6F219EB0CF5", 16, 1499464822, "708543", 1499464835, "708543", null, "Dutchess County Fair", "6550 Springbrook Ave", "Rhinebeck", "NY", "12572", "2017-08-22T00:00:00", "2017-08-27T00:00:00", "Rhinebeck", "Dutchess", [ "http://www.dutchessfair.com", null ], "county", [ "{\"address\":\"6550 Springbrook Ave\",\"city\":\"Rhinebeck\",\"state\":\"NY\",\"zip\":\"12572\"}", "41.936918", "-73.909544", null, false ] ]
+, [ 17, "5FBDF777-8B9F-4A0A-9B81-9781E9FD4BB6", 17, 1499464822, "708543", 1499464835, "708543", null, "Erie County Fair", "5600 McKinley Pkwy", "Hamburg", "NY", "14075", "2017-08-09T00:00:00", "2017-08-20T00:00:00", "Hamburg", "Erie", [ "http://www.ecfair.org", null ], "county", [ "{\"address\":\"5600 McKinley Pkwy\",\"city\":\"Hamburg\",\"state\":\"NY\",\"zip\":\"14075\"}", "42.735875", "-78.812718", null, false ] ]
+, [ 49, "61CA2017-4EF7-4D52-8132-B8FB0CC44107", 49, 1499464822, "708543", 1499464835, "708543", null, "Steuben County Fair", "15 East Washington Street", "Bath", "NY", "14810", "2017-08-15T00:00:00", "2017-08-20T00:00:00", "Bath", "Steuben", [ "http://www.steubencountyfair.org", null ], "county", [ "{\"address\":\"15 East Washington Street\",\"city\":\"Bath\",\"state\":\"NY\",\"zip\":\"14810\"}", "42.336793", "-77.314245", null, false ] ]
+, [ 41, "635F719F-A2AD-4A25-BFAC-3913311E8FD2", 41, 1499464822, "708543", 1499464835, "708543", null, "Oswego County Fair", "291 Ellisburg Street", "Sandy Creek", "NY", "13145", "2017-08-09T00:00:00", "2017-08-13T00:00:00", "Sandy Creek", "Oswego", [ "http://www.oswegocountyfair.com", null ], "county", [ "{\"address\":\"291 Ellisburg Street\",\"city\":\"Sandy Creek\",\"state\":\"NY\",\"zip\":\"13145\"}", "43.649803", "-76.089579", null, false ] ]
+, [ 23, "6E750A70-8F26-4383-90F6-D270351A724B", 23, 1499464822, "708543", 1499464835, "708543", null, "Gouverneur and St. Lawrence County Fair", "85 E. Barney Street", "Gouverneur", "NY", "13642", "2017-08-01T00:00:00", "2017-08-06T00:00:00", "Gouverneur", "St. Lawrence", [ "http://www.gouverneurfair.net", null ], "county", [ "{\"address\":\"85 E Barney Street\",\"city\":\"Gouverneur\",\"state\":\"NY\",\"zip\":\"13642\"}", "44.340154", "-75.466898", null, false ] ]
+, [ 10, "76F66A3E-AA0F-4AAF-8C0A-41CDCDD7D10D", 10, 1499464822, "708543", 1499464835, "708543", null, "Chemung County Fair", "170 Fairview Ave", "Horsehead", "NY", "14845", "2017-08-01T00:00:00", "2017-08-06T00:00:00", "Horseheads", "Chemung", [ "http://www.chemungcountyfair.com", null ], "county", [ "{\"address\":\"170 Fairview Ave\",\"city\":\"Horsehead\",\"state\":\"NY\",\"zip\":\"14845\"}", "42.162711", "-77.090659", null, false ] ]
+, [ 35, "77CFB841-3920-4C20-882A-DDE28B7D2A48", 35, 1499464822, "708543", 1499464835, "708543", null, "New York State Fair", "581 State Fair Boulevard", "Syracuse", "NY", "13209", "2017-08-23T00:00:00", "2017-09-04T00:00:00", "Syracuse", "Onondaga", [ "http://nysfair.ny.gov/", null ], "county", [ "{\"address\":\"581 State Fair Boulevard\",\"city\":\"Syracuse\",\"state\":\"NY\",\"zip\":\"13209\"}", "43.072066", "-76.208957", null, false ] ]
+, [ 8, "7DC559A9-5FCA-4245-9FAA-3FD0461D499F", 8, 1499464822, "708543", 1499464835, "708543", null, "Cayuga County Youth Fair", "6880 East Lake Road", "Auburn", "NY", "13021", "2017-07-28T00:00:00", "2017-07-30T00:00:00", "Auburn", "Cayuga", [ "http://www.rememberthebig6.com", null ], "youth", [ "{\"address\":\"6880 East Lake Road\",\"city\":\"Auburn\",\"state\":\"NY\",\"zip\":\"13021\"}", "42.904529", "-76.536497", null, false ] ]
+, [ 31, "8533CEE7-E9E4-4D40-B326-5A7E76C3850C", 31, 1499464822, "708543", 1499464835, "708543", null, "Long Island Fair", "1303 Round Swamp Rd", "Old Bethpage", "NY", "11804", "2017-09-15T00:00:00", "2017-09-17T00:00:00", "Old Bethpage", "Nassau", [ "http://www.lifair.org", null ], "county", [ "{\"address\":\"1303 Round Swamp Rd\",\"city\":\"Old Bethpage\",\"state\":\"NY\",\"zip\":\"11804\"}", "40.774971", "-73.447684", null, false ] ]
+, [ 27, "870E4FCB-86F3-459F-B532-3D4814E20BF4", 27, 1499464822, "708543", 1499464835, "708543", null, "Herkimer County Fair", "135 Cemetary Street", "Frankfort", "NY", "13340", "2017-08-15T00:00:00", "2017-08-20T00:00:00", "Frankfort", "Herkimer", [ "http://www.herkimercountyfair.org", null ], "county", [ "{\"address\":\"135 Cemetary Street\",\"city\":\"Frankfort\",\"state\":\"NY\",\"zip\":\"13340\"}", "43.03998", "-75.080947", null, false ] ]
+, [ 54, "8B09F897-693C-41F5-8A45-53F6904B448A", 54, 1499464822, "708543", 1499464835, "708543", null, "Washington County Fair", "392 Old Schuylerville Road", "Greenwich", "NY", "12834", "2017-08-21T00:00:00", "2017-08-27T00:00:00", "Greenwich", "Washington", [ "http://www.washingtoncountyfair.com", null ], "county", [ "{\"address\":\"392 Old Schuylerville Road\",\"city\":\"Greenwich\",\"state\":\"NY\",\"zip\":\"12834\"}", "43.09538", "-73.544535", null, false ] ]
+, [ 4, "8C4DCAA8-89F1-46C9-8A48-1178575292AF", 4, 1499464822, "708543", 1499464835, "708543", null, "Boonville-Oneida County Fair", "222 Schuyler Street", "Boonville", "NY", "13309", "2017-07-25T00:00:00", "2017-07-30T00:00:00", "Boonville", "Oneida", [ "http://www.frontiernet.net/~boonvillefair/", null ], "county", [ "{\"address\":\"222 Schuyler Street\",\"city\":\"Boonville\",\"state\":\"NY\",\"zip\":\"13309\"}", "43.48307", "-75.345417", null, false ] ]
+, [ 39, "92509679-1B35-4993-A37B-44F0E5EF4171", 39, 1499464822, "708543", 1499464835, "708543", null, "Orange County Fair", "239 Wisner Ave", "Middletown", "NY", "10940", "2017-07-19T00:00:00", "2017-07-30T00:00:00", "Middletown", "Orange", [ "http://www.orangecountyfair.com", null ], "county", [ "{\"address\":\"239 Wisner Ave\",\"city\":\"Middletown\",\"state\":\"NY\",\"zip\":\"10940\"}", "41.448258", "-74.397789", null, false ] ]
+, [ 47, "949ADD3C-39EF-4EEC-A6B5-CEE904EB939E", 47, 1499464822, "708543", 1499464835, "708543", null, "Schoharie County Sunshine Fair", "113 Sunshine Drive", "Cobleskill", "NY", "12043", "2017-07-29T00:00:00", "2017-08-05T00:00:00", "Cobleskill", "Schoharie", [ "http://www.sunshinefair.org", null ], "county", [ "{\"address\":\"113 Sunshine Drive\",\"city\":\"Cobleskill\",\"state\":\"NY\",\"zip\":\"12043\"}", "42.674463", "-74.48298", null, false ] ]
+, [ 19, "9CE338F0-5E17-4EF5-9338-3D90006393F1", 19, 1499464822, "708543", 1499464835, "708543", null, "Fonda Fair", "21 South Bridge Street", "Fonda", "NY", "12068", "2017-08-30T00:00:00", "2017-09-04T00:00:00", "Fonda", "Montgomery", [ "http://www.fondafair.com", null ], "county", [ "{\"address\":\"21 South Bridge Street\",\"city\":\"Fonda\",\"state\":\"NY\",\"zip\":\"12068\"}", "42.953026", "-74.369432", null, false ] ]
+, [ 32, "A8BD7BCC-FE09-49A3-9584-B07CE7FD30A5", 32, 1499464822, "708543", 1499464835, "708543", null, "Long Island Fair", "1303 Round Swamp Rd", "Old Bethpage", "NY", "11804", "2017-09-22T00:00:00", "2017-09-24T00:00:00", "Old Bethpage", "Nassau", [ "http://www.lifair.org", null ], "county", [ "{\"address\":\"1303 Round Swamp Rd\",\"city\":\"Old Bethpage\",\"state\":\"NY\",\"zip\":\"11804\"}", "40.774971", "-73.447684", null, false ] ]
+, [ 1, "B6D7CFCF-1940-474E-9C40-6AF3EE5844AB", 1, 1499464822, "708543", 1499464835, "708543", null, "Afton Fair", "42 E. Main Street", "Afton", "NY", "13730", "2017-07-06T00:00:00", "2017-07-09T00:00:00", "Afton", "Chenango", [ "http://www.theaftonfair.com", null ], "county", [ "{\"address\":\"42 E Main Street\",\"city\":\"Afton\",\"state\":\"NY\",\"zip\":\"13730\"}", "42.221308", "-75.521917", null, false ] ]
+, [ 48, "BC9A608F-73B9-4DB9-A427-5E39069DE4C7", 48, 1499464822, "708543", 1499464835, "708543", null, "Seneca County Fair", "100 Swift Street", "Waterloo", "NY", "13165", "2017-07-19T00:00:00", "2017-07-22T00:00:00", "Waterloo", "Seneca", [ "http://www.senecacountyfairny.com", null ], "county", [ "{\"address\":\"100 Swift Street\",\"city\":\"Waterloo\",\"state\":\"NY\",\"zip\":\"13165\"}", "42.912276", "-76.854567", null, false ] ]
+, [ 6, "BD83751C-F24C-45D5-9307-62AF45032490", 6, 1499464822, "708543", 1499464835, "708543", null, "Cattaraugus County Fair", "501 Erie Street", "Little Valley", "NY", "14755", "2017-07-31T00:00:00", "2017-08-06T00:00:00", "Little Valley", "Cattaraugus", [ "http://www.cattarauguscofair.com", null ], "county", [ "{\"address\":\"501 Erie Street\",\"city\":\"Little Valley\",\"state\":\"NY\",\"zip\":\"14755\"}", "42.252913", "-78.806252", null, false ] ]
+, [ 46, "C13B8708-CE05-4615-AE13-9D7EE24DA5AE", 46, 1499464822, "708543", 1499464835, "708543", null, "Schaghticoke Fair", "69 Stillwater Bridge Road", "Schaghticoke", "NY", "12154", "2017-08-30T00:00:00", "2017-09-04T00:00:00", "Schaghticoke", "Rensselaer", [ "http://www.schaghticokefair.org", null ], "county", [ "{\"address\":\"69 Stillwater Bridge Road\",\"city\":\"Schaghticoke\",\"state\":\"NY\",\"zip\":\"12154\"}", "42.906883", "-73.590281", null, false ] ]
+, [ 43, "C53F1362-ADC7-456E-AC78-FAE7EA4391E6", 43, 1499464822, "708543", 1499464835, "708543", null, "Putnam County 4-H Fair", "201 Gipsy Trail Road", "Carmel", "NY", "10512", "2017-07-28T00:00:00", "2017-07-31T00:00:00", "Carmel", "Putnam", [ "http://putnam.cce.cornell.edu/events/2016/07/29/45th-annual-putnam-county-4-h-fair", null ], "youth", [ "{\"address\":\"201 Gipsy Trail Road\",\"city\":\"Carmel\",\"state\":\"NY\",\"zip\":\"10512\"}", "41.440606", "-73.704215", null, false ] ]
+, [ 12, "C95B2E98-8D73-48CB-A276-1A5700750A03", 12, 1499464822, "708543", 1499464835, "708543", null, "Clinton County Fair", "84 Fairgrounds Rd", "Morrisonville", "NY", "12962", "2017-07-18T00:00:00", "2017-07-21T00:00:00", "Morrisonville", "Clinton", [ "http://www.clintoncountyfair.com", null ], "county", [ "{\"address\":\"84 Fairgrounds Rd\",\"city\":\"Morrisonville\",\"state\":\"NY\",\"zip\":\"12962\"}", "44.692893", "-73.533327", null, false ] ]
+, [ 29, "C993D261-B5C2-451F-A7F3-25EAC0D7559C", 29, 1499464822, "708543", 1499464835, "708543", null, "Lewis County Fair", "5443 Bostwick Street", "Lowville", "NY", "13367", "2017-07-18T00:00:00", "2017-07-22T00:00:00", "Lowville", "Lewis", [ "http://www.lewiscountyfair.org", null ], "county", [ "{\"address\":\"5443 Bostwick Street\",\"city\":\"Lowville\",\"state\":\"NY\",\"zip\":\"13367\"}", "43.793002", "-75.491215", null, false ] ]
+, [ 55, "C9F52E30-E6ED-46D3-877E-7B525AE9CB7B", 55, 1499464822, "708543", 1499464835, "708543", null, "Wayne County Fair", "300 W. Jaskson Street", "Palmyra", "NY", "14522", "2017-08-14T00:00:00", "2017-08-19T00:00:00", "Palmyra", "Wayne", [ "http://www.waynecountyfair.org", null ], "county", [ "{\"address\":\"300 W Jaskson Street\",\"city\":\"Palmyra\",\"state\":\"NY\",\"zip\":\"14522\"}", "43.060983", "-77.238527", null, false ] ]
+, [ 2, "D6C4A910-4BC8-41BA-ACB9-C60C61403C8F", 2, 1499464822, "708543", 1499464835, "708543", null, "Allegany County Fair", "15 North Street", "Angelica", "NY", "14709", "2017-07-17T00:00:00", "2017-07-22T00:00:00", "Angelica", "Allegany", [ "http://www.alleganycountyfair.org", null ], "county", [ "{\"address\":\"15 North Street\",\"city\":\"Angelica\",\"state\":\"NY\",\"zip\":\"14709\"}", "42.304789", "-78.008659", null, false ] ]
+, [ 3, "E02CA7C7-E1CB-473B-A5DA-94E23C1C0860", 3, 1499464822, "708543", 1499464835, "708543", null, "Altamont Fair", "129 Grand Street", "Altamont", "NY", "12009", "2017-08-15T00:00:00", "2017-08-20T00:00:00", "Altamont", "Albany", [ "http://www.altamontfair.com", null ], "county", [ "{\"address\":\"129 Grand Street\",\"city\":\"Altamont\",\"state\":\"NY\",\"zip\":\"12009\"}", "42.698776", "-74.028228", null, false ] ]
+, [ 22, "E6D253F2-8087-409B-BED8-7ED7D8E51015", 22, 1499464822, "708543", 1499464835, "708543", null, "Goshen Historic Track", "44 Park Place", "Goshen", "NY", "10924", "2017-07-01T00:00:00", "2017-07-04T00:00:00", "Goshen", "Orange", [ "http://www.goshenhistorictrack.com", null ], "county", [ "{\"address\":\"44 Park Place\",\"city\":\"Goshen\",\"state\":\"NY\",\"zip\":\"10924\"}", "41.402677", "-74.320988", null, false ] ]
+, [ 28, "ECFC5D04-3461-4963-9181-FCBC5E9F85A9", 28, 1499464822, "708543", 1499464835, "708543", null, "Jefferson County Fair", "615 W T Fields Drive", "Watertown", "NY", "13601", "2017-07-11T00:00:00", "2017-07-16T00:00:00", "Watertown", "Jefferson", [ "http://www.jeffcofair.org", null ], "county", [ "{\"address\":\"615 W T Fields Drive\",\"city\":\"Watertown\",\"state\":\"NY\",\"zip\":\"13601\"}", "43.985953", "-75.927788", null, false ] ]
+, [ 7, "FC1284DE-BDB9-4F2A-852C-CAB434CF81D9", 7, 1499464822, "708543", 1499464835, "708543", null, "Cayuga County Fair", "1 Speedway Drive", "Weedsport", "NY", "13166", null, null, "Weedsport", "Cayuga", [ "http://www.cayugacountyfair.org", null ], "county", [ "{\"address\":\"1 Speedway Drive\",\"city\":\"Weedsport\",\"state\":\"NY\",\"zip\":\"13166\"}", "43.055989", "-76.546967", null, false ] ]
+ ]
+}
