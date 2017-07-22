@@ -1,0 +1,71 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+            <title>Socrata Example</title>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           
+           <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>  
+           <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>  
+      </head>  
+
+  
+
+<body>
+    <div id="container">
+       <h1>Data from Socrata</h1>
+       <table id="example">
+          <thead>
+            <tr>
+    <th>Contact</th>
+    <th>City</th>
+    <th>County</th>
+      </tr>
+     </thead>
+           <tbody>
+     </tbody>
+  </table>
+   </div>  
+   <script> 
+   // like data.gov
+
+// Tell datatable what HTML table we want to use
+$('#example').dataTable();      
+
+// Construct a SODA query string - I'm using the farmers market data for my experiment
+//url = 'http://data.ny.gov/resource/farmersmarkets.json?$limit=30';
+url='https://data.ny.gov/resource/mn9z-iqan.json';
+// Use jQuery Ajax Awesomeness to acquire data from data.ny.gov (Socrata)
+$.getJSON(url, function(data, textstatus) {
+      // Loop over result set
+      $.each(data, function(i, column) {
+         // for each json record, add a row to the HTML table
+         $('#example').dataTable().fnAddData( [
+         columns: [
+        { data: 11},
+
+         { data: 13},
+        { data: 19},
+       
+        { data:  23},
+         { data: 25},
+        { data: 27},
+       
+        { data:  31},
+        { data: 32},
+       
+        { data:  33},
+         { data: 34},
+        { data: 35},
+       
+        { data:  36},
+         { data:  37}
+    ]]
+         );
+      }); // end $.each
+}); // end $.getJSON 
+</script>
+</body>
+ 
+ </html>

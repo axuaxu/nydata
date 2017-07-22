@@ -1,0 +1,66 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+            <title>Socrata Example</title>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           
+           <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>  
+           <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>  
+      </head>  
+
+  
+
+<body>
+    <div id="container">
+       <h1>Data from Socrata</h1>
+       <table id="example">
+          <thead>
+            <tr>
+    <th>Contact</th>
+    <th>City</th>
+    <th>County</th>
+      </tr>
+     </thead>
+           <tbody>
+     </tbody>
+  </table>
+   </div>  
+   <script> 
+   // Forked and tweaked to demonstrate Socrata's CORS support: http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing
+
+// Author: Ed Donohue
+// Purpose:
+// This is a very simple example of how to use client side technology to interact with the Socrata SODA API.
+// In this example I am using jQuery and the jQuery plugin dataTables.
+// There are a lot more capabilities in terms of filtering, etc but this little diddy should help get you started.
+// I encourage all developers to keep data.ny.gov in mind as a very useful datastore for storing and using public 
+// viewable data rather than stuffing it in out of reach data bases. 
+// For more information about Socrata SODA go here: http://dev.socrata.com/consumers/getting-started
+// Also keep in mind this approach is not limited to ny.data.gov and can be used for any instance of Socrata 
+// like data.gov
+
+// Tell datatable what HTML table we want to use
+$('#example').dataTable();      
+
+// Construct a SODA query string - I'm using the farmers market data for my experiment
+url = 'http://data.ny.gov/resource/farmersmarkets.json?$limit=30';
+//https://data.ny.gov/api/views/cb42-qumz/rows.json?accessType=DOWNLOAD
+//url= 'https://data.ny.gov/resource/mn9z-iqan.json'
+// Use jQuery Ajax Awesomeness to acquire data from data.ny.gov (Socrata)
+$.getJSON(url, function(data, textstatus) {
+      // Loop over result set
+      $.each(data, function(i, column) {
+         // for each json record, add a row to the HTML table
+         $('#example').dataTable().fnAddData( [
+         column.contact ,
+         column.city,
+         column.county ]
+         );
+      }); // end $.each
+}); // end $.getJSONN 
+</script>
+</body>
+ 
+ </html>
