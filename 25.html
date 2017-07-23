@@ -51,16 +51,8 @@
         url: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit=30',
         dataSrc: ''
     },
-
    columns: [
-         {data: "registration_number",
-        "render": function(data, type, row, meta){
-            if(type === 'display'){
-                data = '<a href="' + row[2] + '">' + data + '</a>';
-            }
-            
-            return data;
-         }},
+         {data: "registration_number"},
         { data: "last_name"},
 
          { data: "state", "defaultContent": "<i>N/A</i>"},
@@ -69,21 +61,13 @@
         { data:  "first_name",
       "render": function(data, type, row, meta){
             if(type === 'display'){
-                data = '<a href="' + row.registration_number+ '">' + data + '</a>';
+                data = '<a href="' + data + '">' + data + '</a>';
             }
             
             return data;
          }
       } 
-   ],
-    "columnDefs": [ {
-    "targets": 2,
-    "data": "state",
-    "render": function ( data, type, full, meta ) {
-      return '<a href="'+data+'">'+data+'</a>';
-    }
-  } ]
-    
+   ]
 } );
  });  
  
