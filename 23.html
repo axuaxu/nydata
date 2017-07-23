@@ -8,8 +8,7 @@
            
          
            <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-          <link rel="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
-<link rel="https://cdn.datatables.net/select/1.2.2/css/select.dataTables.min.css"/>
+        
           <script type="text/javascript" src="DataTables/datatables.min.js"></script>
       </head>  
       <body>  
@@ -17,7 +16,10 @@
            <div class="container">  
                 <h1 align="center">Show JSON Data in Jquery Datatables</h3><br />  
                 <h3 align="center">Employee Database</h3><br />  
-                <table id="data-table" class="table table-bordered">  
+             <h3>jQuery DataTables: Render cell content</h3>
+<a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a><hr>
+
+ <table id="data-table" class="display">  
                      <thead>  
                           <tr>  
                                <th>Facility Name</th>  
@@ -29,23 +31,25 @@
                                <th>Number of Beds</th> 
                           </tr>  
                      </thead>  
-                     <tbody>
-                     </tbody>
                 </table>  
+
+
+<hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
            </div>  
+           <div id="events"></div>
       </body>  
  </html>  
  <script>  
+
+
+
+
+
  $(document).ready(function(){  
       $('#data-table').DataTable( {
     ajax: {
-        url: 'https://data.ny.gov/resource/cdhq-buk7.json',
-        dataSrc: '',
-         scrollY:        20,
-    deferRender:    true,
-    scroller:       true,
-     responsive: true,
-      select: true
+        url: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit=30',
+        dataSrc: ''
     },
    columns: [
          {data: "registration_number"},
@@ -54,15 +58,17 @@
          { data: "state", "defaultContent": "<i>N/A</i>"},
         { data:"phone_number", "defaultContent": "<i>N/A</i>"},
        
-        { data:  "first_name"},
-        
-    ]
-
+        { data:  "first_name",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="' + data + '">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } 
+   ]
 } );
-       $('#data-table tbody').on('click', 'tr', function () {
-        var data = table.row( this ).data();
-        alert( 'You clicked on '+data[0]+'\'s row' );
-    } );
  });  
  
  </script>  

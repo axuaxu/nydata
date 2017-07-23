@@ -8,8 +8,7 @@
            
          
            <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-          <link rel="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
-<link rel="https://cdn.datatables.net/select/1.2.2/css/select.dataTables.min.css"/>
+        
           <script type="text/javascript" src="DataTables/datatables.min.js"></script>
       </head>  
       <body>  
@@ -33,36 +32,18 @@
                      </tbody>
                 </table>  
            </div>  
+           <div id="events"></div>
       </body>  
  </html>  
  <script>  
- $(document).ready(function(){  
-      $('#data-table').DataTable( {
-    ajax: {
-        url: 'https://data.ny.gov/resource/cdhq-buk7.json',
-        dataSrc: '',
-         scrollY:        20,
-    deferRender:    true,
-    scroller:       true,
-     responsive: true,
-      select: true
-    },
-   columns: [
-         {data: "registration_number"},
-        { data: "last_name"},
-
-         { data: "state", "defaultContent": "<i>N/A</i>"},
-        { data:"phone_number", "defaultContent": "<i>N/A</i>"},
-       
-        { data:  "first_name"},
-        
-    ]
-
-} );
-       $('#data-table tbody').on('click', 'tr', function () {
-        var data = table.row( this ).data();
-        alert( 'You clicked on '+data[0]+'\'s row' );
-    } );
- });  
- 
+ $(document).ready(function(){
+ $('#data-table').dynatable({
+  dataset: {
+    ajax: true,
+    ajaxUrl: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit=30',
+    ajaxOnLoad: true,
+    records: []
+  }
+});  
+ })
  </script>  
