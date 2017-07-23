@@ -80,6 +80,8 @@
      $('#data-table').DataTable().destroy();
      $('#data-table').DataTable({
        "pageLength": len,
+        "pagingType": "simple",
+         paging: false,
     ajax: {
         url: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit='+len,
         dataSrc: '',
