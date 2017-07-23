@@ -1,0 +1,81 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Show JSON Data in Jquery Datatables</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           
+         
+           <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+      </head>  
+      <body>  
+           <br /><br />  
+           <div class="container">  
+                <h1 align="center">Show JSON Data in Jquery Datatables</h3><br />  
+                <h3 align="center">Employee Database</h3><br />  
+             <h3>jQuery DataTables: Render cell content</h3>
+<a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a><hr>
+
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>Facility Name</th>  
+                               <th>City</th>  
+                               <th>City</th> 
+                              
+                                <th>Number of Beds</th> 
+                               
+                               <th>Number of Beds</th> 
+                          </tr>  
+                     </thead>  
+                </table>  
+
+
+<hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
+           </div>  
+           <div id="events"></div>
+      </body>  
+ </html>  
+ <script>  
+
+
+
+
+
+ $(document).ready(function(){  
+      $('#data-table').DataTable( {
+    ajax: {
+        url: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit=50',
+        dataSrc: '',
+         deferRender:    true,
+        scrollY:        200,
+        scrollCollapse: true,
+        scroller:       true,
+        responsive: true
+    },
+
+   columns: [
+         {data: "registration_number"},
+        { data: "last_name"},
+
+         { data: "state", "defaultContent": "<i>N/A</i>"},
+        { data:"phone_number", "defaultContent": "<i>N/A</i>"},
+        { data:  "first_name",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="https://data.ny.gov/resource/cdhq-buk7.json?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } 
+   ],
+   
+} );
+     
+ });  
+ 
+ </script>  
