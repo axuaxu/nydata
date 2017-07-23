@@ -79,6 +79,7 @@
     console.log( 'New page length: '+len );
      $('#data-table').DataTable().destroy();
      $('#data-table').DataTable({
+       "pageLength": len,
     ajax: {
         url: 'https://data.ny.gov/resource/cdhq-buk7.json?$limit='+len,
         dataSrc: '',
