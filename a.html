@@ -37,20 +37,28 @@
 <hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
            </div>  
            <div id="events"></div>
+           <pre>
+
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,'W')
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27A%27
+https://data.ny.gov/resource/cdhq-buk7.json?registration_number=1083229
+https://data.ny.gov/resource/cdhq-buk7.json?last_name=WEISS
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name between 'a' and 'ad'
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27ad%27
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27abz%27
+           https://data.ny.gov/resource/cdhq-buk7.json?$where=registration_number%20between%20%271008648%27%20and%20%271009648%27
+           </pre>
+
       </body>  
  </html>  
  <script>  
 
 
-https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,'W')
-https://data.ny.gov/resource/cdhq-buk7.json?registration_number=1083229
-https://data.ny.gov/resource/cdhq-buk7.json?last_name=WEISS
-https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name between 'a' and 'ad'
 
  $(document).ready(function(){  
       $('#data-table').DataTable( {
     ajax: {
-        url: 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27A%27)',
+        url: 'https://data.ny.gov/resource/cdhq-buk7.json?$where=registration_number%20between%20%271008648%27%20and%20%271009648%27',
         dataSrc: '',
          deferRender:    true,
         scrollY:        200,
