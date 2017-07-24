@@ -1,0 +1,153 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Show JSON Data in Jquery Datatables</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           <link rel="stylesheet" href="js/jquery-ui.min.css">
+         
+           <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+          <script src="js/jquery-ui.min.js"></script>
+      </head>  
+      <body>  
+         <h1 align="center">New York Attorney List</h3><br />  
+ 
+  <div id="accordion">
+  <h3>Search By Name</h3>
+  <div>
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+  </div>
+  </div>
+  <div id="listDiv"></div>
+
+           <div class="container">  
+             
+                <h3 align="center">Employee Database</h3><br />  
+             <h3>jQuery DataTables: Render cell content</h3>
+<a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a><hr>
+
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>Facility Name</th>  
+                               <th>City</th>  
+                               <th>City</th> 
+                              
+                                <th>Number of Beds</th> 
+                               
+                               <th>Number of Beds</th> 
+                          </tr>  
+                     </thead>  
+                </table>  
+
+
+<hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
+           </div>  
+           <div id="events"></div>
+           <pre>
+
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,'W')
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27A%27)
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27A%27)%20and%20starts_with(first_name,%27A%27)
+https://data.ny.gov/resource/cdhq-buk7.json?registration_number=1083229
+https://data.ny.gov/resource/cdhq-buk7.json?last_name=WEISS
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name between 'a' and 'ad'
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27ad%27
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27abz%27
+           https://data.ny.gov/resource/cdhq-buk7.json?$where=registration_number%20between%20%271008648%27%20and%20%271009648%27
+  https://data.cityofchicago.org/resource/tt4n-kn4t.json?$where=starts_with(job_titles,%20%27CHIEF%27)
+           </pre>
+ <div><input type="text" name="date" id="date">
+</div>
+<div id="listDisplay"></div>
+<div title="Anchor description">Anchor text </div>
+  <input title="Input help">
+  <input type="email" name="email" required><p>
+  <input type="text" id="partNumber" pattern="[A-Z]{3}[0-9]{4}" /><p>
+  Last Name
+  <input type="text" id="last_name" pattern="[A-Z]" />
+
+           <br /><br />  
+      </body>  
+ </html>  
+ <script>  
+
+
+
+ $(document).ready(function(){  
+  $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val();
+       var lastname = $("#lastname").val();
+       alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+       var nyurl= '';
+       ajax{
+        url: 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27'+lastname+'%27)%20and%20starts_with(first_name,%27'+firstname+'%27)',
+        dataSrc: '',
+         deferRender:    true,
+        scrollY:        200,
+        scrollCollapse: true,
+        scroller:       true,
+        responsive: true
+    },
+
+   columns: [
+         {data: "registration_number"},
+        { data: "last_name"},
+
+         { data: "state", "defaultContent": "<i>N/A</i>"},
+        { data:"phone_number", "defaultContent": "<i>N/A</i>"},
+        { data:  "first_name",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="https://data.ny.gov/resource/cdhq-buk7.json?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } 
+   ],
+   
+} );
+ });
+   $( "#date" ).datepicker(); 
+   $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });var firstname = $("#firstname").val();
+     } );
+   $( "#button" ).button();   
+   $( document ).tooltip();
+   
+
+ });  
+ 
+ </script>  
+
