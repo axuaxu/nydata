@@ -1,0 +1,246 @@
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Show JSON Data in Jquery Datatables</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           <link rel="stylesheet" href="js/jquery-ui.min.css">
+         
+           <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+          <script src="js/jquery-ui.min.js"></script>
+      </head>  
+      <body>  
+         <h1 align="center">New York Attorney List</h3><br />  
+ 
+  <div id="accordion">
+  <h3>Search By Name</h3>
+  <div>
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <h3>Search by Company Name</h3>
+  <div>
+   <table class="display">
+    <form id="companyForm">
+    <tr><td>Company Name:</td><td><input type="text" id="companyname"/></td></tr>
+    
+   
+    <tr><td></td><td><button id="buttonc" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <h3>Search by Law School</h3>
+  <div>
+   table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <h3>Search by City</h3>
+  <div>
+  <table class="display">
+    <form id="cityForm">
+    
+    <tr><td>City Name:</td><td><input type="text" id="cityname"/></td></tr>
+    <tr><td></td><td><button id="buttonty" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <h3>Advanced Search</h3>
+  <div>
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  </div>
+<div id="listDisplay"></div>
+
+           <div class="container">  
+             
+            
+<div id="lawyerList">
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Phone Number</th> 
+                          </tr>  
+                     </thead>  
+                </table>  
+</div>
+
+<hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
+           </div>  
+           <div id="events"></div>
+           <pre>
+
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,'W')
+https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%27A%27
+https://data.ny.gov/resource/cdhq-buk7.json?registration_number=1083229
+https://data.ny.gov/resource/cdhq-buk7.json?last_name=WEISS
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name between 'a' and 'ad'
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27ad%27
+https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27abz%27
+           https://data.ny.gov/resource/cdhq-buk7.json?$where=registration_number%20between%20%271008648%27%20and%20%271009648%27
+           </pre>
+ <div><input type="text" name="date" id="date">
+</div>
+<div title="Anchor description">Anchor text </div>
+  <input title="Input help">
+  <input type="email" name="email" required><p>
+  <input type="text" id="partNumber" pattern="[A-Z]{3}[0-9]{4}" /><p>
+  Last Name 
+  <input type="text" id="last_name" pattern="[A-Z]" />
+
+           <br /><br />  
+
+      </body>  
+ </html>  
+ <script>  
+
+
+
+ $(document).ready(function(){ 
+  function m(x,y){
+    return x+y;
+  }
+  function myDT(tableID,dtUrl)
+  {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name"},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "phone_number","defaultContent": "<i>N/A</i>",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="https://data.ny.gov/resource/cdhq-buk7.json?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } 
+       ],
+   
+} );
+   return mytable;
+  }
+
+
+  $( "#accordion" ).accordion({
+      collapsible: true
+    });
+    $( "#accordion" ).accordion("option", "active", false ) ;
+   $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+        $( "#accordion" ).accordion("option", "active", false ) ;
+        console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+    $("#companyForm").submit(function( event ) {
+       //var firstname = $("#firstname").val().toUpperCase();
+       var companyname = $("#companyname").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+        $( "#accordion" ).accordion("option", "active", false ) ;
+       // console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=company_name like "%25'+companyname+'%25"';
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+     $("#cityForm").submit(function( event ) {
+       //var firstname = $("#firstname").val().toUpperCase();
+       var cityname = $("#cityname").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+        $( "#accordion" ).accordion("option", "active", false ) ;
+        //console.log(m(firstname,lastname));
+        dtUrl =  dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=city like "%25'+cityname+'%25"';;
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+      $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+        $( "#accordion" ).accordion("option", "active", false ) ;
+        console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+       $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+        $( "#accordion" ).accordion("option", "active", false ) ;
+        console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+
+   $( "#date" ).datepicker(); 
+   $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    }); 
+     } );
+   $( "#button" ).button();
+    $( "#buttonc" ).button();      
+   $( document ).tooltip();
+  
+     
+    $('#data-table').on( 'select', function ( e, dt, type, indexes ) {
+    //table[ type ]( indexes ).nodes().to$().addClass( 'custom-selected' );
+    alert('selected'); 
+        } );   
+  
+ });  
+ 
+ </script>  
