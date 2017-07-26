@@ -103,19 +103,30 @@
         dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
         var table=myDT('#data-table',dtUrl);
       
-         $('#data-table tbody').on( 'click', 'td', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-       // alert( data.first_name +"'s last name is: "+ data.last_name );
-        console.log(data.city);
-       // alert( data.first_name );
-     //   $('#lawyerDetail').dialog("open");
-          lcity = data.city;
-        
-    // var cell_value = $(event.target).text();
-        showPopup(lcity);   
-        //alert(table.cell('.selected', 0).data());
-    } );
-     
+             /* Add events */
+            $("body").on("click", "#data-table tbody tr", function (e) {
+                 e.preventDefault();                    
+
+                var nTds = $('td', this);
+                //example to show any cell data can be gathered, I used to get my ID from the first coumn in my final code
+                var sBrowser = $(nTds[1]).text();
+                var sGrade = $(nTds[4]).text();
+                var dialogText="The info cell I need was in (col2) as:"+sBrowser+" and in (col5) as:"+sGrade+"" ;
+                var targetUrl = $(this).attr("href");
+
+                $('#lawyerDetail').dialog({
+                  buttons: {
+                    "Delete": function() {
+                        window.location.href = targetUrl;
+                    },
+                    "Cancel": function() {
+                      $(this).dialog("close");
+                    }
+                  }
+                });                 
+                //simple dialog example here
+                $('#lawyerDetail').text(dialogText ).dialog("open");                
+            });
    });
     
 } );
