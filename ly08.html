@@ -91,7 +91,7 @@
                           </tr>  
                      </thead>  
                 </table>
-                <tbody>><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></div>
+                 </div>
 
 <hr><a href="https://www.gyrocode.com/articles/tag/jquery-datatables/">See more articles about jQuery DataTables</a> on <a href="https://www.gyrocode.com/articles/">Gyrocode.com</a>
            </div>  
@@ -264,7 +264,8 @@ https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27
     } );
     $('#data-table tbody').on( 'click', 'td', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        alert( data[0] +"'s salary is: "+ data[ 2 ] );
+        //alert( data[0] +"'s salary is: "+ data[ 2 ] );
+        console.log(data.city);
         //alert( table.( this ).data() );
         //alert(table.cell('.selected', 0).data());
     } );

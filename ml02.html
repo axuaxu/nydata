@@ -1,0 +1,82 @@
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+         
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+</head>
+<body>
+<div id="lawyerList">
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Phone Number</th>
+                             
+                          </tr>  
+                     </thead>  
+                </table>
+                 </div>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+     
+ 
+      function myDT(tableID,dtUrl)
+     {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name"},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "phone_number","defaultContent": "<i>N/A</i>",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="https://data.ny.gov/resource/cdhq-buk7.json?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } ,
+
+       ],
+      
+   
+} );
+   return mytable;
+  }
+       
+       dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+'W'+'%27) AND starts_with(first_name,%20%27'+'A'+'%27)';
+      table=myDT('#data-table',dtUrl);
+
+     $('#data-table tbody').on( 'click', 'td', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        alert( data[0] +"'s salary is: "+ data[ 5 ] );
+        console.log(data.city);
+        //alert( table.( this ).data() );
+        //alert(table.cell('.selected', 0).data());
+    } );
+} );
+    </script>
+    </body>
+    </html>

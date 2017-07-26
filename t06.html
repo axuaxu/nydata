@@ -1,0 +1,58 @@
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+         
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+</head>
+<body>
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    var table = $('#example').DataTable( {
+        "ajax": "js/array.txt",
+        "columnDefs": [ {
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<button>Click!</button>"
+        } ]
+    } );
+ 
+    $('#example tbody').on( 'click', 'button', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        alert( data[0] +"'s salary is: "+ data[ 5 ] );
+        //alert( table.( this ).data() );
+        //alert(table.cell('.selected', 0).data());
+    } );
+
+     $('#example tbody').on( 'click', 'td', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        alert( data[0] +"'s salary is: "+ data[ 5 ] );
+        //alert( table.( this ).data() );
+        //alert(table.cell('.selected', 0).data());
+    } );
+} );
+    </script>
+    </body>
+    </html>
