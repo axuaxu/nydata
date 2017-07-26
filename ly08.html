@@ -240,31 +240,10 @@ https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27
   
      
     var table = $('#data-table').DataTable();
-     
-   $('#data-table').on('click', 'tr', function(event) {
-   event.preventDefault();
-    console.log( $( this ).text());
-    console.log( $( this ).data());
-   // var cd =  $( this ).data();
-    //console.log(cd[0]);
-     //var data = table.row( $(this).parents('tr') ).data();
-     //   alert( data[0] +"'s salary is: "+ data[ 1] );
-   //console.log(table.cell({ row: this.parentNode.rowIndex, column : this.cellIndex }).data());
-   //console.log(table.row( this ).data());
-  //get textContent of the TD
-  //console.log('TD cell textContent : ', this.textContent)
-
-  //get the value of the TD using the API 
-  //console.log('value by API : ', table.cell({ row: this.parentNode.rowIndex, column : this.cellIndex }).data());
-})
-    $('#data-table tbody').off('click');
-   $('#data-table tbody').on( 'click', '#buttonk', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-        alert( data[0] +"'s salary is: "+ data[ 2 ] );
-    } );
+   
     $('#data-table tbody').on( 'click', 'td', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        //alert( data[0] +"'s salary is: "+ data[ 2 ] );
+        alert( data.first_name +"'s last name is: "+ data.last_name );
         console.log(data.city);
         //alert( table.( this ).data() );
         //alert(table.cell('.selected', 0).data());

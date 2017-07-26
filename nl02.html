@@ -6,6 +6,16 @@
           <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head>
 <body>
+ <div>
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
 <div id="lawyerList">
  <table id="data-table" class="display">  
                      <thead>  
@@ -66,16 +76,28 @@
    return mytable;
   }
        
-       dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+'W'+'%27) AND starts_with(first_name,%20%27'+'A'+'%27)';
-      table=myDT('#data-table',dtUrl);
+     //  dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+'W'+'%27) AND starts_with(first_name,%20%27'+'A'+'%27)';
+   //   table=myDT('#data-table',dtUrl);
+    $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+    //    $( "#accordion" ).accordion("option", "active", false ) ;
+    //    console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
 
-     $('#data-table tbody').on( 'click', 'td', function () {
+         $('#data-table tbody').on( 'click', 'td', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        alert( data.first_name +"'s last name is: "+ data.last_name );
+       // alert( data.first_name +"'s last name is: "+ data.last_name );
         console.log(data.city);
         //alert( table.( this ).data() );
         //alert(table.cell('.selected', 0).data());
     } );
+     
+   });
+    
 } );
     </script>
     </body>
