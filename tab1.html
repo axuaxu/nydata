@@ -13,25 +13,59 @@
           <script src="js/jquery-ui.min.js"></script>
       </head>  
       <body>  
-         <h1 align="center">New York Attorney List</h3><br />  
+         <h1 align="center">Search New York Attorney List</h3><br />  
  <div id="tabs">
   <ul>
-    <li><a href="#fragment-1"><span>One</span></a></li>
-    <li><a href="#fragment-2"><span>Two</span></a></li>
-    <li><a href="#fragment-3"><span>Three</span></a></li>
+    <li><a href="#byName"><span>By Name</span></a></li>
+    <li><a href="#byCompany"><span>By Company</span></a></li>
+    <li><a href="#byCity"><span>By City</span></a></li>
+    <li><a href="#bySchool"><span>By Law School</span></a></li>
+    <li><a href="#advanced"><span>Advanced Search</span></a></li>
   </ul>
-  <div id="fragment-1">
-    <p>First tab is active by default:</p>
-    <pre><code>$( "#tabs" ).tabs(); </code></pre>
+  <div id="byName">
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
   </div>
-  <div id="fragment-2">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  <div id="byCompany">
+     <table class="display">
+    <form id="companyForm">
+    <tr><td>Company Name:</td><td><input type="text" id="companyname"/></td></tr>  
+    <tr><td></td><td><button id="buttonc" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
   </div>
-  <div id="fragment-3">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  <div id="byCity">
+    <table class="display">
+    <form id="cityForm">
+    
+    <tr><td>City Name:</td><td><input type="text" id="cityname"/></td></tr>
+    <tr><td></td><td><button id="buttonty" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="bySchool">
+      <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="advanced">
+     <table class="display">
+    <form id="companyForm">
+    <tr><td>Company Name:</td><td><input type="text" id="companyname"/></td></tr>  
+    <tr><td></td><td><button id="buttonc" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
   </div>
 </div>
   <div id="accordion">
@@ -59,7 +93,7 @@
   </div>
   <h3>Search by Law School</h3>
   <div>
-   table class="display">
+   <table class="display">
     <form id="nameForm">
     <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
     
