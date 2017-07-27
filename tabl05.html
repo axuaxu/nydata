@@ -61,15 +61,7 @@
   </div>
   <div id="advanced">
      <table class="display">
-    <form id="advancedForm">
-     <tr><td>First Name:</td><td><input type="text" id="afirstname"/></td></tr>
-    
-    <tr><td>Last Name:</td><td><input type="text" id="alastname"/></td></tr>
-    <tr><td>Company:</td><td><input type="text" id="acompanyname"/></td></tr> 
-    <tr><td>City:</td><td><input type="text" id="acityname"/></td></tr>
-     <tr><td>Law School:</td><td><input type="text" id="alawshool"/></td></tr> 
-    <tr><td></td><td><button id="buttona" input type="submit" value="Submit">submit</button></td></tr>
-    </form>
+     
     </table>
   </div>
 </div>
@@ -110,14 +102,7 @@ https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27
 https://data.ny.gov/resource/cdhq-buk7.json?$where=last_name%20between%20%27a%27%20and%20%27abz%27
            https://data.ny.gov/resource/cdhq-buk7.json?$where=registration_number%20between%20%271008648%27%20and%20%271009648%27
            </pre>
- <div><input type="text" name="date" id="date">
-</div>
-<div title="Anchor description">Anchor text </div>
-  <input title="Input help">
-  <input type="email" name="email" required><p>
-  <input type="text" id="partNumber" pattern="[A-Z]{3}[0-9]{4}" /><p>
-  Last Name 
-  <input type="text" id="last_name" pattern="[A-Z]" />
+  
 
            <br /><br />  
 
@@ -220,27 +205,13 @@ $( "#tabs" ).tabs();
         var table=myDT('#data-table',dtUrl);
      
    });
-       $("#advancedForm").submit(function( event ) {
-       var afirstname = $("#afirstname").val().toUpperCase();
-       var alastname = $("#alastname").val().toUpperCase();
-       var acompanyname = $("#acompanyname").val();
-       var acityname = $("#acityname").val();
-       var alawschool = $("#alawschool").val().toUpperCase();
-      // alert( "Handler for .submit() called." +lastname+firstname);
-       event.preventDefault();
-       // $( "#accordion" ).accordion("option", "active", false ) ;
-       // console.log(m(firstname,lastname));
-     //   dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) AND  company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25"';
-        console.log(dtUrl+'ooo');
-        //var table=myDT('#data-table',dtUrl);
-     
-   });
+      
 
   
    $( "#button" ).button();
     $( "#buttonc" ).button();      
-   $( document ).tooltip();
-  
+    $( "#buttonty" ).button();
+    $( "#buttons" ).button();   
      
     var table = $('#data-table').DataTable();
    
