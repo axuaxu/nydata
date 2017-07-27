@@ -59,7 +59,14 @@
   </div>
   <div id="advanced">
      <table class="display">
-     
+    <form id="advancedForm">
+    <tr><td>First Name:</td><td><input type="text" id="afirstname"/></td></tr>    
+    <tr><td>Last Name:</td><td><input type="text" id="alastname"/></td></tr>
+    <tr><td>Company Name:</td><td><input type="text" id="acompanyname"/></td></tr> 
+    <tr><td>City Name:</td><td><input type="text" id="acityname"/></td></tr>
+    <tr><td>Law School:</td><td><input type="text" id="alawschool"/></td></tr>
+    <tr><td></td><td><button id="buttona" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
     </table>
   </div>
 </div>
@@ -189,13 +196,27 @@ $( "#tabs" ).tabs();
      
    });
       
-
+     $("#advancedForm").submit(function( event ) {
+       var afirstname = $("#afirstname").val().toUpperCase();
+       var alastname = $("#alastname").val().toUpperCase();
+        var acompanyname = $("#acompanyname").val();
+        var acityname = $("#acityname").val();
+        var alawschool = $("#alawschool").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+      //  $( "#accordion" ).accordion("option", "active", false ) ;
+      //  console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25"';
+        var table=myDT('#data-table',dtUrl);
+        console.log(dtUrl);
+     
+   });
   
    $( "#button" ).button();
     $( "#buttonc" ).button();      
     $( "#buttonty" ).button();
     $( "#buttons" ).button();   
-     
+      $( "#buttona" ).button();   
     var table = $('#data-table').DataTable();
    
     $('#data-table tbody').on( 'click', 'td', function () {
