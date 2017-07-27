@@ -1,6 +1,7 @@
 <html><head>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
 </head>
 <body>
+<div id="lawyerDetail"></div>
 
 	<script  type="text/javascript">
 		 var param = document.URL.split('#')[1];
@@ -52,10 +53,17 @@ $.getJSON( rurl, function( data ) {
     items.push( "<li id='" + key + "'>" + key+':'+val + "</li>" );
   });
  
+
   $( "<ul/>", {
     "class": "my-new-list",
     html: items.join( "" )
   }).appendTo( "body" );
+
+  //display lawyer details
+  //$("#lawyerDetail").innerHtml
+  $("<div>First Name: "+data[0].first_name+"</div>").appendTo("#lawyerDetail");
+  //$("#lawyerDetail").append("<div>Last Name: "+data[0].last_name+"</div>");
+  
 });
 	</script>
 </body>
