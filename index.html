@@ -1,0 +1,82 @@
+<html><head> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+
+</head>
+<body>
+<table id="lawyerTable" cellpadding="50px" align="center"></table>
+	<script  type="text/javascript">
+		 var param = document.URL.split('#')[1];
+		 console.log(param);
+
+		 var vars = [], hash;
+    var q = document.URL.split('?')[1];
+    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+            hash = q[i].split('=');
+            
+            vars.push(hash[1]);
+            vars[hash[0]] = hash[1];
+
+        }
+}
+    console.log(hash[1]);
+    function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+var rnumber = $_GET('registration_number');
+console.log('registration_number: '+name);
+var rurl = 'https://data.ny.gov/resource/cdhq-buk7.json?registration_number='+rnumber;
+$.getJSON( rurl, function( data ) {
+  
+ 
+
+   
+  //display lawyer details
+  //$("#lawyerDetail").innerHtml
+  if (data[0].city === undefined) {lycity ="";}  else { lycity= data[0].city;};
+  if (data[0].state === undefined) {lystate ="";} else { lystate= data[0].state;} ;
+  if (data[0].country === undefined) {lycountry ="";} else { lycountry= data[0].country;} ;
+  if (data[0].street_1 === undefined) {lystreet ="";} else { lystreet= data[0].street_1;} ;
+  if (data[0].zip === undefined) {lyzip ="";} else { lyzip= data[0].zip;};
+  if (data[0].phone_number === undefined) {lyphone ="";} else { lyphone= data[0].phone_number;} ;
+  if (data[0].email_address === undefined) {lyemail ="";} else { lyemail= data[0].email_address;} ;
+  if (data[0].year_admitted === undefined) {lyyear ="";} else { lyyear= data[0].year_admitted;} ;
+  if (data[0].status === undefined) {lystatus ="";} else { lystatus= data[0].status;};
+  if (data[0].company_name === undefined) {lycompany ="";} else { lycompany= data[0].company_name;} ;
+  if (data[0].law_school === undefined) {lyschool ="";} else { lyschool= data[0].law_school;};
+
+  
+  console.log(lystate);
+
+  $("<tr class='h3'><td></th><th >"+data[0].first_name+" "+data[0].last_name+"</th></tr>").appendTo("#lawyerTable");
+   $("<tr class='h4'><td >Company: </td><td>"+lycompany+"</td></tr>").appendTo("#lawyerTable");
+   $("<tr class='h4'><td >Address: </td><td>"+lystreet+", "+lycity+" "+lystate+" "+lycountry+" "+lyzip+"</td></tr>").appendTo("#lawyerTable");
+   $("<tr class='h4'><td >Phone: </td><td>"+lyphone+"</td></tr>"+"<tr><td  >Email: </td><td>"+lyemail+"</td></tr>").appendTo("#lawyerTable");
+  $("<tr class='h4'><td class='h4'>Law School: </td><td>"+lyschool+"</td></tr>"+"<tr><td  >Year Admitted:    </td><td  >"+lyyear+"</td></tr>"+"<tr class='h4'><td >Status: </td><td>"+lystatus+"</td></tr>").appendTo("#lawyerTable");
+  
+  
+});
+	</script>
+</body>
+</html>
