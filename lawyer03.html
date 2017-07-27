@@ -1,0 +1,135 @@
+<html>
+<head>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script> 
+         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     
+</head>
+<body>
+ <div>
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+<div id="lawyerList">
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Phone Number</th>
+                             
+                          </tr>  
+                     </thead>  
+  </table>
+</div>
+<div id="lawyerDetail" class="dialog"><p>lawyer detail</p></div>
+    <script type="text/javascript">
+    $( "#lawyerDetail" ).dialog({ autoOpen: false });
+    $(document).ready(function() {
+     
+ 
+      function myDT(tableID,dtUrl)
+     {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name"},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "phone_number","defaultContent": "<i>N/A</i>",
+      "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="https://data.ny.gov/resource/cdhq-buk7.json?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }
+      } ,
+
+       ],
+      
+   
+} );
+   return mytable;
+  }
+       
+     //  dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+'W'+'%27) AND starts_with(first_name,%20%27'+'A'+'%27)';
+   //   table=myDT('#data-table',dtUrl);
+    function showPopup(lcity){
+        
+        $("#lawyerDetail").dialog({
+            width: 500,
+            height: 300,
+            open: function(){
+                $(this).find("p").html("Hello " + lcity);
+            }
+        });
+    }
+  
+    $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+    //    $( "#accordion" ).accordion("option", "active", false ) ;
+    //    console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
+      
+             /* Add events */
+            $("body").on("click", "#data-table tbody tr", function (e) {
+                 e.preventDefault();                    
+
+                var nTds = $('td', this);
+                //example to show any cell data can be gathered, I used to get my ID from the first coumn in my final code
+                var sBrowser = $(nTds[1]).text();
+                var sGrade = $(nTds[4]).text();
+                var dialogText="The info cell I need was in (col2) as:"+sBrowser+" and in (col5) as:"+sGrade+"" ;
+                var targetUrl = $(this).attr("href");
+
+                $('#lawyerDetail').dialog({
+                  buttons: {
+                    "Delete": function() {
+                        window.location.href = targetUrl;
+                    },
+                    "Cancel": function() {
+                      $(this).dialog("close");
+                    }
+                  }
+                });                 
+                //simple dialog example here
+                $('#lawyerDetail').text(dialogText ).dialog("open");                
+            });
+   });
+    
+} );
+    </script>
+    </body>
+    </html>

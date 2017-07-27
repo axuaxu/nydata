@@ -1,0 +1,62 @@
+<html><head>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+</head>
+<body>
+
+	<script  type="text/javascript">
+		 var param = document.URL.split('#')[1];
+		 console.log(param);
+
+		 var vars = [], hash;
+    var q = document.URL.split('?')[1];
+    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+            hash = q[i].split('=');
+            
+            vars.push(hash[1]);
+            vars[hash[0]] = hash[1];
+
+        }
+}
+    console.log(hash[1]);
+    function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+var rnumber = $_GET('registration_number');
+console.log('registration_number: '+name);
+var rurl = 'https://data.ny.gov/resource/cdhq-buk7.json?registration_number='+rnumber;
+$.getJSON( rurl, function( data ) {
+  var items = [];
+  console.log(data);
+  console.log(data[0].city);
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});
+	</script>
+</body>
+</html>
