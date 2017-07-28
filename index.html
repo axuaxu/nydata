@@ -1,82 +1,251 @@
-<html><head> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
-
-</head>
-<body>
-<table id="lawyerTable" cellpadding="50px" align="center"></table>
-	<script  type="text/javascript">
-		 var param = document.URL.split('#')[1];
-		 console.log(param);
-
-		 var vars = [], hash;
-    var q = document.URL.split('?')[1];
-    if(q != undefined){
-        q = q.split('&');
-        for(var i = 0; i < q.length; i++){
-            hash = q[i].split('=');
-            
-            vars.push(hash[1]);
-            vars[hash[0]] = hash[1];
-
-        }
-}
-    console.log(hash[1]);
-    function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-};
-
-function $_GET(param) {
-	var vars = {};
-	window.location.href.replace( location.hash, '' ).replace( 
-		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-		function( m, key, value ) { // callback
-			vars[key] = value !== undefined ? value : '';
-		}
-	);
-
-	if ( param ) {
-		return vars[param] ? vars[param] : null;	
-	}
-	return vars;
-}
-
-var rnumber = $_GET('registration_number');
-console.log('registration_number: '+name);
-var rurl = 'https://data.ny.gov/resource/cdhq-buk7.json?registration_number='+rnumber;
-$.getJSON( rurl, function( data ) {
-  
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Show JSON Data in Jquery Datatables</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           <link rel="stylesheet" href="js/jquery-ui.min.css">
+         
+           <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+          <script src="js/jquery-ui.min.js"></script>
+      </head>  
+      <body>  
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- l002 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8980136446658337"
+     data-ad-slot="8798096706"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+         <h1 align="center">Search New York Attorney Registry</h3><br />  
+ <div id="tabs">
+  <ul>
+    <li><a href="#byName"><span>By Name</span></a></li>
+    <li><a href="#byCompany"><span>By Company</span></a></li>
+    <li><a href="#byCity"><span>By City</span></a></li>
+    <li><a href="#bySchool"><span>By Law School</span></a></li>
+    <li><a href="#advanced"><span>Advanced Search</span></a></li>
+  </ul>
+  <div id="byName">
+    <table class="display">
+    <form id="nameForm">
+    <tr><td>First Name:</td><td><input type="text" id="firstname"/></td></tr>
+    
+    <tr><td>Last Name:</td><td><input type="text" id="lastname"/></td></tr>
+    <tr><td></td><td><button id="button" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="byCompany">
+     <table class="display">
+    <form id="companyForm">
+    <tr><td>Company Name:</td><td><input type="text" id="companyname"/></td></tr>  
+    <tr><td></td><td><button id="buttonc" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="byCity">
+    <table class="display">
+    <form id="cityForm">
+    
+    <tr><td>City Name:</td><td><input type="text" id="cityname"/></td></tr>
+    <tr><td></td><td><button id="buttonty" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="bySchool">
+      <table class="display">
+    <form id="schoolForm">
+    <tr><td>Law School:</td><td><input type="text" id="lawschool"/></td></tr>
+    <tr><td></td><td><button id="buttons" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+  <div id="advanced">
+     <table class="display">
+    <form id="advancedForm">
+    <tr><td>First Name:</td><td><input type="text" id="afirstname"/></td></tr>    
+    <tr><td>Last Name:</td><td><input type="text" id="alastname"/></td></tr>
+    <tr><td>Company Name:</td><td><input type="text" id="acompanyname"/></td></tr> 
+    <tr><td>City Name:</td><td><input type="text" id="acityname"/></td></tr>
+    <tr><td>Law School:</td><td><input type="text" id="alawschool"/></td></tr>
+    <tr><td></td><td><button id="buttona" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+</div>
  
+<div id="listDisplay"></div>
 
+           <div class="container">  
+             
+            
+<div id="lawyerList">
+ <table id="data-table" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr>  
+                     </thead>  
+                </table>
+                 </div>
+
+
+
+      </body>  
+ </html>  
+ <script>  
+
+
+
+ $(document).ready(function(){ 
+  function m(x,y){
+    return x+y;
+  }
+  function myDT(tableID,dtUrl)
+  {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name",  "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="detail03.html?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "law_school","defaultContent": "<i>N/A</i>",
+    
+      } ,
+      {data: "year_admitted","defaultContent": "<i>N/A</i>", },
+       ],
+      
    
-  //display lawyer details
-  //$("#lawyerDetail").innerHtml
-  if (data[0].city === undefined) {lycity ="";}  else { lycity= data[0].city;};
-  if (data[0].state === undefined) {lystate ="";} else { lystate= data[0].state;} ;
-  if (data[0].country === undefined) {lycountry ="";} else { lycountry= data[0].country;} ;
-  if (data[0].street_1 === undefined) {lystreet ="";} else { lystreet= data[0].street_1;} ;
-  if (data[0].zip === undefined) {lyzip ="";} else { lyzip= data[0].zip;};
-  if (data[0].phone_number === undefined) {lyphone ="";} else { lyphone= data[0].phone_number;} ;
-  if (data[0].email_address === undefined) {lyemail ="";} else { lyemail= data[0].email_address;} ;
-  if (data[0].year_admitted === undefined) {lyyear ="";} else { lyyear= data[0].year_admitted;} ;
-  if (data[0].status === undefined) {lystatus ="";} else { lystatus= data[0].status;};
-  if (data[0].company_name === undefined) {lycompany ="";} else { lycompany= data[0].company_name;} ;
-  if (data[0].law_school === undefined) {lyschool ="";} else { lyschool= data[0].law_school;};
+} );
+   return mytable;
+  }
 
+$( "#tabs" ).tabs();
+  //$( "#accordion" ).accordion({
+  //    collapsible: true
+   // });
+   // $( "#accordion" ).accordion("option", "active", false ) ;
+   $("#nameForm").submit(function( event ) {
+       var firstname = $("#firstname").val().toUpperCase();
+       var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+      //  $( "#accordion" ).accordion("option", "active", false ) ;
+      //  console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+lastname+'%27) AND starts_with(first_name,%20%27'+firstname+'%27)';
+        var table=myDT('#data-table',dtUrl);
+        console.log(dtUrl);
+     
+   });
+    $("#companyForm").submit(function( event ) {
+       //var firstname = $("#firstname").val().toUpperCase();
+       var companyname = $("#companyname").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+       // $( "#accordion" ).accordion("option", "active", false ) ;
+       // console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=company_name like "%25'+companyname+'%25"';
+        var table=myDT('#data-table',dtUrl);
+        console.log(dtUrl);
+   });
+     $("#cityForm").submit(function( event ) {
+       //var firstname = $("#firstname").val().toUpperCase();
+       var cityname = $("#cityname").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+       // $( "#accordion" ).accordion("option", "active", false ) ;
+        //console.log(m(firstname,lastname));
+        dtUrl =  dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=city like "%25'+cityname+'%25"';
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+      $("#schoolForm").submit(function( event ) {
+       var lawschool = $("#lawschool").val();
+      // var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+       //$( "#accordion" ).accordion("option", "active", false ) ;
+       // console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=law_school like "%25'+lawschool+'%25"';
+        console.log(dtUrl);
+        var table=myDT('#data-table',dtUrl);
+     
+   });
+      
+     $("#advancedForm").submit(function( event ) {
+       var afirstname = $("#afirstname").val().toUpperCase();
+       var alastname = $("#alastname").val().toUpperCase();
+        var acompanyname = $("#acompanyname").val();
+        var acityname = $("#acityname").val();
+        var alawschool = $("#alawschool").val();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+      //  $( "#accordion" ).accordion("option", "active", false ) ;
+      //  console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25"';
+        var table=myDT('#data-table',dtUrl);
+        console.log(dtUrl);
+     
+   });
   
-  console.log(lystate);
-
-  $("<tr class='h3'><td></th><th >"+data[0].first_name+" "+data[0].last_name+"</th></tr>").appendTo("#lawyerTable");
-   $("<tr class='h4'><td >Company: </td><td>"+lycompany+"</td></tr>").appendTo("#lawyerTable");
-   $("<tr class='h4'><td >Address: </td><td>"+lystreet+", "+lycity+" "+lystate+" "+lycountry+" "+lyzip+"</td></tr>").appendTo("#lawyerTable");
-   $("<tr class='h4'><td >Phone: </td><td>"+lyphone+"</td></tr>"+"<tr><td  >Email: </td><td>"+lyemail+"</td></tr>").appendTo("#lawyerTable");
-  $("<tr class='h4'><td class='h4'>Law School: </td><td>"+lyschool+"</td></tr>"+"<tr><td  >Year Admitted:    </td><td  >"+lyyear+"</td></tr>"+"<tr class='h4'><td >Status: </td><td>"+lystatus+"</td></tr>").appendTo("#lawyerTable");
-  
-  
-});
-	</script>
-</body>
-</html>
+   $( "#button" ).button();
+    $( "#buttonc" ).button();      
+    $( "#buttonty" ).button();
+    $( "#buttons" ).button();   
+      $( "#buttona" ).button();   
+    var table = $('#data-table').DataTable();
+   
+    $('#data-table tbody').on( 'click', 'td', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        alert( data.first_name +"'s last name is: "+ data.last_name );
+        console.log(data.city);
+        //alert( table.( this ).data() );
+        //alert(table.cell('.selected', 0).data());
+    } );
+ });  
+ 
+ </script>  
+ <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- l001 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8980136446658337"
+     data-ad-slot="7580862731"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
