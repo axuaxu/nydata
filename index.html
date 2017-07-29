@@ -221,9 +221,10 @@ $( "#tabs" ).tabs();
        event.preventDefault();
        //$( "#accordion" ).accordion("option", "active", false ) ;
        // console.log(m(firstname,lastname));
+       if (year==="") {year=2017;}
         dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted = '+year;
         console.log(dtUrl);
-        var table=myDT('#data-table',dtUrl);
+        var table=myDT('#data-table',dtUrl); 
      
    });
      $("#advancedForm").submit(function( event ) {
@@ -233,12 +234,13 @@ $( "#tabs" ).tabs();
         var acityname = $("#acityname").val();
         var alawschool = $("#alawschool").val();
         var ayear = $("#ayear").val();
+        if (ayear==="") {ayear=2017;}
       // alert( "Handler for .submit() called." +lastname+firstname);
        event.preventDefault();
       //  $( "#accordion" ).accordion("option", "active", false ) ;
       //  console.log(m(firstname,lastname));
       console.log(ayear);
-        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25" AND year_admitted = '+ayear;
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25" AND year_admitted  = '+ayear;
         var table=myDT('#data-table',dtUrl);
         console.log(dtUrl);
      
