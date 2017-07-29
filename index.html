@@ -29,6 +29,7 @@
     <li><a href="#byCompany"><span>By Company</span></a></li>
     <li><a href="#byCity"><span>By City</span></a></li>
     <li><a href="#bySchool"><span>By Law School</span></a></li>
+    <li><a href="#byYear"><span>By Year Admitted</span></a></li>
     <li><a href="#advanced"><span>Advanced Search</span></a></li>
   </ul>
   <div id="byName">
@@ -63,6 +64,14 @@
     <form id="schoolForm">
     <tr><td>Law School:</td><td><input type="text" id="lawschool"/></td></tr>
     <tr><td></td><td><button id="buttons" input type="submit" value="Submit">submit</button></td></tr>
+    </form>
+    </table>
+  </div>
+   <div id="byYear">
+      <table class="display">
+    <form id="yearForm">
+    <tr><td>Year Admitted:</td><td><input type="text" id="year"/></td></tr>
+    <tr><td></td><td><button id="buttonyear" input type="submit" value="Submit">submit</button></td></tr>
     </form>
     </table>
   </div>
@@ -204,7 +213,18 @@ $( "#tabs" ).tabs();
         var table=myDT('#data-table',dtUrl);
      
    });
-      
+      $("#yearForm").submit(function( event ) {
+       var year = $("#year").val();
+      // var lastname = $("#lastname").val().toUpperCase();
+      // alert( "Handler for .submit() called." +lastname+firstname);
+       event.preventDefault();
+       //$( "#accordion" ).accordion("option", "active", false ) ;
+       // console.log(m(firstname,lastname));
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted = '+year;
+        console.log(dtUrl);
+        var table=myDT('#data-table',dtUrl);
+     
+   });
      $("#advancedForm").submit(function( event ) {
        var afirstname = $("#afirstname").val().toUpperCase();
        var alastname = $("#alastname").val().toUpperCase();
@@ -224,7 +244,8 @@ $( "#tabs" ).tabs();
    $( "#button" ).button();
     $( "#buttonc" ).button();      
     $( "#buttonty" ).button();
-    $( "#buttons" ).button();   
+    $( "#buttons" ).button();  
+      $( "#buttonyear" ).button();  
       $( "#buttona" ).button();   
     var table = $('#data-table').DataTable();
    
