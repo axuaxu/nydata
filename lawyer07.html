@@ -83,6 +83,7 @@
     <tr><td>Company Name:</td><td><input type="text" id="acompanyname"/></td></tr> 
     <tr><td>City Name:</td><td><input type="text" id="acityname"/></td></tr>
     <tr><td>Law School:</td><td><input type="text" id="alawschool"/></td></tr>
+     <tr><td>Year Admitted:</td><td><input type="text" id="ayear"/></td></tr>
     <tr><td></td><td><button id="buttona" input type="submit" value="Submit">submit</button></td></tr>
     </form>
     </table>
@@ -231,11 +232,13 @@ $( "#tabs" ).tabs();
         var acompanyname = $("#acompanyname").val();
         var acityname = $("#acityname").val();
         var alawschool = $("#alawschool").val();
+        var ayear = $("#ayear").val();
       // alert( "Handler for .submit() called." +lastname+firstname);
        event.preventDefault();
       //  $( "#accordion" ).accordion("option", "active", false ) ;
       //  console.log(m(firstname,lastname));
-        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25"';
+      console.log(ayear);
+        dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=starts_with(last_name,%20%27'+alastname+'%27) AND starts_with(first_name,%20%27'+afirstname+'%27) and company_name like "%25'+acompanyname+'%25" AND city like "%25'+acityname+'%25" AND law_school like "%25'+alawschool+'%25" AND year_admitted = '+ayear;
         var table=myDT('#data-table',dtUrl);
         console.log(dtUrl);
      
