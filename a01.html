@@ -1,0 +1,53 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<script src="DataTables/datatables.min.js"></script>
+</head>
+<body>
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#example').dataTable( {
+      ajax: {
+       url: "json/ny_2015c.json",
+       dataSrc: "",
+       deferRender: true,
+             },
+       columns: [
+        {data: "FirstName"},
+        {data: "LastName"},
+        {data: "CompanyName"},
+        {data: "LawSchool"},
+        {data: "PhoneNumber"},
+        {data: "City"},
+       ]     
+
+
+         } );
+   } );
+</script>
+  
+</body>
+</html>
