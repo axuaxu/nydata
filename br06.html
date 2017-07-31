@@ -34,16 +34,8 @@
   <div id="byCity">By City</div>
   <div id="bySchool">By Law School</div>
   <div id="byYear">By Year Admitted
-  <div id="d-container">
-    <script id="yearTemplate" type="text/x-handlebars-template">
- 
-  <div class="year1">
-    {{#each year_admitted_1}}
-   {{year_admitted_1}}
-  {{/each}}  
-  </div>
-{{/each}}
-</script>
+  <div id="yearList">
+  
   </div>
   </div>
 
@@ -51,36 +43,8 @@
 </div>
 
 </div>
- <div class="page-wrap">
-  <h1>Handlebars Tutorial</h1>
-  <div id="pets-container"></div>
-</div> 
-
-<script id="petsTemplate" type="text/x-handlebars-template">
-{{#each pets}}
-  <div class="pet">
-    <div class="photo-column">
-      <img src="{{photo}}">
-    </div>
-
-    <div class="info-column">
-      <h2>{{name}} <span class="species">({{species}})</span></h2>
-
-      <p>Age: {{calculateAge birthYear}}</p>
-
-      {{#if favFoods}}
-      <h4 class="headline-bar">Favorite Foods</h4>
-      <ul class="favorite-foods">
-        {{#each favFoods}}
-          <li>{{{this}}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
-
-    </div>
-  </div>
-{{/each}}
-</script>
+ 
+ 
 <script src="js/handlebars-v4.0.10.js"></script>
 <script src="js/main.js"></script>
  <script>
@@ -100,7 +64,7 @@ $(document).ready(function(){
   $( "<ul/>", {
     "class": "year-list",
     html: items.join( "" )
-  }).appendTo( "body" );
+  }).appendTo( "#yearList" );
 });
 });
 </script>
