@@ -1,0 +1,54 @@
+<html>
+<body>
+	<pre>
+		https://data.ny.gov/resource/cdhq-buk7.json?$select=count(year_admitted)
+		[{"count_year_admitted":"356108"}]
+		https://data.ny.gov/resource/cdhq-buk7.json?$select=min(year_admitted)
+		[{"min_year_admitted":"1898"}]
+		https://data.ny.gov/resource/cdhq-buk7.json?$select=max(year_admitted)
+		[{"max_year_admitted":"2017"}]
+
+		https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)
+
+		[{}
+,{"year_admitted_1":"1990"}
+,{"year_admitted_1":"2014"}
+,{"year_admitted_1":"2005"}
+,{"year_admitted_1":"1929"}
+,{"year_admitted_1":"1914"}
+,{"year_admitted_1":"1947"}
+,{"year_admitted_1":"1948"} ...]
+
+https://data.ny.gov/resource/cdhq-buk7.json?status=%27Currently%20registered%27
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC
+[{"year_admitted_1":"2017"}
+,{"year_admitted_1":"2016"}
+,{"year_admitted_1":"2015"}
+,{"year_admitted_1":"2014"}
+,{"year_admitted_1":"2013"}
+,{"year_admitted_1":"2012"}
+,{"year_admitted_1":"2011"}
+,{"year_admitted_1":"2010"}
+,{"year_admitted_1":"2009"}
+,{"year_admitted_1":"2008"}
+,{"year_admitted_1":"2007"}
+,{"year_admitted_1":"2006"}
+,{"year_admitted_1":"2005"}
+,{"year_admitted_1":"2004"}
+,{"year_admitted_1":"2003"}
+,{"year_admitted_1":"2002"}
+,{"year_admitted_1":"2001"}   ..]
+
+https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20=2017&$limit=10000
+[{"first_name":"NATALIA","judicial_department_of_admission":"3","last_name":"MIKOLAJCZYK","law_school":"UNIVERSITY OF CALIFORNIA, BERKELEY","middle_name":"ALEKSANDRA","next_registration":"Apr 2019","registration_number":"5525746","status":"Currently registered","year_admitted":"2017"}
+,{"city":"FORT LAUDERDALE","company_name":"FIDELITY NATIONAL LAW GROUP","country":"United States","county":"Out of State","first_name":"ALEXANDER","judicial_department_of_admission":"2","last_name":"OSTROVSKY","law_school":"NOVA SOUTHEASTERN UNIVERSITY","next_registration":"Oct 2019","phone_number":"(954) 414-2105","registration_number":"5390331","state":"FL","status":"Currently registered","street_1":"200 WEST CYPRESS CREEK ROAD, SUITE 201","year_admitted":"2017","zip":"33309"}
+,{"first_name":"KIHO","judicial_department_of_admission":"3","last_name":"KIM","law_school":"HOFSTRA LAW SCHOOL","next_registration":"Aug 2019","registration_number":"5525779","status":"Currently registered","year_admitted":"2017"}
+,{"city":"NEW YORK","company_name":"NEW YORK LAWYERS FOR THE PUBLIC INTEREST","country":"United States","county":"New York","first_name":"MAUREEN","judicial_department_of_admission":"2","last_name":"BELLUSCIO","law_school":"VILLANOVA UNIVERSITY SCHOOL OF LAW","next_registration":"Aug 2019","phone_number":"(212) 244-4664","registration_number":"5519830","state":"NY","status":"Currently registered","street_1":"151 W 30TH ST, 11TH FL","year_admitted":"2017","zip":"10001","zip_plus_four":"4017"},]
+		SQL
+		select distinct(YearAdmitted) from ny_lawer_list where status like "%Registered%" order by YearAdmitted desc;
+		2017-1935
+
+	</pre>
+</body>
+</html>
