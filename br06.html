@@ -92,16 +92,9 @@ $(document).ready(function(){
      var items = [];
      console.log(data);
   $.each(data, function( index, value ) {
-    items.push( index + ": " + value );
-    items.push(data[index].year_admitted_1);
+    //items.push( index + ": " + value );
+    items.push('<div id="year'+data[index].year_admitted_1+'">'+data[index].year_admitted_1+'</div>');
      });
- 
-  
-  $.each( data, function( key, val ) {
-    //var i= index;
-    items.push(data[20].year_admitted_1);
-   // items.push( "<li id='" + key + "'>" + val + "</li>" );
-  });
 
  
   $( "<ul/>", {
