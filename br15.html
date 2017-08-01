@@ -69,6 +69,47 @@
  
  <script>
 $(document).ready(function(){ 
+  // table function
+   function myDT(tableID,dtUrl)
+  {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name",  "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="detail03.html?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "law_school","defaultContent": "<i>N/A</i>",
+    
+      } ,
+      {data: "year_admitted","defaultContent": "<i>N/A</i>", },
+       ],
+      
+   
+} );
+   return mytable;
+  }
+
+  
   $( "#tabs" ).tabs();
   var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
   var cy = new Date().getFullYear();
