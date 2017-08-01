@@ -62,7 +62,24 @@
 
   <div id="byZip">By Zip Code</div>
 </div>
+  <div id="lawyerList">
+   <table id="lawyerTable" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr>  
+                     </thead>  
+                </table>
+                 </div>
 
+      <table>table</table>
 </div>
  
  
@@ -109,7 +126,7 @@ $(document).ready(function(){
    return mytable;
   }
 
-  
+
   $( "#tabs" ).tabs();
   var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
   var cy = new Date().getFullYear();
@@ -146,7 +163,10 @@ $(document).ready(function(){
   //click year no#
     $(document).on("click", "#yno" , function() {
                   // $(this).parent().remove();
-                  alert("this is it"+$(this).text());
+        //alert("this is it"+$(this).text());
+      dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
+        var table=myDT('#lawyerTable',dtUrl);
+          console.log($(this).text()+" : "+dtUrl);//
         });
 });
 //https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
