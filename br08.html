@@ -60,16 +60,18 @@ $(document).ready(function(){
     //items.push( index + ": " + value );
     //t=index/5;
     var myear = data[index].year_admitted_1;
+    var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
+    var dSource = '<a href="'+urlString+'">'+myear+'</a>';
     dy = cy-myear;
     if  (dy % 10 == 0)  
       {
         console.log(cy,myear,dy);
-      items.push("<br>   "+myear)}
+      items.push('<br>   '+dSource)}
     else
       //if ((index % 5 == 0) && (index > 0)) 
         {
         //console.log(dy);
-        items.push("   "+myear)}
+        items.push("   "+dSource)}
       });
       //else { items.push("<td>"+data[index].year_admitted_1+"</td>");}
 
