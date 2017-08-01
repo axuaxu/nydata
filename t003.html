@@ -21,9 +21,13 @@
 			console.log(noyear);
 			var items=[];
 			 $.each(noyear, function( index, value ) {
-                 items.push("<div>"+noyear[index]+"</div>");
+                 items.push("<div id='lyear'>"+noyear[index]+"</div>");
 			 });
 			 $("#myear").append(items);
+			  $(document).on("click", "#lyear" , function() {
+                  // $(this).parent().remove();
+                  alert("this is it"+$(this).text());
+        });
 		</script>
 	</body>
 </html>
