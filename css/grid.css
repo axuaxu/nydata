@@ -1,0 +1,70 @@
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TEN  */
+.span_10_of_10 {
+	width: 100%;
+}
+
+.span_9_of_10 {
+  	width: 89.7%;
+}
+
+.span_8_of_10 {
+  	width: 79.4%;
+}
+
+.span_7_of_10 {
+  	width: 69.1%;
+}
+
+.span_6_of_10 {
+  	width: 58.8%;
+}
+
+.span_5_of_10 {
+  	width: 48.5%;
+}
+
+.span_4_of_10 {
+  	width: 38.2%;
+}
+
+.span_3_of_10 {
+  	width: 27.9%;
+}
+
+.span_2_of_10 {
+  	width: 17.6%;
+}
+
+.span_1_of_10 {
+  	width: 7.3%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	
+    .span_1_of_10, .span_2_of_10, .span_3_of_10, .span_4_of_10, .span_5_of_10, .span_6_of_10, .span_7_of_10, .span_8_of_10, .span_9_of_10, .span_10_of_10 {
+	width: 100%; 
+	}
+}
