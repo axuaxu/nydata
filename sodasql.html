@@ -49,6 +49,14 @@ https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20=2017&$limit=
 		select distinct(YearAdmitted) from ny_lawer_list where status like "%Registered%" order by YearAdmitted desc;
 		2017-1935
 
+
+//zip law_school company_name city last_name first_name
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&status=%27Currently%20registered%27&$order=zip%20ASC&$limit=50000
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(law_school)&status=%27Currently%20registered%27&$order=law_School%20ASC&$limit=50000
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(company_name)&status=%27Currently%20registered%27&$order=company_name%20ASC&$limit=50000
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&status=%27Currently%20registered%27&$order=first_name%20ASC&$limit=50000
+https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(last_name)&status=%27Currently%20registered%27&$order=last_name%20ASC&$limit=50000
 	</pre>
 </body>
 </html>

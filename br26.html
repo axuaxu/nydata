@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/grid.css">
+     <link rel="stylesheet" type="text/css" href="css/simplegrid.css" />
+    <title>Browse New York Attorney Registry</title>  
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           <link rel="stylesheet" href="js/jquery-ui.min.css">
+         
+           <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+          <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+<div id="page">
+ <h1 align="center">Browse New York Attorney Registry</h3><br />  
+<div id="tabs">
+  <ul>
+    <li><a href="#byName"><span>By Name</span></a></li>
+    <li><a href="#byCompany"><span>By Company</span></a></li>
+    <li><a href="#byCity"><span>By City</span></a></li>
+    <li><a href="#bySchool"><span>By Law School</span></a></li>
+    <li><a href="#byYear"><span>By Year Admitted</span></a></li>
+    <li><a href="#byZip"><span>By Zip Code</span></a></li>
+  </ul>
+  <div id="byName">By Name</div>
+  <div id="byCompany">By Company</div>
+  <div id="byCity">By City</div>
+  <div id="bySchool">By Law School</div>
+  <div id="byYear"><h3>Browse New York Attorney Registry By Year Admitted</h3>
+  <div class="section group" id="yearList">
+   <div id="YearL" class="grid grid-pad">
+
+   </div>
+  
+  </div>
+  
+  
+   
+
+ 
+ 
+  </div>
+   
+
+  
+
+  <div id="byZip"><h3>By Zip Code</h3></div>
+  </div>
+  <div id="lawyerList">
+   <table id="lawyerTable" class="display">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr>  
+                     </thead>  
+                </table>
+                 </div>
+
+      
+</div>
+ 
+ 
+ 
+ <script>
+$(document).ready(function(){ 
+  // table function
+   function myDT(tableID,dtUrl)
+  {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "first_name"},
+        { data: "last_name",  "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="detail03.html?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }},
+
+         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"state","defaultContent": "<i>N/A</i>",},
+        { data:  "law_school","defaultContent": "<i>N/A</i>",
+    
+      } ,
+      {data: "year_admitted","defaultContent": "<i>N/A</i>", },
+       ],
+      
+   
+} );
+   return mytable;
+  }
+
+
+  $( "#tabs" ).tabs();
+
+  // get year list 
+  var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
+  var cy = new Date().getFullYear();
+  //console.log(cy);
+  $.getJSON( yearUrl, function( data ) {
+     var items = [];
+     //console.log(data);
+     items.push(" ");
+  $.each(data, function( index, value ) {
+    //items.push( index + ": " + value );
+    //t=index/5;
+    var myear = data[index].year_admitted_1;
+    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
+    urlString = "#tableData";
+    var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+urlString+'">'+myear+'</a></div></div>';
+   // dy = cy-myear;
+     
+       // console.log(cy,myear,dy);
+      items.push(dSource);
+      });
+    
+    
+      //else { items.push("<td>"+data[index].year_admitted_1+"</td>");}
+
+    //items.push('<div id="year'+data[index].year_admitted_1+'">'+data[index].year_admitted_1+'</div>');
+  //  });
+  $("#yearList").append(items);
+  });
+    
+  
+  // get zip 
+
+   var zipUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&status=%27Currently%20registered%27&$order=zip%20ASC&$limit=50000';
+  //var cy = new Date().getFullYear();
+  //console.log(cy);
+  $.getJSON( zipUrl, function( data ) {
+     var zipitems = [];
+     //console.log(data);
+     zipitems.push(" ");
+  $.each(data, function( index, value ) {
+    //items.push( index + ": " + value );
+    //t=index/5;
+    var mzip = data[index].zip_1;
+    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
+    urlString = "#zipData";
+    var dSource = '<div class="col-1-10"><div  id="zno" class="content"> <a href="'+urlString+'">'+mzip+'</a></div></div>';
+   // dy = cy-myear;
+     
+       // console.log(cy,myear,dy);
+      zipitems.push(dSource);
+      });
+  
+  $("#zipList").append(zipitems);
+
+
+
+  
+  });
+      
+
+  //click year no#
+    $(document).on("click", "#yno" , function() {
+    
+    $( "#byYear" ).accordion({
+         active: false
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+      dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
+        var table=myDT('#lawyerTable',dtUrl);
+          console.log($(this).text()+" : "+dtUrl);//
+        });
+   
+
+});
+//https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
+ $( "#byYear" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byZip" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+</script>
+</body>
+</html>
