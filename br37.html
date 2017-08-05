@@ -44,7 +44,7 @@
    </div>
      
   </div>
-   <h3>Attorney Registered for the Selected Year</h3>
+   <h3>Attorneys Registered for the Selected Year</h3>
    <div id="lawyerList">
     <div class="content">
    <table id="lawyerTable" class="table-responsive">  
@@ -64,16 +64,41 @@
                 </table>
     </div>
     </div>
-   
-
- 
  
   </div>
    
 
   
 
-  <div id="byZip"><h3>By Zip Code</h3></div>
+  <div id="byZip"><h3>Browse New York Attorney Registry By Zip Code</h3>
+    <div class="section group" id="zipList">
+   <div id="zipL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Zip Code</h3>
+   <div id="ziplawyerList">
+    <div class="content">
+   <table id="zTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+ 
+  </div>
   </div>
 
 
@@ -200,6 +225,21 @@ $(document).ready(function(){
           console.log($(this).text()+" : "+dtUrl);//
         });
    
+   //click zip code
+    $(document).on("click", "#zno" , function() {
+    
+    $( "#byZip" ).accordion({
+         active: 1
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var zStr = $.trim($(this).text());
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= zip  = %27"+zStr+"%27&$limit=10000";
+        var table=myDT('#zTable',dtUrl);
+          console.log($(this).text()+" : "+dtUrl);//
+        });
+   
+
 
 });
 //https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
