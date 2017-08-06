@@ -11,7 +11,7 @@
         
           <script type="text/javascript" src="DataTables/datatables.min.js"></script>
           <script src="js/jquery-ui.min.js"></script>
-           
+          <script src="https://www.w3schools.com/lib/w3.js"></script>
       </head>  
       <body>  
      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -23,9 +23,22 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-         <h1 align="center" ><a href="search.html">Search New York Attorney Registry</a></h3><br />  
+         <h1 align="center">New York Attorney Registry</h3><br />  
+ <div id="tabs">
+  <ul>
+    <li><a href="#Search"><span>Search</span></a></li>
+    <li><a href="#Browse"><span>Browse</span></a></li>
+    
+  </ul>
   
-          <h1 align="center" ><a href="browse.html">Browse New York Attorney Registry</a></h3><br />  
+  
+  <div id="Search">
+   <div w3-include-html="search.html"></div>
+  </div>
+  <div id="Browse">
+       <div w3-include-html="browse.html"></div>
+  </div>
+   
   
 </div>
  
@@ -35,7 +48,11 @@
              
             
  
- 
+<script type="text/javascript">
+  $( "#tabs" ).tabs();
+  w3.includeHTML();
+</script>
+
 
       </body>  
  </html>  
