@@ -1,5 +1,17 @@
 <html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/simplegrid.css" />
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+</head>
 	<body>
+
+	 <div class="section group" id="alphaList">
+   <div id="firstL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+
 	<div>
 		
 	</div>
@@ -13,11 +25,13 @@
 		upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 		console.log(upperalpha);
 
-    
+    var items = [];
    for ( var i = 0, l = upperalpha.length; i < l; i++ ) {
         console.log(upperalpha[i]);
+         var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+upperalpha[i]+'">'+upperalpha[i]+'</a></div></div>';
+          items.push(dSource);
      }
-
+     $("#alphaList").append(items);
 
       var sum = 0;
  
