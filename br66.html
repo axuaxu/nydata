@@ -301,22 +301,33 @@ $(document).ready(function(){
   }
 
 // initial alphabet list
+function alphaL(alist,items,divID)
+{
+   for ( var i = 0, l = alist.length; i < l; i++ ) {
+    var dSource = '<div class="col-1-10"><div  id="'+divID+'"  class="content"> <a href="'+alist[i]+'">'+alist[i]+'</a></div></div>';
+    items.push(dSource);
+     }
+  return items;
+};
+
 
   $( "#tabs" ).tabs();
 
 // alpha list
   upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   var aitems = [];
-   for ( var i = 0, l = upperalpha.length; i < l; i++ ) {
-        console.log(upperalpha[i]);
-         var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+upperalpha[i]+'">'+upperalpha[i]+'</a></div></div>';
-          aitems.push(dSource);
-     }
-     $("#firstalphaList").append(aitems);
-      $("#lastalphaList").append(aitems);
-       $("#companyalphaList").append(aitems);
-        $("#cityalphaList").append(aitems); 
-         $("#schoolalphaList").append(aitems);
+     var divID = "firstNo";
+     var firstAB = alphaL(upperalpha,[],divID);
+     var lastAB = alphaL(upperalpha,[],"lastNo");
+     var companyAB = alphaL(upperalpha,[],"companyNo");
+     var cityAB = alphaL(upperalpha,[],"cityNo");
+     var schoolAB = alphaL(upperalpha,[],"schoolNo");
+     $("#firstalphaList").append(firstAB);
+
+      $("#lastalphaList").append(lastAB);
+       $("#companyalphaList").append(companyAB);
+        $("#cityalphaList").append(cityAB); 
+         $("#schoolalphaList").append(schoolAB);
     
   // get year list 
   var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
