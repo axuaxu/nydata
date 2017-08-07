@@ -35,7 +35,7 @@
     <li><a href="#byZip"><span>By Zip Code</span></a></li>
   </ul>
   <div id="byFirst">
-  <h3>Browse New York Attorney Registry By Initials of First Name </h3>
+  <h3>Browse New York Attorney Registry By First Name </h3>
   <div id="firstalphaList"></div>
   <h3>Browse New York Attorney Registry By First Name</h3>
     <div class="section group" id="firstList">
@@ -66,7 +66,7 @@
     </div>
     </div>
     <div id="byLast">
-    <h3>Browse New York Attorney Registry By Initials of Last Name </h3>
+    <h3>Browse New York Attorney Registry By Last Name </h3>
   <div id="lastalphaList"></div>
   <h3>Browse New York Attorney Registry By Last Name</h3>
     <div class="section group" id="lastList">
@@ -97,7 +97,7 @@
     </div>
     </div>
   <div id="byCompany">
-   <h3>Browse New York Attorney Registry By Initials of Company Name </h3>
+   <h3>Browse New York Attorney Registry By Company Name </h3>
   <div id="companyalphaList"></div><h3>Browse New York Attorney Registry By Company</h3>
     <div class="section group" id="companyList">
    <div id="companyL" class="grid grid-pad">
@@ -127,7 +127,7 @@
     </div>
     </div>
   <div id="byCity">
-   <h3>Browse New York Attorney Registry By Initials of City </h3>
+   <h3>Browse New York Attorney Registry By City </h3>
   <div id="cityalphaList"></div>
   <h3>Browse New York Attorney Registry By City</h3>
     <div class="section group" id="cityList">
@@ -158,7 +158,7 @@
     </div>
     </div>
   <div id="bySchool">
-   <h3>Browse New York Attorney Registry By Initials of Law School </h3>
+   <h3>Browse New York Attorney Registry By Law School </h3>
   <div id="schoolalphaList"></div>
   <h3>Browse New York Attorney Registry By Law School</h3>
     <div class="section group" id="schoolList">
@@ -390,33 +390,7 @@ function alphaL(alist,items,divID)
       
   // get school
   
-  var schoolUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(law_school)&status=%27Currently%20registered%27&$order=law_school%20ASC&$limit=20000';
-  //var cy = new Date().getFullYear();
-  //console.log(cy);
-  $.getJSON( schoolUrl, function( data ) {
-     var schoolitems = [];
-     //console.log(data);
-     schoolitems.push(" ");
-  $.each(data, function( index, value ) {
-    //items.push( index + ": " + value );
-    //t=index/5;
-    var mschool = data[index].law_school_1;
-    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
-    urlString = "#schoolData";
-    var dSource = '<div class="col-1-10"><div  id="sno" class="content"> <a href="'+urlString+'">'+mschool+'</a></div></div>';
-   // dy = cy-myear;
-     
-       // console.log(cy,myear,dy);
-      schoolitems.push(dSource);
-      });
-    
-    
-      //else { items.push("<td>"+data[index].year_admitted_1+"</td>");}
-
-    //items.push('<div id="year'+data[index].year_admitted_1+'">'+data[index].year_admitted_1+'</div>');
-  //  });
-  $("#schoolList").append(schoolitems);
-  });
+ 
     
     // get company
     
