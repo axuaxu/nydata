@@ -613,24 +613,21 @@ function alphaL(alist,items,divID)
           console.log($(this).text()+" : "+dtUrl);//
         });
    
-   
 
-   //  click on initial of first name 
-   $(document).on("click", "#firstNo" , function() {
+   //click on the alphabet list
+   function clickAlpha(clickID, tabID,fieldName,sStr) {
+
+       $(document).on("click", clickID, function() {
     
-    $( "#byFirst" ).accordion({
+        $( tabID).accordion({
          active: 1
              });
-                  // $(this).parent().remove();
-        //alert("this is it"+$(this).text());
-        var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=10000";
-      //  var table=myDT('#lTable',dtUrl);
-         // console.log($(this).text()+" : "+dtUrl);//
+                  
+        
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct("+fieldName+")&$where= starts_with("+fieldName+", %27"+sStr+"%27)&$order="+fieldName+" ASC&$limit=10000";
+      
       console.log(fStr,dtUrl);
-        //  var firstUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&status=%27Currently%20registered%27&$order=first_name%20ASC&$limit=20000';
-  //var cy = new Date().getFullYear();
-  //console.log(cy);
+         
   $.getJSON( dtUrl, function( data ) {
      var firstitems = [];
      console.log(data);
@@ -638,27 +635,58 @@ function alphaL(alist,items,divID)
   $.each(data, function( index, value ) {
     //items.push( index + ": " + value );
     //t=index/5;
+    var mfirst = data[index][0];
+    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
+    urlString = "#firstData";
+    var dSource = '<div class="col-1-5"><div  id="fno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+   
+      firstitems.push(dSource);
+      });
+    
+  $("#firstList").empty();
+  $("#firstList").append(firstitems);
+  });
+        });
+
+   };
+
+   //  click on initial of first name 
+   $(document).on("click", "#firstNo" , function() {
+    
+    $( "#byFirst" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=10000";
+      
+      console.log(fStr,dtUrl);
+         
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+     console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    //items.push( index + ": " + value );
+    //t=index/5;
+    var ff  = "first_name_1";
     var mfirst = data[index].first_name_1;
     //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
     urlString = "#firstData";
     var dSource = '<div class="col-1-5"><div  id="fno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
-   // dy = cy-myear;
-     
-       // console.log(cy,myear,dy);
+   
       firstitems.push(dSource);
       });
     
-    
-      //else { items.push("<td>"+data[index].year_admitted_1+"</td>");}
-
-    //items.push('<div id="year'+data[index].year_admitted_1+'">'+data[index].year_admitted_1+'</div>');
-  //  });
   $("#firstList").empty();
   $("#firstList").append(firstitems);
   });
         });
 
 });
+
+
+
 //https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
  $( "#byYear" ).accordion({
   collapsible: true, active: 0,heightStyle:"content"

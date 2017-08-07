@@ -624,7 +624,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= starts_with(first_name, %27"+fStr+"%27)&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=10000";
       //  var table=myDT('#lTable',dtUrl);
          // console.log($(this).text()+" : "+dtUrl);//
       console.log(fStr,dtUrl);
@@ -638,7 +638,7 @@ function alphaL(alist,items,divID)
   $.each(data, function( index, value ) {
     //items.push( index + ": " + value );
     //t=index/5;
-    var mfirst = data[index].first_name;
+    var mfirst = data[index].first_name_1;
     //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
     urlString = "#firstData";
     var dSource = '<div class="col-1-5"><div  id="fno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
@@ -653,6 +653,7 @@ function alphaL(alist,items,divID)
 
     //items.push('<div id="year'+data[index].year_admitted_1+'">'+data[index].year_admitted_1+'</div>');
   //  });
+  $("#firstList").empty();
   $("#firstList").append(firstitems);
   });
         });
