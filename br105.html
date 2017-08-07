@@ -32,8 +32,21 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <div id="page">
- <h1 align="center"><a href="http://gurukoala.com">gurukoala.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browse New York Attorney Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <a href="search.html"> search </a></h3>  
+<ul id="menu">
+  <li>
+    <div>Item 1</div>
+  </li>
+  <li>
+    <div>Item 2</div>
+  </li>
+  <li>
+    <div>Item 3</div>
+   
+  </li>
+ 
+</ul>
+
+ <h1 align="center">Browse New York Attorney Registry</h3><br />  
 <div id="tabs">
   <ul>
     <li><a href="#byFirst"><span>By First Name</span></a></li>
@@ -323,7 +336,7 @@ function alphaL(alist,items,divID)
   return items;
 };
 
-
+  $( "#menu" ).menu();
   $( "#tabs" ).tabs();
 
 // alpha list

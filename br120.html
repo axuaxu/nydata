@@ -32,8 +32,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <div id="page">
- <h1 align="center"><a href="http://gurukoala.com">gurukoala.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browse New York Attorney Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <a href="search.html"> search </a></h3>  
+ <h1 align="center">Browse New York Attorney Registry</h3><br />  
 <div id="tabs">
   <ul>
     <li><a href="#byFirst"><span>By First Name</span></a></li>
@@ -443,7 +442,6 @@ function alphaL(alist,items,divID)
         //alert("this is it"+$(this).text());
         var companyStr = $.trim($(this).text());
         companyStr = companyStr.replace('&',' ');
-         companyStr = companyStr.replace("'"," ");
       dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= company_name  = %27"+companyStr+"%27&$limit=10000";
         var table=myDT('#cTable',dtUrl);
         //  console.log($(this).text()+" : "+dtUrl);//

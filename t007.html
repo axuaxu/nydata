@@ -2,9 +2,38 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/simplegrid.css" />
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+    <script src="js/jquery-ui.min.js"></script>
+</head>
 </head>
 	<body>
-
+<ul id="menu">
+  <li>
+    <div>Item 1</div>
+  </li>
+  <li>
+    <div>Item 2</div>
+  </li>
+  <li>
+    <div>Item 3</div>
+    <ul>
+      <li>
+        <div>Item 3-1</div>
+      </li>
+      <li>
+        <div>Item 3-2</div>
+      </li>
+      <li>
+        <div>Item 3-3</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <div>Item 4</div>
+  </li>
+  <li>
+    <div>Item 5</div>
+  </li>
+</ul>
 	 <div class="section group" id="alphaList">
    <div id="firstL" class="grid grid-pad">
 
@@ -21,13 +50,13 @@
     return (a.slice(a.indexOf(c1), a.indexOf(c2) + 1)); 
      }
 		alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-		console.log(alphabet);
+//		console.log(alphabet);
 		upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-		console.log(upperalpha);
+	//	console.log(upperalpha);
 
     var items = [];
    for ( var i = 0, l = upperalpha.length; i < l; i++ ) {
-        console.log(upperalpha[i]);
+      //  console.log(upperalpha[i]);
          var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+upperalpha[i]+'">'+upperalpha[i]+'</a></div></div>';
           items.push(dSource);
      }
@@ -40,7 +69,12 @@
     sum += arr[ i ];
      }
  
-    console.log( sum ); 
-	</script>
+   // console.log( sum ); 
+   var ss = "12&34";
+   var t = ss.replace('&',' ');
+   console.log(t);
+
+ $( "#menu" ).menu();
+   </script>t
 	</body>
 </html>
