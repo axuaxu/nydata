@@ -221,7 +221,10 @@
 
   
 
-  <div id="byZip"><h3>Browse New York Attorney Registry By Zip Code</h3>
+  <div id="byZip">
+  <h3>Browse New York Attorney Registry By Zip Code </h3>
+  <div id="zipnumberList"></div>
+  <h3>Browse New York Attorney Registry By Zip Code</h3>
     <div class="section group" id="zipList">
    <div id="zipL" class="grid grid-pad">
 
@@ -315,6 +318,7 @@ function alphaL(alist,items,divID)
 
 // alpha list
   upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  numberlist = '0123456789'.split('');
   var aitems = [];
      var divID = "firstNo";
      var firstAB = alphaL(upperalpha,[],divID);
@@ -322,13 +326,14 @@ function alphaL(alist,items,divID)
      var companyAB = alphaL(upperalpha,[],"companyNo");
      var cityAB = alphaL(upperalpha,[],"cityNo");
      var schoolAB = alphaL(upperalpha,[],"schoolNo");
+     var zipAB = alphaL(numberlist,[],"zipNo");
      $("#firstalphaList").append(firstAB);
 
       $("#lastalphaList").append(lastAB);
        $("#companyalphaList").append(companyAB);
         $("#cityalphaList").append(cityAB); 
          $("#schoolalphaList").append(schoolAB);
-    
+        $("#zipnumberList").append(zipAB);
   // get year list 
   var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
   var cy = new Date().getFullYear();
@@ -361,33 +366,7 @@ function alphaL(alist,items,divID)
   
   // get zip 
 
-   var zipUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&status=%27Currently%20registered%27&$order=zip%20ASC&$limit=50000';
-  //var cy = new Date().getFullYear();
-  //console.log(cy);
-  $.getJSON( zipUrl, function( data ) {
-     var zipitems = [];
-     //console.log(data);
-     zipitems.push(" ");
-  $.each(data, function( index, value ) {
-    //items.push( index + ": " + value );
-    //t=index/5;
-    var mzip = data[index].zip_1;
-    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
-    urlString = "#zipData";
-    var dSource = '<div class="col-1-10"><div  id="zno" class="content"> <a href="'+urlString+'">'+mzip+'</a></div></div>';
-   // dy = cy-myear;
-     
-       // console.log(cy,myear,dy);
-      zipitems.push(dSource);
-      });
   
-  $("#zipList").append(zipitems);
-
-
-
-
-  });
-      
  
     $(document).on("click", "#yno" , function() {
     
@@ -580,6 +559,36 @@ function alphaL(alist,items,divID)
     
   $("#schoolList").empty();
   $("#schoolList").append(firstitems);
+  });
+        });
+
+   //click on zip code number
+
+   $(document).on("click", "#zipNo" , function() {
+    
+    $( "#byZip" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&$where= starts_with(zip, %27"+fStr+"%27)&$order=zip ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].zip_1;
+    urlString = "#zipData";
+    var dSource = '<div class="col-1-5"><div  id="zno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#zipList").empty();
+  $("#zipList").append(firstitems);
   });
         });
 

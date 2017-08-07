@@ -366,7 +366,33 @@ function alphaL(alist,items,divID)
   
   // get zip 
 
+   var zipUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&status=%27Currently%20registered%27&$order=zip%20ASC&$limit=50000';
+  //var cy = new Date().getFullYear();
+  //console.log(cy);
+  $.getJSON( zipUrl, function( data ) {
+     var zipitems = [];
+     //console.log(data);
+     zipitems.push(" ");
+  $.each(data, function( index, value ) {
+    //items.push( index + ": " + value );
+    //t=index/5;
+    var mzip = data[index].zip_1;
+    //var urlString = 'https://data.ny.gov/resource/cdhq-buk7.json?$where=year_admitted%20='+myear+'&$limit=10000';
+    urlString = "#zipData";
+    var dSource = '<div class="col-1-10"><div  id="zno" class="content"> <a href="'+urlString+'">'+mzip+'</a></div></div>';
+   // dy = cy-myear;
+     
+       // console.log(cy,myear,dy);
+      zipitems.push(dSource);
+      });
   
+  $("#zipList").append(zipitems);
+
+
+
+
+  });
+      
  
     $(document).on("click", "#yno" , function() {
     
@@ -559,36 +585,6 @@ function alphaL(alist,items,divID)
     
   $("#schoolList").empty();
   $("#schoolList").append(firstitems);
-  });
-        });
-
-   //click on zip code number
-
-   $(document).on("click", "#zipNo" , function() {
-    
-    $( "#byZip" ).accordion({
-         active: 1
-             });
-                  
-        var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&$where= starts_with(zip, %27"+fStr+"%27)&$order=zip ASC&$limit=10000";
-       
-     // console.log(fStr,dtUrl);
-       
-  $.getJSON( dtUrl, function( data ) {
-     var firstitems = [];
-    // console.log(data);
-     firstitems.push(" ");
-  $.each(data, function( index, value ) {
-    
-    var mfirst = data[index].zip_1;
-    urlString = "#zipData";
-    var dSource = '<div class="col-1-5"><div  id="zno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
-      firstitems.push(dSource);
-      });
-    
-  $("#zipList").empty();
-  $("#zipList").append(firstitems);
   });
         });
 
