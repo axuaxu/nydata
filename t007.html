@@ -40,7 +40,12 @@
    </div>
      
   </div>
+ <div class="section group" id="yearList">
+   <div id="firstL" class="grid grid-pad">
 
+   </div>
+     
+  </div>
 	<div>
 		
 	</div>
@@ -73,6 +78,19 @@
    var ss = "12&34";
    var t = ss.replace('&',' ');
    console.log(t);
+
+   var yeararr = [];
+   var cy = new Date().getFullYear();
+   var dt = cy-1935;
+
+    yitems=[];
+    for ( var i = 0; i <= dt; i++ ) {
+      yeararr[i]= cy-i;
+     var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+yeararr[i]+'">'+yeararr[i]+'</a></div></div>';
+     yitems.push(dSource);
+     }
+      $("#yearList").append(yitems);
+       console.log(cy,dt,yeararr);
 
  $( "#menu" ).menu();
    </script>t
