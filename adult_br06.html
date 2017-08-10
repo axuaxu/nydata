@@ -25,22 +25,13 @@
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">beautiful day</p>&mdash; KimberLite (@axu0110) <a href="https://twitter.com/axu0110/status/895408973901434881">August 9, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">FREE San Diego Youth Mental Health First Aid Course &amp; QPR Suicide Prevention Courses on April 30 &amp; May 1 <a href="https://t.co/bknKAz7Nib">https://t.co/bknKAz7Nib</a></p>&mdash; Jilleen (@socalfieldtrips) <a href="https://twitter.com/socalfieldtrips/status/895409494477426688">August 9, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- top001 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-8980136446658337"
-     data-ad-slot="5261164618"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+ 
 <div id="page">
  <h1 align="center"><a href="http://gurukoala.com">gurukoala.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browse New York Attorney Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    <a href="search.html"> search </a></h1>  
 <div id="tabs">
   <ul>
-    <li><a href="#byFirst"><span>By First Name</span></a></li>
+    <li><a href="#byFacility"><span>By Facility Name</span></a></li>
     <li><a href="#byLast"><span>By Last Name</span></a></li>
     <li><a href="#byCompany"><span>By Company</span></a></li>
     <li><a href="#byCity"><span>By City</span></a></li>
@@ -48,10 +39,10 @@
     <li><a href="#byYear"><span>By Year Admitted</span></a></li>
     <li><a href="#byZip"><span>By Zip Code</span></a></li>
   </ul>
-  <div id="byFirst">
-  <h3>Browse New York Attorney Registry By First Name </h3>
+  <div id="byFacility">
+  <h3>Browse New York State Adult Care Facility First Name </h3>
   <div id="firstalphaList"></div>
-  <h3>Browse New York Attorney Registry By First Name</h3>
+  <h3>Browse New York State Adult Care Facility First Name</h3>
     <div class="section group" id="firstList">
    <div id="firstL" class="grid grid-pad">
 
@@ -80,9 +71,9 @@
     </div>
     </div>
     <div id="byLast">
-    <h3>Browse New York Attorney Registry By Last Name </h3>
+    <h3>Browse New York State Adult Care Facility Last Name </h3>
   <div id="lastalphaList"></div>
-  <h3>Browse New York Attorney Registry By Last Name</h3>
+  <h3>Browse New York State Adult Care Facility Last Name</h3>
     <div class="section group" id="lastList">
    <div id="lastL" class="grid grid-pad">
 
@@ -111,8 +102,8 @@
     </div>
     </div>
   <div id="byCompany">
-   <h3>Browse New York Attorney Registry By Company Name </h3>
-  <div id="companyalphaList"></div><h3>Browse New York Attorney Registry By Company</h3>
+   <h3>Browse New York State Adult Care Facility Company Name </h3>
+  <div id="companyalphaList"></div><h3>Browse New York State Adult Care Facility Company</h3>
     <div class="section group" id="companyList">
    <div id="companyL" class="grid grid-pad">
 
@@ -141,9 +132,9 @@
     </div>
     </div>
   <div id="byCity">
-   <h3>Browse New York Attorney Registry By City </h3>
+   <h3>Browse New York State Adult Care Facility City </h3>
   <div id="cityalphaList"></div>
-  <h3>Browse New York Attorney Registry By City</h3>
+  <h3>Browse New York State Adult Care Facility City</h3>
     <div class="section group" id="cityList">
    <div id="cityL" class="grid grid-pad">
 
@@ -172,9 +163,9 @@
     </div>
     </div>
   <div id="bySchool">
-   <h3>Browse New York Attorney Registry By Law School </h3>
+   <h3>Browse New York State Adult Care Facility Law School </h3>
   <div id="schoolalphaList"></div>
-  <h3>Browse New York Attorney Registry By Law School</h3>
+  <h3>Browse New York State Adult Care Facility Law School</h3>
     <div class="section group" id="schoolList">
    <div id="schoolL" class="grid grid-pad">
 
@@ -202,7 +193,7 @@
     </div>
     </div>
  </div>
-  <div id="byYear"><h3>Browse New York Attorney Registry By Year Admitted</h3>
+  <div id="byYear"><h3>Browse New York State Adult Care Facility Year Admitted</h3>
   <div class="section group" id="yearList">
    <div id="YearL" class="grid grid-pad">
 
@@ -236,9 +227,9 @@
   
 
   <div id="byZip">
-  <h3>Browse New York Attorney Registry By Zip Code </h3>
+  <h3>Browse New York State Adult Care Facility Zip Code </h3>
   <div id="zipnumberList"></div>
-  <h3>Browse New York Attorney Registry By Zip Code</h3>
+  <h3>Browse New York State Adult Care Facility Zip Code</h3>
     <div class="section group" id="zipList">
    <div id="zipL" class="grid grid-pad">
 
@@ -293,8 +284,8 @@ $(document).ready(function(){
                 },
 
     columns: [
-         {data: "first_name"},
-        { data: "last_name",  "render": function(data, type, row, meta){
+         {data: "facility_name"},
+        { data: "address",  "render": function(data, type, row, meta){
             if(type === 'display'){
                 data = '<a href="detail03.html?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
             }
@@ -302,14 +293,14 @@ $(document).ready(function(){
             return data;
          }},
 
-         { data: "company_name", "defaultContent": "<i>N/A</i>"},
+         { data: "countu", "defaultContent": "<i>N/A</i>"},
         { data:"city", "defaultContent": "<i>N/A</i>",
          },
-         {data:"state","defaultContent": "<i>N/A</i>",},
-        { data:  "law_school","defaultContent": "<i>N/A</i>",
+         {data:"zip","defaultContent": "<i>N/A</i>",},
+        { data:  "phone","defaultContent": "<i>N/A</i>",
     
       } ,
-      {data: "year_admitted","defaultContent": "<i>N/A</i>", },
+      {data: "operator","defaultContent": "<i>N/A</i>", },
        ],
       
    
@@ -350,7 +341,7 @@ function alphaL(alist,items,divID)
         $("#zipnumberList").append(zipAB);
   // get year list 
 
-  var yearUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
+  var yearUrl = 'https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
   var cy = new Date().getFullYear();
    var yeararr = [];
      var dt = cy-1935;
@@ -376,7 +367,7 @@ function alphaL(alist,items,divID)
              });
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
-      dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
+      dtUrl = 'https://health.data.ny.gov/resource/3jtn-arcj.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
         var table=myDT('#lawyerTable',dtUrl);
     //      console.log($(this).text()+" : "+dtUrl);//
         });
@@ -404,7 +395,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var sStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= law_school  = %27"+sStr+"%27&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= law_school  = %27"+sStr+"%27&$limit=10000";
         var table=myDT('#sTable',dtUrl);
        //   console.log($(this).text()+" : "+dtUrl);//
         });
@@ -418,7 +409,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var cityStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= city  = %27"+cityStr+"%27&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= city  = %27"+cityStr+"%27&$limit=10000";
         var table=myDT('#cityTable',dtUrl);
         //  console.log($(this).text()+" : "+dtUrl);//
         });
@@ -435,7 +426,7 @@ function alphaL(alist,items,divID)
         var companyStr = $.trim($(this).text());
         companyStr = companyStr.replace('&',' ');
          companyStr = companyStr.replace("'"," ");
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= company_name  = %27"+companyStr+"%27&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= company_name  = %27"+companyStr+"%27&$limit=10000";
         var table=myDT('#cTable',dtUrl);
         //  console.log($(this).text()+" : "+dtUrl);//
         });
@@ -445,13 +436,13 @@ function alphaL(alist,items,divID)
    //click first name
    $(document).on("click", "#fno" , function() {
     
-    $( "#byFirst" ).accordion({
+    $( "#byFacility" ).accordion({
          active: 2
              });
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var firstStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= first_name  = %27"+firstStr+"%27&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= facility_name  = %27"+firstStr+"%27&$limit=10000";
         var table=myDT('#fTable',dtUrl);
       //    console.log($(this).text()+" : "+dtUrl);//
         });
@@ -465,7 +456,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var lastStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= last_name  = %27"+lastStr+"%27&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= last_name  = %27"+lastStr+"%27&$limit=10000";
         var table=myDT('#lTable',dtUrl);
        //   console.log($(this).text()+" : "+dtUrl);//
         });
@@ -480,7 +471,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(last_name)&$where= starts_with(last_name, %27"+fStr+"%27)&$order=last_name ASC&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(last_name)&$where= starts_with(last_name, %27"+fStr+"%27)&$order=last_name ASC&$limit=10000";
        
      // console.log(fStr,dtUrl);
        
@@ -509,7 +500,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(company_name)&$where= starts_with(company_name, %27"+fStr+"%27)&$order=company_name ASC&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(company_name)&$where= starts_with(company_name, %27"+fStr+"%27)&$order=company_name ASC&$limit=10000";
        
      // console.log(fStr,dtUrl);
        
@@ -539,7 +530,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(city)&$where= starts_with(city, %27"+fStr+"%27)&$order=city ASC&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(city)&$where= starts_with(city, %27"+fStr+"%27)&$order=city ASC&$limit=10000";
        
      // console.log(fStr,dtUrl);
        
@@ -569,7 +560,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(law_school)&$where= starts_with(law_school, %27"+fStr+"%27)&$order=law_school ASC&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(law_school)&$where= starts_with(law_school, %27"+fStr+"%27)&$order=law_school ASC&$limit=10000";
        
      // console.log(fStr,dtUrl);
        
@@ -625,12 +616,12 @@ function alphaL(alist,items,divID)
 
    $(document).on("click", "#firstNo" , function() {
     
-    $( "#byFirst" ).accordion({
+    $( "#byFacility" ).accordion({
          active: 1
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=10000";
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(facility_name)&$where= starts_with(facility_name, %27"+fStr+"%27)&$order=facility_name ASC&$limit=10000";
        
      // console.log(fStr,dtUrl);
        
@@ -640,7 +631,7 @@ function alphaL(alist,items,divID)
      firstitems.push(" ");
   $.each(data, function( index, value ) {
     
-    var mfirst = data[index].first_name_1;
+    var mfirst = data[index].facility_name_1;
     urlString = "#firstData";
     var dSource = '<div class="col-1-5"><div  id="fno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
       firstitems.push(dSource);
@@ -672,19 +663,10 @@ function alphaL(alist,items,divID)
  $( "#byLast" ).accordion({
   collapsible: true, active: 0,heightStyle:"content"
    });
- $( "#byFirst" ).accordion({
+ $( "#byFacility" ).accordion({
   collapsible: true, active: 0,heightStyle:"content"
    });
 </script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- bottom001 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8980136446658337"
-     data-ad-slot="1778798728"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+ 
 </body>
 </html>
