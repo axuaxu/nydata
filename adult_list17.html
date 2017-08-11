@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/grid.css">
+     <link rel="stylesheet" type="text/css" href="css/simplegrid.css" />
+     <link rel="stylesheet" href="js/jquery-ui.min.css">
+    <title>Browse New York Attorney Registry</title>  
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="css/w3.css">
+           <script src="js/jquery.min.js"></script>  
+             <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+           <link rel="stylesheet" href="css/bootstrap.min.css" />  
+           <script src="js/bootstrap.min.js"></script>  
+           
+         
+         
+        
+          <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+          <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+ 
+ 
+<div id="page">
+ <h1 align="center"><a href="http://gurukoala.com">gurukoala.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browse New York Attorney Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="search.html"> search </a></h1>  
+<div id="tabs">
+  <ul>
+    <li><a href="#byFacility"><span>By Facility Name</span></a></li>
+    <li><a href="#byLast"><span>By Last Name</span></a></li>
+    <li><a href="#byCompany"><span>By Company</span></a></li>
+    <li><a href="#byCity"><span>By City</span></a></li>
+    <li><a href="#bySchool"><span>By Law School</span></a></li>
+    <li><a href="#byYear"><span>By Year Admitted</span></a></li>
+    <li><a href="#byZip"><span>By Zip Code</span></a></li>
+  </ul>
+  <div id="byFacility">
+  <h3>Browse New York State Adult Care By Facility Name</h3>
+  <div id="firstalphaList"></div>
+  <h3>Browse New York State Adult Care By Facility Name</h3>
+  
+    <div class="section group" id="firstList">
+   <div id="firstL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+  
+   <h3>Attorneys Registered for the Selected First Name</h3>
+   <div id="firstlawyerList">
+    <div class="content">
+   <table id="fTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+    </div>
+    <div id="byLast">
+    <h3>Browse New York State Adult Care Facility Last Name </h3>
+  <div id="lastalphaList"></div>
+  <h3>Browse New York State Adult Care Facility Last Name</h3>
+    <div class="section group" id="lastList">
+   <div id="lastL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Last Name</h3>
+   <div id="lastlawyerList">
+    <div class="content">
+   <table id="lTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+    </div>
+  <div id="byCompany">
+   <h3>Browse New York State Adult Care Facility Company Name </h3>
+  <div id="companyalphaList"></div><h3>Browse New York State Adult Care Facility Company</h3>
+    <div class="section group" id="companyList">
+   <div id="companyL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Company</h3>
+   <div id="companylawyerList">
+    <div class="content">
+   <table id="cTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+    </div>
+  <div id="byCity">
+   <h3>Browse New York State Adult Care Facility City </h3>
+  <div id="cityalphaList"></div>
+  <h3>Browse New York State Adult Care Facility City</h3>
+    <div class="section group" id="cityList">
+   <div id="cityL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected City</h3>
+   <div id="citylawyerList">
+    <div class="content">
+   <table id="cityTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+    </div>
+  <div id="bySchool">
+   <h3>Browse New York State Adult Care Facility Law School </h3>
+  <div id="schoolalphaList"></div>
+  <h3>Browse New York State Adult Care Facility Law School</h3>
+    <div class="section group" id="schoolList">
+   <div id="schoolL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Law School</h3>
+   <div id="schoollawyerList">
+    <div class="content">
+   <table id="sTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+ </div>
+  <div id="byYear"><h3>Browse New York State Adult Care Facility Year Admitted</h3>
+  <div class="section group" id="yearList">
+   <div id="YearL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Year</h3>
+   <div id="lawyerList">
+    <div class="content">
+   <table id="lawyerTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+ 
+  </div>
+   
+
+  
+
+  <div id="byZip">
+  <h3>Browse New York State Adult Care Facility Zip Code </h3>
+  <div id="zipnumberList"></div>
+  <h3>Browse New York State Adult Care Facility Zip Code</h3>
+    <div class="section group" id="zipList">
+   <div id="zipL" class="grid grid-pad">
+
+   </div>
+     
+  </div>
+   <h3>Attorneys Registered for the Selected Zip Code</h3>
+   <div id="ziplawyerList">
+    <div class="content">
+   <table id="zTable" class="table-responsive">  
+                     <thead>  
+                          <tr>  
+                               <th>First Name</th>  
+                               <th>Last Name</th>  
+                               <th>Company Name</th> 
+                              
+                                <th>City</th><th>State</th> 
+                               
+                               <th>Law School</th>
+                               <th>Year Admitted</th> 
+                          </tr> 
+
+                     </thead>  
+                </table>
+    </div>
+    </div>
+ 
+  </div>
+  </div>
+
+
+      
+</div>
+ 
+ 
+ 
+ <script>
+$(document).ready(function(){ 
+  // table function
+   function myDT(tableID,dtUrl)
+  {
+      $(tableID).DataTable().destroy();
+      var mytable = $(tableID).DataTable( {
+          ajax: {
+             url: dtUrl,
+          dataSrc: '',
+          deferRender:    true,
+         scrollY:        200,
+         scrollCollapse: true,
+         scroller:       true,
+         responsive: true
+                },
+
+    columns: [
+         {data: "facility_name"},
+        { data: "address",  "render": function(data, type, row, meta){
+            if(type === 'display'){
+                data = '<a href="detail03.html?registration_number=' + row.registration_number+ '" target="new">' + data + '</a>';
+            }
+            
+            return data;
+         }},
+
+         { data: "countu", "defaultContent": "<i>N/A</i>"},
+        { data:"city", "defaultContent": "<i>N/A</i>",
+         },
+         {data:"zip","defaultContent": "<i>N/A</i>",},
+        { data:  "phone","defaultContent": "<i>N/A</i>",
+    
+      } ,
+      {data: "operator","defaultContent": "<i>N/A</i>", },
+       ],
+      
+   
+} );
+   return mytable;
+  }
+
+// initial alphabet list
+function alphaL(alist,items,divID)
+{
+   for ( var i = 0, l = alist.length; i < l; i++ ) {
+    var dSource = '<div class="col-1-10"><div  id="'+divID+'"  class="content"> <a href="#'+alist[i]+'">'+alist[i]+'</a></div></div>';
+    items.push(dSource);
+     }
+  return items;
+};
+
+
+  $( "#tabs" ).tabs();
+   dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json";
+        var table=myDT('#fTable',dtUrl);
+
+// alpha list
+  upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  numberlist = '0123456789'.split('');
+  var aitems = [];
+     var divID = "firstNo";
+     var firstAB = alphaL(upperalpha,[],divID);
+     var lastAB = alphaL(upperalpha,[],"lastNo");
+     var companyAB = alphaL(upperalpha,[],"companyNo");
+     var cityAB = alphaL(upperalpha,[],"cityNo");
+     var schoolAB = alphaL(upperalpha,[],"schoolNo");
+     var zipAB = alphaL(numberlist,[],"zipNo");
+     $("#firstalphaList").append(firstAB);
+
+      $("#lastalphaList").append(lastAB);
+       $("#companyalphaList").append(companyAB);
+        $("#cityalphaList").append(cityAB); 
+         $("#schoolalphaList").append(schoolAB);
+        $("#zipnumberList").append(zipAB);
+  // get year list 
+
+  var yearUrl = 'https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(year_admitted)&status=%27Currently%20registered%27&$order=year_admitted%20DESC';
+  var cy = new Date().getFullYear();
+   var yeararr = [];
+     var dt = cy-1935;
+      yitems=[];
+       urlString = "#tableData";
+    for ( var i = 0; i <= dt; i++ ) {
+      yeararr[i]= cy-i;
+     var dSource = '<div class="col-1-10"><div  id="yno" class="content"> <a href="'+urlString+'">'+yeararr[i]+'</a></div></div>';
+     yitems.push(dSource);
+     }
+     $("#yearList").append(yitems);
+  //console.log(cy);
+  
+  
+  // get zip 
+
+  
+ 
+    $(document).on("click", "#yno" , function() {
+    
+    $( "#byYear" ).accordion({
+         active: 1
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+      dtUrl = 'https://health.data.ny.gov/resource/3jtn-arcj.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
+        var table=myDT('#lawyerTable',dtUrl);
+    //      console.log($(this).text()+" : "+dtUrl);//
+        });
+   
+   //click zip code
+    $(document).on("click", "#zno" , function() {
+    
+    $( "#byZip" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var zStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= zip  = %27"+zStr+"%27&$limit=10000";
+        var table=myDT('#zTable',dtUrl);
+      //    console.log($(this).text()+" : "+dtUrl);//
+        });
+   
+//click law school
+    $(document).on("click", "#sno" , function() {
+    
+    $( "#bySchool" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var sStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= law_school  = %27"+sStr+"%27&$limit=10000";
+        var table=myDT('#sTable',dtUrl);
+       //   console.log($(this).text()+" : "+dtUrl);//
+        });
+
+   //click city
+    $(document).on("click", "#cityno" , function() {
+    
+    $( "#byCity" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var cityStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= city  = %27"+cityStr+"%27&$limit=10000";
+        var table=myDT('#cityTable',dtUrl);
+        //  console.log($(this).text()+" : "+dtUrl);//
+        });
+
+
+   //click company
+    $(document).on("click", "#cno" , function() {
+    
+    $( "#byCompany" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var companyStr = $.trim($(this).text());
+        companyStr = companyStr.replace('&',' ');
+         companyStr = companyStr.replace("'"," ");
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= company_name  = %27"+companyStr+"%27&$limit=10000";
+        var table=myDT('#cTable',dtUrl);
+        //  console.log($(this).text()+" : "+dtUrl);//
+        });
+
+
+
+   //click first name
+   $(document).on("click", "#fno" , function() {
+    
+    $( "#byFacility" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var firstStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= facility_name  = %27"+firstStr+"%27&$limit=10000";
+        var table=myDT('#fTable',dtUrl);
+      //    console.log($(this).text()+" : "+dtUrl);//
+        });
+
+   // click on last name
+    $(document).on("click", "#lno" , function() {
+    
+    $( "#byLast" ).accordion({
+         active: 2
+             });
+                  // $(this).parent().remove();
+        //alert("this is it"+$(this).text());
+        var lastStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= last_name  = %27"+lastStr+"%27&$limit=10000";
+        var table=myDT('#lTable',dtUrl);
+       //   console.log($(this).text()+" : "+dtUrl);//
+        });
+   
+   
+
+   //  click on initial of last name 
+   $(document).on("click", "#lastNo" , function() {
+    
+    $( "#byLast" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(last_name)&$where= starts_with(last_name, %27"+fStr+"%27)&$order=last_name ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].last_name_1;
+    urlString = "#lastData";
+    var dSource = '<div class="col-1-5"><div  id="lno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#lastList").empty();
+  $("#lastList").append(firstitems);
+  });
+        });
+
+   // click on initial of company name
+   $(document).on("click", "#companyNo" , function() {
+    
+    $( "#byCompany" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(company_name)&$where= starts_with(company_name, %27"+fStr+"%27)&$order=company_name ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].company_name_1;
+    urlString = "#companyData";
+    var dSource = '<div class="col-1-5"><div  id="cno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#companyList").empty();
+  $("#companyList").append(firstitems);
+  });
+        });
+
+   // click on initials of city name
+
+   $(document).on("click", "#cityNo" , function() {
+    
+    $( "#byCity" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(city)&$where= starts_with(city, %27"+fStr+"%27)&$order=city ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].city_1;
+    urlString = "#cityData";
+    var dSource = '<div class="col-1-5"><div  id="cityno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#cityList").empty();
+  $("#cityList").append(firstitems);
+  });
+        });
+
+
+   //click on initial of law school
+   $(document).on("click", "#schoolNo" , function() {
+    
+    $( "#bySchool" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(law_school)&$where= starts_with(law_school, %27"+fStr+"%27)&$order=law_school ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].law_school_1;
+    urlString = "#schoolData";
+    var dSource = '<div class="col-1-5"><div  id="sno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#schoolList").empty();
+  $("#schoolList").append(firstitems);
+  });
+        });
+
+   //click on zip code number
+
+   $(document).on("click", "#zipNo" , function() {
+    
+    $( "#byZip" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(zip)&$where= starts_with(zip, %27"+fStr+"%27)&$order=zip ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+      console.log(data);
+  $.each(data, function( index, value ) {
+   
+    var mfirst = data[index].zip_1;
+    urlString = "#zipData";
+    var dSource = '<div class="col-1-5"><div  id="zno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#zipList").empty();
+  $("#zipList").append(firstitems);
+  });
+        });
+
+   //click on initial of first name
+
+   $(document).on("click", "#firstNo" , function() {
+    
+    $( "#byFacility" ).accordion({
+         active: 1
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$select=distinct(facility_name)&$where= starts_with(facility_name, %27"+fStr+"%27)&$order=facility_name ASC&$limit=10000";
+       
+     // console.log(fStr,dtUrl);
+       
+  $.getJSON( dtUrl, function( data ) {
+     var firstitems = [];
+    // console.log(data);
+     firstitems.push(" ");
+  $.each(data, function( index, value ) {
+    
+    var mfirst = data[index].facility_name_1;
+    urlString = "#firstData";
+    var dSource = '<div class="col-1-5"><div  id="fno" class="content"> <a href="'+urlString+'">'+mfirst+'</a></div></div>';
+      firstitems.push(dSource);
+      });
+    
+  $("#firstList").empty();
+  $("#firstList").append(firstitems);
+  });
+        });
+
+
+});
+//https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
+ $( "#byYear" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byZip" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#bySchool" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byCity" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byCompany" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byLast" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+ $( "#byFacility" ).accordion({
+  collapsible: true, active: 0,heightStyle:"content"
+   });
+</script>
+ 
+</body>
+</html>
