@@ -62,27 +62,16 @@
     </div>
     </div>
   
-   <h3>Attorneys Registered for the Selected First Name</h3>
-   <div id="firstlawyerList">
-    <div class="content">
-   <table id="fTable" class="table-responsive">  
-                     <thead>  
-                          <tr>  
-                               <th>First Name</th>  
-                               <th>Last Name</th>  
-                               <th>Company Name</th> 
-                              
-                                <th>City</th><th>State</th> 
-                               
-                               <th>Law School</th>
-                               <th>Year Admitted</th> 
-                          </tr> 
+   <h3>Attorneys Registered for the Selected Facility</h3>
+    
+  <div class="section group" id="facList">
+   <div id="FacilityL" class="grid grid-pad">
 
-                     </thead>  
-                </table>
-    </div>
-    </div>
-    </div>
+   </div>
+     
+  </div>
+    
+    
     <div id="byLast">
     <h3>Browse New York State Adult Care Facility Last Name </h3>
   <div id="lastalphaList"></div>
@@ -334,9 +323,7 @@ function alphaL(alist,items,divID)
 
 
   $( "#tabs" ).tabs();
-   dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json";
-        var table=myDT('#fTable',dtUrl);
-
+  
 // alpha list
   upperalpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   numberlist = '0123456789'.split('');
@@ -459,7 +446,7 @@ function alphaL(alist,items,divID)
         //alert("this is it"+$(this).text());
         var firstStr = $.trim($(this).text());
       dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= facility_name  = %27"+firstStr+"%27&$limit=10000";
-        var table=myDT('#fTable',dtUrl);
+      //  var table=myDT('#fTable',dtUrl);
       //    console.log($(this).text()+" : "+dtUrl);//
         });
 
@@ -644,7 +631,32 @@ function alphaL(alist,items,divID)
        
   
         });
+     $(document).on("click", "#faNo" , function() {
+    
+    $( "#byFacility" ).accordion({
+         active: 2
+             });
+                  
+        var fStr = $.trim($(this).text());
+      dtUrl = "https://health.data.ny.gov/resource/3jtn-arcj.json?$where= starts_with(facility_name, %27"+fStr+"%27)&$order=facility_name ASC&$limit=10000";
+        
 
+         $.getJSON( dtUrl, function( data ) {
+     var faitems = [];
+    // console.log(data);
+     faitems.push(" ");
+      console.log(data);
+       faitems.push(data[0].address);
+       faitems.push(data[0].city);
+       console.log(faitems);
+  $("#facList").empty();
+  $("#facList").append(faitems);
+  });
+       //var table=myDT('#faTable',dtUrl);
+      console.log(fStr,dtUrl);
+       
+  
+        });
 
 });
 //https://www.tutorialrepublic.com/faq/how-to-bind-click-event-to-dynamically-added-elements-in-jquery.php
