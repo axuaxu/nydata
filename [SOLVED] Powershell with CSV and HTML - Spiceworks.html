@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html -->
+<html lang="en" class=" no-ie community js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/16b4f0abc5"></script><script async="" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/analytics.js.download"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/nr-1044.min.js.download"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/ads"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/ads(1)"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/osd.js.download"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/ads(2)"></script><script async="" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gala.js.download"></script><script type="text/javascript" async="" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/recaptcha__en.js.download"></script><script type="text/javascript" async="" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/_Incapsula_Resource"></script><script>
+//<![CDATA[
+
+  var gekko = gekko || {};
+  gekko.cmd = gekko.cmd || [];
+  gekko.client = gekko.client || {};
+  gekko.client.app = {
+    id: 'COM',
+    env: 'p'
+  };
+  gekko.client.page = {
+    type: 'topic',
+    id: 1910571,
+  };
+
+  gekko.client.user = {};
+
+  gekko.times = gekko.times || [];
+  gekko.times.push({ gekkoRequest: new Date().getTime() });
+
+//]]>
+</script><script async="false" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko.js.download" type="text/javascript"></script>
+<script async="false" type="text/javascript" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gpt.js.download"></script>
+<script async="true" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/sec.js.download"></script>
+
+<script>
+//<![CDATA[
+
+  // Red October logs usage analytics when Gekko is ad blocked
+  // It needs to run on every page with Gekko in Community
+  (function () {
+    var gk = document.createElement('script');
+    var head = getHead();
+
+    gk.src = '//gekko.spiceworks.com/redoctober';
+    gk.async = true;
+    gk.addEventListener('error', function () {
+      gekko = gekko || {};
+      gekko.silent = true;
+
+      var ro = document.createElement('script');
+      ro.src = '//clancy.spiceworks.com/jackryan.js';
+      head.appendChild(ro);
+    });
+
+    head.appendChild(gk);
+
+    function getHead() {
+      if (document.head) {
+        return document.head;
+      }
+
+      var heads = document.getElementsByTagName('head') || [];
+      if (heads.length) {
+        return heads[0];
+      }
+
+      var scripts = document.getElementsByTagName('script') || [];
+      if (scripts.length && scripts[0]) {
+        return scripts[0].parentNode;
+      }
+    }
+  })();
+
+//]]>
+</script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/redoctober" async=""></script>
+    <meta name="msapplication-config" content="none">
+    
+    <meta name="author" content="Spiceworks, Inc.">
+    <meta name="description" content="Solution: You can use the -Append switch of Out-File to have it add to the HTML file.Import-Csv .\file.csv | ConvertTo-Html | Out-File .\file.html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"16b4f0abc5","applicationID":"28497408","transactionName":"cwkKR0BeVF5SFh8QWUAPBxxBWVdFaApVE2lGDwFE","queueTime":0,"applicationTime":262,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="revision" content="073fbcef">
+    <meta name="theme-color" color="#FF5200">
+      <meta property="og:url" content="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html">
+  <meta property="og:title" content="Powershell with CSV and HTML">
+  <meta property="og:site_name" content="The Spiceworks Community">
+
+  <meta name="twitter:url" content="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html">
+  <meta name="twitter:site" content="@Spiceworks">
+  <meta name="twitter:title" content="Powershell with CSV and HTML">
+  <meta name="twitter:description" content="Good Morning everyone!
+
+I am currently creating a script that pulls multiple reports such as the current SEP date, Last boot time, inactive computers, ect, and the info is divid...">
+
+
+    <meta name="twitter:card" content="summary">
+    
+
+  <meta name="apple-itunes-app" content="app-id=1079899059">
+
+    
+    
+
+
+    <link rel="canonical" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html">
+
+    <title>[SOLVED] Powershell with CSV and HTML - Spiceworks</title>
+
+    <link rel="search" type="application/opensearchdescription+xml" href="https://community.spiceworks.com/opensearch_desc.xml" title="Spiceworks Community">
+
+    
+
+      <link rel="stylesheet" media="screen" href="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/discussions-critical-155586ff7dc556a95a48ecf33ea8c894532d20974d7ad231d3145302c3e6f59f.css">
+
+
+    <link rel="stylesheet" media="print" href="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/print-2b7c94c46e7154806d266e52362cccf5de50704e2dd15aea6f64f7df7220a729.css">
+
+
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="P99OOWKQvrHbxgUBdr8Fc4cIOMz/IeQ6QDStBhTQ01QBB9eZn/a3gLpa2QD8fo48gPlXcDjfE5Af6ksL0/0gYA==">
+
+    
+    <script type="text/javascript" async="true" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/client.js.download"></script>
+    
+  
+  <script>
+    gekko.cmd.push(function() {
+      gekko.defineUnit('read_more', {
+        u: 'com/topic/card',
+        
+        d: ['fluid'],
+        
+        h: 'read_more',
+        
+       });
+    });
+  </script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/ads.js.download"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/px.js.download"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/px.js(1).download"></script><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/1w04"><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/pubads_impl_142.js.download" async=""></script><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/pixel"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/spiceworks"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/2i3l">
+
+
+<script>
+//<![CDATA[
+
+  gekko.cmd.push(function() {
+      gekko.setTargeting('cg', '340' ).setTargeting('ct', '1910571' ).setTargeting('gcat', '8' ).setTargeting('krns', 'layout_3' );
+
+    gekko.enableServices();
+  });
+
+//]]>
+</script>
+
+      <link rel="alternate" type="application/rss+xml" title="Replies to &quot;Powershell with CSV and HTML&quot;" href="https://community.spiceworks.com/feed/topic/1910571-powershell-with-csv-and-html.rss">
+
+    <link rel="alternate" type="application/rss+xml" title="Spiceworks Community Global Feed" href="https://community.spiceworks.com/feed/global.rss">
+
+      
+  <script type="text/javascript" charset="utf-8">
+    function initCommunityAnalytics() {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-314222-5', 'auto');
+      if(!(typeof GoogleAnalytics === 'undefined')){
+          GoogleAnalytics.setGroup("programming:powershell");
+        
+        GoogleAnalytics.setUserType("Search User");
+        
+        GoogleAnalytics.setHomePageType("Guest");
+        
+        GoogleAnalytics.setTopicContentGroup("PowerShell");
+
+      }
+        ga('send', 'pageview');
+
+      // For the community property use the GoogleAnalytics helper in analytics.js. Direct calls to _gaq will no longer function.
+      // Adding this var here to avoid potentially breaking legacy analytics
+      var _gaq = _gaq || [];
+    }
+  </script>
+
+      <!-- BEGIN MARKETO -->
+      <script type="text/javascript">
+        function initMarketoAnalytics() {
+          jQuery.ajax({
+            //url: document.location.protocol + '//munchkin.marketo.net/munchkin.js',
+            url: '//static.spiceworks.com/assets/marketo-munchkin-d8451dc769e5512c21075cc3d1d3b262645b218d2e30d0babaa5ce2cc92adc73.js', // see #36903
+            dataType: 'script',
+            cache: true,
+            success: function() {
+              Munchkin.init('989-NIR-811', {cookieAnon: false});
+
+            }
+          });
+        }
+      </script>
+<!-- END MARKETO -->
+
+      <script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/api.js.download" async="true"></script>
+
+    <script type="text/javascript">
+  var SignupTypes = {
+    default:        'default',
+    fromPhoto:      'default from photo modal',
+    fromNavbar:     'default from navbar',
+    fromPanel:      'default from message panel',
+    fromFooter:     'default from footer',
+    fromRepeatVisit:'Default from 1000000 visit modal',
+    fromSecondPage: 'default from second page modal',
+    modalLimit:     '1000000',
+    photoModalDelay: '20',
+    repeatVisitModalEnabled: false,
+    joinFooterEnabled: true,
+    photoModalEnabled: true,
+    secondPageModalEnabled: false,
+    marketingPage: false
+  };
+</script>
+    <link rel="manifest" href="https://community.spiceworks.com/manifest/manifest.json">
+  <script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/singsing.js.download" type="text/javascript"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/singsing.js(1).download" type="text/javascript"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/singsing.js(2).download" type="text/javascript"></script><script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/singsing.js(3).download" type="text/javascript"></script><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/scmp"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed.gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed(1).gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed(2).gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed(3).gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/1zbt"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(1)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(2)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(3)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(4)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/epxb"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed(4).gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/adm"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/epxb(1)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/n0h3"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(5)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/arfa"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/gekko-fixed(5).gif"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/adm(1)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/adrt"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/ev2i"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/impr(6)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/arfa(1)"><style type="text/css"></style><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/adbt"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/giam"><script id="gekko-jpr-timerRefreshRequest" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/updateParams.js.download" type="text/javascript" async=""></script><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/epxb(2)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/n0h3(1)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/giam(1)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/epxb(3)"><img width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/n0h3(2)"><img width="1" height="1" src="https://px.spiceworks.com/px/giam?buster=82354&amp;nid=ppaov3a44fgn&amp;impst=a33p83ii4mzieu10&amp;url=https%3A%2F%2Fcommunity.spiceworks.com%2Ftopic%2F1910571-powershell-with-csv-and-html&amp;dt=1223&amp;privw=false&amp;vpct=-1"><img width="1" height="1" src="https://px.spiceworks.com/px/epxb?buster=91192&amp;impst=a33p83ii4mzieu10&amp;nid=ppaov3a44fgn&amp;gst=156186&amp;ast=156186&amp;ost=175630&amp;tf=3000"></head>
+  <body class="base sui-spiceworks no_login sui-opt-in topic no_breadcrumbs super-header-layout channel-programming full-topic no-body-shadow  no_ads sui--domestic-nav-shown sui--nav-message-shown" style="">
+      <header class="site-navigation sui-opt-in" data-navbar="site-navigation"><script data-placeholder="global-nav"></script>
+  <nav class="global-nav" data-navbar="global" data-search-autocomplete-min-length=""><div class="nav-fluid-container role=" banner"=""><a class="global-nav_brand" href="https://community.spiceworks.com/?referer=%2Ftopic%2F1910571-powershell-with-csv-and-html">Home</a><span class="global-nav_print-logo"></span><ul class="global-nav_menus"><li class="global-search-menu global-nav_menu" data-menu-type="search"><div class="global-search_controls global-search_single-app" role="search"><form><i class="navbar-icon search-icon icon-search con-search sui-icon sui-icon--16" role="presentation"></i><input type="text" autocomplete="off"><div class="global-search_spinner sui-spinner sui-u-fadeable"><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div><div class="sui-spinner_inner"></div></div></form><div class="global-search_app-selector" data-toggle="nav-dropdown"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="global-search-toggle" data-toggle="nav-dropdown" onclick="return false;"><i class="navbar-icon community-notifications-icon_small"></i> <span class="caret"></span></a><ul class="global-search-dropdown-menu" data-content="app-selection-list"><li><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-name="community"><i class="navbar-icon community-notifications-icon"></i><span>Community</span></a></li></ul></div></div><div class="global-search_results" style="display: none;"><div class="global-search_result is-selected" data-content="exact-search-result" data-result-type="full-search" data-text=""><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html" class="global-search_full-search-link"><i class="navbar-icon icon-search sui-icon sui-icon--16"></i><span class="global-search_result-name"></span></a></div><div data-content="search-suggestions"></div><div class="global-search_groups sui-u-collapsible sui-u-collapsed"></div></div></li><li class="global-nav_menu global-community-notifications-menu" data-menu-type="community-notifications"></li><li class="global-nav_menu" data-menu-type="community-messages"></li><li class="global-app-alerts-menu global-nav_menu" data-menu-type="app-alerts"></li><li class="global-user-menu global-nav_menu" data-menu-type="user"></li><li class="guest-user-navmenu global-nav_menu" data-menu-type="guest-user"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="login-link" data-modal-name="login" data-target="#" data-toggle="modal"><span class="login-link_inner">Login</span></a><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-modal-name="join" data-target="#" data-toggle="modal" class="join-button"><span class="join-button_inner">Join</span></a></li></ul><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="global-nav_mobile-nav-toggle global-nav_menu" data-toggle="mobile-nav"><i class="navbar-icon apps-menu-icon"></i></a></div></nav>
+  <script data-placeholder="domestic-nav"></script><nav class="domestic-nav" data-navbar="domestic" role="navigation" aria-labelledby="aria-domestic-nav"><div class="nav-fluid-container"><ul class="domestic-menus"><li class="domestic-menus_entry domestic-menus_dropmenu domestic-apps-menu domestic-nav_brand"><a class="domestic-nav_title" data-toggle="nav-dropdown" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#"><i class="platform-app-icon community-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Community</span></a><ul class="domestic-menus_submenu domestic-menus_submenu_items sui-u-fadeable u-faded-in" data-content="nav-dropdown" data-nav-menu="apps"><li class="apps-menu-entry_spiceworks_inventory"><a href="https://community.spiceworks.com/platform_redirect/v1?app=inventory&amp;source=navbar-apps" class=""><i class="platform-app-icon inventory-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Inventory</span></a></li><li class="apps-menu-entry_spiceworks_help_desk"><a href="https://community.spiceworks.com/platform_redirect/v1?app=help_desk&amp;source=navbar-apps" class=""><i class="platform-app-icon helpdesk-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Help Desk</span></a></li><li class="apps-menu-entry_spiceworks_network_monitor"><a href="https://community.spiceworks.com/platform_redirect/v1?app=network_monitor&amp;source=navbar-apps" class=""><i class="platform-app-icon monitoring-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Network Monitor</span></a></li><li class="apps-menu-entry_spiceworks_product_reviews"><a href="https://community.spiceworks.com/reviews?source=navbar-apps" class=""><i class="platform-app-icon reviews-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Product Reviews</span></a></li><li class="apps-menu-entry_spiceworks_app_center"><a href="https://community.spiceworks.com/appcenter?source=navbar-apps" class=""><i class="platform-app-icon appcenter-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">App Center</span></a></li></ul></li><li class="domestic-menus_entry   domestic-menus_dropmenu active"><a href="javascript:void(0)" data-toggle="nav-dropdown" role="button">Categories</a><ul class="domestic-menus_submenu domestic-menus_submenu_items sui-u-fadeable u-faded-in" data-content="nav-dropdown"><li><a href="https://community.spiceworks.com/careers?source=navbar-subnav">Careers</a></li><li><a href="https://community.spiceworks.com/cloud?source=navbar-subnav">Cloud</a></li><li><a href="https://community.spiceworks.com/communications?source=navbar-subnav">Communications</a></li><li><a href="https://community.spiceworks.com/databases?source=navbar-subnav">Databases</a></li><li><a href="https://community.spiceworks.com/devops?source=navbar-subnav">DevOps</a></li><li><a href="https://community.spiceworks.com/email?source=navbar-subnav">Email</a></li><li><a href="https://community.spiceworks.com/hardware?source=navbar-subnav">Hardware</a></li><li><a href="https://community.spiceworks.com/verticals?source=navbar-subnav">Industry-Specific IT</a></li><li><a href="https://community.spiceworks.com/best-practices?source=navbar-subnav">IT Best Practices</a></li><li><a href="https://community.spiceworks.com/linux?source=navbar-subnav">Linux</a></li><li><a href="https://community.spiceworks.com/mobile?source=navbar-subnav">Mobile</a></li><li><a href="https://community.spiceworks.com/networking?source=navbar-subnav">Networking</a></li><li><a href="https://community.spiceworks.com/programming?source=navbar-subnav">Programming</a></li><li><a href="https://community.spiceworks.com/security?source=navbar-subnav">Security</a></li><li><a href="https://community.spiceworks.com/software?source=navbar-subnav">Software</a></li><li><a href="https://community.spiceworks.com/storage?source=navbar-subnav">Storage &amp; Backup</a></li><li><a href="https://community.spiceworks.com/virtualization?source=navbar-subnav">Virtualization</a></li><li><a href="https://community.spiceworks.com/windows?source=navbar-subnav">Windows</a></li><li><a href="https://community.spiceworks.com/launch/see_all?source=navbar-subnav">More...</a></li></ul></li><li class="domestic-menus_entry   domestic-menus_dropmenu"><a href="javascript:void(0)" data-toggle="nav-dropdown" role="button">Resources</a><ul class="domestic-menus_submenu domestic-menus_submenu_items sui-u-fadeable u-faded-in" data-content="nav-dropdown"><li><a href="https://community.spiceworks.com/reviews?source=navbar-subnav">IT Products &amp; Reviews</a></li><li><a href="https://community.spiceworks.com/how_to?source=navbar-subnav">How-tos</a></li><li><a href="https://community.spiceworks.com/scripts?source=navbar-subnav">Scripts</a></li><li><a href="https://community.spiceworks.com/spiceworks-tv?source=navbar-subnav">Videos</a></li><li><a href="https://community.spiceworks.com/service-providers?source=navbar-subnav">IT Service Providers</a></li><li><a href="https://community.spiceworks.com/pages?source=navbar-subnav">Vendor Pages</a></li><li><a href="https://community.spiceworks.com/spicecorps/news?source=navbar-subnav">SpiceCorps</a></li><li><a href="https://community.spiceworks.com/the-voice-of-it?source=navbar-subnav">Voice of IT</a></li><li><a href="https://community.spiceworks.com/blog?source=navbar-subnav">Blog</a></li><li><a href="https://community.spiceworks.com/support?source=navbar-resourcesnav">Help</a></li><li><a href="https://community.spiceworks.com/user-groups">User Groups</a></li><li><a href="https://community.spiceworks.com/field-guide">Community Guidelines</a></li></ul></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/learn?source=navbar-subnav">Learn</a></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/tools/?source=navbar-subnav">Tools</a></li></ul><ul class="secondary-menus"><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/topic/new?forum_id=356&amp;source=navbar-subnav" rel="nofollow"><i class="sui-icon sui-icon-plus sui-icon--light sui-icon--16"></i>Ask</a></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/unanswered/?source=navbar-subnav" rel="nofollow">Answer</a></li></ul></div></nav>
+  <script data-placeholder="mobile-nav"></script><nav class="mobile-nav sui-opt-in" data-navbar="mobile"><form accept-charset="UTF-8" action="https://community.spiceworks.com/search" class="nav-page-search" method="get" role="search"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div><div class="nav-search-content"><input class="nav-search-field init" data-event-enabled="false" name="query" placeholder="Search" type="text"><button class="global-search-bttn" data-button-type="submit" data-primary="true" type="submit">Search</button></div></form><div class="guest-user-navmenu"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="login-link" data-modal-name="login" data-target="#" data-toggle="modal"><span class="login-link_inner">Login</span></a><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-modal-name="join" data-target="#" data-toggle="modal" class="join-button"><span class="join-button_inner">Join</span></a></div><ul class="domestic-menus"><ul class="domestic-menus"><li class="domestic-menus_entry   domestic-menus_dropmenu active"><a href="javascript:void(0)" data-toggle="nav-dropdown" role="button">Categories</a><ul class="domestic-menus_submenu domestic-menus_submenu_items sui-u-fadeable u-faded-in" data-content="nav-dropdown"><li><a href="https://community.spiceworks.com/careers?source=navbar-subnav">Careers</a></li><li><a href="https://community.spiceworks.com/cloud?source=navbar-subnav">Cloud</a></li><li><a href="https://community.spiceworks.com/communications?source=navbar-subnav">Communications</a></li><li><a href="https://community.spiceworks.com/databases?source=navbar-subnav">Databases</a></li><li><a href="https://community.spiceworks.com/devops?source=navbar-subnav">DevOps</a></li><li><a href="https://community.spiceworks.com/email?source=navbar-subnav">Email</a></li><li><a href="https://community.spiceworks.com/hardware?source=navbar-subnav">Hardware</a></li><li><a href="https://community.spiceworks.com/verticals?source=navbar-subnav">Industry-Specific IT</a></li><li><a href="https://community.spiceworks.com/best-practices?source=navbar-subnav">IT Best Practices</a></li><li><a href="https://community.spiceworks.com/linux?source=navbar-subnav">Linux</a></li><li><a href="https://community.spiceworks.com/mobile?source=navbar-subnav">Mobile</a></li><li><a href="https://community.spiceworks.com/networking?source=navbar-subnav">Networking</a></li><li><a href="https://community.spiceworks.com/programming?source=navbar-subnav">Programming</a></li><li><a href="https://community.spiceworks.com/security?source=navbar-subnav">Security</a></li><li><a href="https://community.spiceworks.com/software?source=navbar-subnav">Software</a></li><li><a href="https://community.spiceworks.com/storage?source=navbar-subnav">Storage &amp; Backup</a></li><li><a href="https://community.spiceworks.com/virtualization?source=navbar-subnav">Virtualization</a></li><li><a href="https://community.spiceworks.com/windows?source=navbar-subnav">Windows</a></li><li><a href="https://community.spiceworks.com/launch/see_all?source=navbar-subnav">More...</a></li></ul></li><li class="domestic-menus_entry   domestic-menus_dropmenu"><a href="javascript:void(0)" data-toggle="nav-dropdown" role="button">Resources</a><ul class="domestic-menus_submenu domestic-menus_submenu_items sui-u-fadeable u-faded-in" data-content="nav-dropdown"><li><a href="https://community.spiceworks.com/reviews?source=navbar-subnav">IT Products &amp; Reviews</a></li><li><a href="https://community.spiceworks.com/how_to?source=navbar-subnav">How-tos</a></li><li><a href="https://community.spiceworks.com/scripts?source=navbar-subnav">Scripts</a></li><li><a href="https://community.spiceworks.com/spiceworks-tv?source=navbar-subnav">Videos</a></li><li><a href="https://community.spiceworks.com/service-providers?source=navbar-subnav">IT Service Providers</a></li><li><a href="https://community.spiceworks.com/pages?source=navbar-subnav">Vendor Pages</a></li><li><a href="https://community.spiceworks.com/spicecorps/news?source=navbar-subnav">SpiceCorps</a></li><li><a href="https://community.spiceworks.com/the-voice-of-it?source=navbar-subnav">Voice of IT</a></li><li><a href="https://community.spiceworks.com/blog?source=navbar-subnav">Blog</a></li><li><a href="https://community.spiceworks.com/support?source=navbar-resourcesnav">Help</a></li><li><a href="https://community.spiceworks.com/user-groups">User Groups</a></li><li><a href="https://community.spiceworks.com/field-guide">Community Guidelines</a></li></ul></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/learn?source=navbar-subnav">Learn</a></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/tools/?source=navbar-subnav">Tools</a></li></ul><ul class="secondary-menus"><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/topic/new?forum_id=356&amp;source=navbar-subnav" rel="nofollow"><i class="sui-icon sui-icon-plus sui-icon--light sui-icon--16"></i>Ask</a></li><li class=" domestic-menus_entry  "><a href="https://community.spiceworks.com/unanswered/?source=navbar-subnav" rel="nofollow">Answer</a></li></ul></ul><ul class="apps-listing"><li class="apps-menu-entry_spiceworks_inventory"><a href="https://community.spiceworks.com/platform_redirect/v1?app=inventory&amp;source=navbar-apps" class=""><i class="platform-app-icon inventory-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Inventory</span></a></li><li class="apps-menu-entry_spiceworks_help_desk"><a href="https://community.spiceworks.com/platform_redirect/v1?app=help_desk&amp;source=navbar-apps" class=""><i class="platform-app-icon helpdesk-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Help Desk</span></a></li><li class="apps-menu-entry_spiceworks_network_monitor"><a href="https://community.spiceworks.com/platform_redirect/v1?app=network_monitor&amp;source=navbar-apps" class=""><i class="platform-app-icon monitoring-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Network Monitor</span></a></li><li class="apps-menu-entry_spiceworks_product_reviews"><a href="https://community.spiceworks.com/reviews?source=navbar-apps" class=""><i class="platform-app-icon reviews-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">Product Reviews</span></a></li><li class="apps-menu-entry_spiceworks_app_center"><a href="https://community.spiceworks.com/appcenter?source=navbar-apps" class=""><i class="platform-app-icon appcenter-icon"><div class="platform-app-icon_inner-icon"></div></i><span class="app-icon_label">App Center</span></a></li></ul></nav>
+  <script data-placeholder="nav-message"></script><div class="sui-site-message-container navaffix" data-navbar="message" style=""><div class="sui-site-message"><div class="sui-site-message_text">Cookies help us deliver our services. By using our services you agree to our <a href="https://www.spiceworks.com/privacy/cookies/">use of cookies</a>.</div><a href="javascript:void(0);" class="sui-bttn sui-bttn--outline sui-bttn--large sui-site-message_control">Ok</a></div></div>
+</header>
+
+
+<script type="application/json" data-menu-config="globalNavbar">
+  {"user_info":{"guest":true},"sticky":null,"include_mobile":true,"logo_path":"/?referer=%2Ftopic%2F1910571-powershell-with-csv-and-html","app_alerts":false,"check_eu_cookie_policy":true,"search":true}</script>
+
+<script type="application/json" data-menu-config="navbarApps">
+  {"apps":[{"unique_name":"spiceworks_community","display_name":"Community","url":"https://community.spiceworks.com","app_type":"community","active":true},{"unique_name":"spiceworks_inventory","display_name":"Inventory","url":"/platform_redirect/v1?app=inventory\u0026source=navbar-apps"},{"unique_name":"spiceworks_help_desk","display_name":"Help Desk","url":"/platform_redirect/v1?app=help_desk\u0026source=navbar-apps","app_type":"desktop"},{"unique_name":"spiceworks_network_monitor","display_name":"Network Monitor","url":"/platform_redirect/v1?app=network_monitor\u0026source=navbar-apps"},{"unique_name":"spiceworks_product_reviews","display_name":"Product Reviews","url":"/reviews?source=navbar-apps"},{"unique_name":"spiceworks_app_center","display_name":"App Center","url":"/appcenter?source=navbar-apps"}]}</script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/json" data-menu-config="suiNavbarConfig">
+  {"logo_path":"/?referer=%2Ftopic%2F1910571-powershell-with-csv-and-html","sticky":null,"search":true,"community_url":null,"id_service_url":null,"notifications_url":null,"refresh_community_notifications":null,"user_info":{"guest":true},"user_menus":null,"apps_menu":{"apps":[{"unique_name":"spiceworks_community","display_name":"Community","url":"https://community.spiceworks.com","app_type":"community","active":true},{"unique_name":"spiceworks_inventory","display_name":"Inventory","url":"/platform_redirect/v1?app=inventory\u0026source=navbar-apps"},{"unique_name":"spiceworks_help_desk","display_name":"Help Desk","url":"/platform_redirect/v1?app=help_desk\u0026source=navbar-apps","app_type":"desktop"},{"unique_name":"spiceworks_network_monitor","display_name":"Network Monitor","url":"/platform_redirect/v1?app=network_monitor\u0026source=navbar-apps"},{"unique_name":"spiceworks_product_reviews","display_name":"Product Reviews","url":"/reviews?source=navbar-apps"},{"unique_name":"spiceworks_app_center","display_name":"App Center","url":"/appcenter?source=navbar-apps"}]},"navigation_menus":[{"text":"Categories","active":true,"items":[{"text":"Careers","url":"/careers?source=navbar-subnav","handler":"default"},{"text":"Cloud","url":"/cloud?source=navbar-subnav","handler":"default"},{"text":"Communications","url":"/communications?source=navbar-subnav","handler":"default"},{"text":"Databases","url":"/databases?source=navbar-subnav","handler":"default"},{"text":"DevOps","url":"/devops?source=navbar-subnav","handler":"default"},{"text":"Email","url":"/email?source=navbar-subnav","handler":"default"},{"text":"Hardware","url":"/hardware?source=navbar-subnav","handler":"default"},{"text":"Industry-Specific IT","url":"/verticals?source=navbar-subnav","handler":"default"},{"text":"IT Best Practices","url":"/best-practices?source=navbar-subnav","handler":"default"},{"text":"Linux","url":"/linux?source=navbar-subnav","handler":"default"},{"text":"Mobile","url":"/mobile?source=navbar-subnav","handler":"default"},{"text":"Networking","url":"/networking?source=navbar-subnav","handler":"default"},{"text":"Programming","url":"/programming?source=navbar-subnav","handler":"default"},{"text":"Security","url":"/security?source=navbar-subnav","handler":"default"},{"text":"Software","url":"/software?source=navbar-subnav","handler":"default"},{"text":"Storage \u0026 Backup","url":"/storage?source=navbar-subnav","handler":"default"},{"text":"Virtualization","url":"/virtualization?source=navbar-subnav","handler":"default"},{"text":"Windows","url":"/windows?source=navbar-subnav","handler":"default"},{"text":"More...","url":"/launch/see_all?source=navbar-subnav","handler":"default"}],"handler":"default"},{"text":"Resources","active":false,"items":[{"text":"IT Products \u0026 Reviews","url":"/reviews?source=navbar-subnav","handler":"default"},{"text":"How-tos","url":"/how_to?source=navbar-subnav","handler":"default"},{"text":"Scripts","url":"/scripts?source=navbar-subnav","handler":"default"},{"text":"Videos","url":"/spiceworks-tv?source=navbar-subnav","handler":"default"},{"text":"IT Service Providers","url":"/service-providers?source=navbar-subnav","handler":"default"},{"text":"Vendor Pages","url":"/pages?source=navbar-subnav","handler":"default"},{"text":"SpiceCorps","url":"/spicecorps/news?source=navbar-subnav","handler":"default"},{"text":"Voice of IT","url":"/the-voice-of-it?source=navbar-subnav","handler":"default"},{"text":"Blog","url":"/blog?source=navbar-subnav","handler":"default"},{"text":"Help","url":"/support?source=navbar-resourcesnav","handler":"default"},{"text":"User Groups","url":"/user-groups","handler":"default"},{"text":"Community Guidelines","url":"/field-guide","handler":"default"}],"handler":"default"},{"text":"Learn","url":"/learn?source=navbar-subnav","active":false,"handler":"default"},{"text":"Tools","url":"/tools/?source=navbar-subnav","active":false,"handler":"default"}],"secondary_nav_menus":[{"text":"Ask","icon":"plus","url":"/topic/new?forum_id=356\u0026source=navbar-subnav","handler":"default","rel":"nofollow"},{"text":"Answer","url":"/unanswered/?source=navbar-subnav","handler":"default","rel":"nofollow"}],"check_eu_cookie_policy":true}
+</script>
+
+    <div id="container" class="sui-fluid-container">
+
+      <div class="sui-body-shadow">
+        
+        <div class="sui-body">
+          
+
+          
+
+          <section class="sui-page-contents">
+            <a id="page_top"></a>
+            <div id="content_wrapper">
+
+              <div id="messaging_container" class="constrained-content">
+  <div class="sui-opt-in">
+    <div id="application_messaging" style="display: none;" class="message-panel message-panel-info"><ol></ol></div>
+  </div>
+</div><span style="clear:both;"></span>
+
+              
+
+
+
+                  
+  <div id="background_skin" class="pixel-code" style="display: none;" data-google-query-id="CPmbrfeu0tUCFZBTDAodWysKAQ">
+    <script>
+      gekko.cmd.push(function() {
+        gekko.defineUnit('background_skin', {
+          u: 'native/skin',
+          
+          d: ['fluid'],
+          
+          h: 'background_skin',
+          
+         });
+        gekko.display('background_skin');
+      });
+    </script>
+<div id="google_ads_iframe_/8951970/native/skin_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/8951970/native/skin_0" title="3rd party ad content" name="google_ads_iframe_/8951970/native/skin_0" width="100%" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/saved_resource.html"></iframe></div></div>
+  <div class="js-topic-header-wrapper" style="height: 216px;">
+    <header class="topic-header affix">
+          <div class="breadcrumbs">
+    <a href="https://community.spiceworks.com/start">Home</a>
+      &gt;
+      <a href="https://community.spiceworks.com/programming">Programming</a>
+      &gt;
+      <a href="https://community.spiceworks.com/programming/powershell">PowerShell</a>
+  </div>
+
+      <div class="constrained-content">
+        <div class="title-and-controls">
+          <a class="sw-logo" href="https://community.spiceworks.com/start"></a>
+            <h1>
+              <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html">Powershell with CSV and HTML</a>
+            </h1>
+          <div class="meta topic-meta  " data-id="6358542">
+            <div class="byline">
+              <div class="byline-avatar">
+                <a data-popup-url="/profile/popup/kharper?redirect=/topic/post/6358542&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=question" data-author-id="5252630" href="https://community.spiceworks.com/people/khristopherharper2" data-original-title="" title=""><img src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20160916-2519-1n52uos_medium.jpg" alt="Mini magick20160916 2519 1n52uos medium"></a>
+              </div>
+              <div class="byline-user-info">
+              <p class="name">
+                <span> by
+                  <a data-popup-url="/profile/popup/kharper?redirect=/topic/post/6358542&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=question" data-author-id="5252630" class="user profile_link--user profile_link " href="https://community.spiceworks.com/people/khristopherharper2" data-original-title="" title="">kharper</a> on
+                </span> <span title="Nov 7, 2016 at  2:46 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 14:46:32 +0000">Nov 7, 2016 at 9:46 AM</span>
+</p>
+              </div>
+
+            </div>
+            <h2 class="classification">
+              <div class="topic-forum-tag"><a data-group-id="340" data-forum-popup="groups" href="https://community.spiceworks.com/programming/powershell">PowerShell</a></div>
+
+
+                <script data-placeholder="manage-forums-modal-link"></script>
+            </h2>
+            <div class="spacer"></div>
+
+            <script data-placeholder="author-host-link"></script>
+          </div>
+          <div class="controls js-root-post-controls"><div>
+
+<div class="actions-dropdown sui-bttn-group sui-dropdown is-closed">
+  <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="sui-dropdown_trigger sui-bttn sui-bttn--small" data-toggle="sui_dropdown" onclick="return false;"><span class="sui-caret"></span></a>
+  <div class="sui-dropdown_content-caret"></div>
+  <ul class="sui-dropdown_content sui-dropdown_content--align-right is-hidden">
+
+    
+
+    
+
+    
+
+    <li class="sui-dropdown_entry"><a on-click="subscribe_topic" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" id="subscribe_topic_dropdown" data-subscribed="false">Subscribe</a></li>
+    <li class="sui-dropdown_entry"><a on-click="report_post" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Report</a></li>
+    <li class="sui-dropdown_entry"><a on-click="translate_topic" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Translate</a></li>
+
+     
+
+  </ul>
+</div>
+
+<div class="sui-spicebttn-wrap"><a href="javascript:void(0)" class="sui-bttn sui-spicebttn" data-dir="true" data-toggle="spicebttn" onclick="return false;" rel="" title="Spice this!"><i class="sui-icon sui-icon-pepper sui-icon--16"></i><span class="sui-spicelink-count">5</span></a></div>
+
+
+  <div class="topic-answer-tag">
+    <a href="https://community.spiceworks.com/posts/6358632"><i class="sui-icon sui-icon-check sui-icon--white sui-icon--16"></i> View Best Answer</a>
+  </div>
+
+</div></div>
+        </div>
+          <a class="topic-suggestion" href="https://community.spiceworks.com/topic/2031609-powershell-copy-attributes-from-one-ad-user-to-another?source=recommended">
+            <label>Next:</label>
+            <span>PowerShell: Copy Attributes from one AD User to another</span>
+          </a>
+      </div>
+
+      <div id="spam_report_dialog"></div>
+
+    </header>
+  </div>
+
+
+              <div id="content">
+                <div id="primary" class="frameless">
+                  <div id="dynamic-layout-name" data-dynamiclayout="3"></div>
+
+
+
+
+
+
+
+<div id="topic"></div><!-- Translate JS from back-end expects an id of topic somewhere -->
+
+<article class="topic-body">
+
+  <script data-placeholder="above-root-post"></script>
+
+
+    <div class="dynamic-layout-sidebar" id="sidebar">
+    
+  <div id="slot_2" class="dynamic-layout-sidebar--item" style="" data-google-query-id="CLaa-Y2v0tUCFey2swodJw0H8A"><div id="google_ads_iframe_/8951970/com/topic/primary_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/8951970/com/topic/primary_0" title="3rd party ad content" name="google_ads_iframe_/8951970/com/topic/primary_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/saved_resource(1).html"></iframe></div></div>
+    <div class="dynamic-layout-sidebar--item">
+      <div class="help-desk-callout community-content-card">
+  <div class="help-desk-callout--graphic"><img src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/helpdesk-icon-02db14913c035661a87e382212e844b755e4d9ac68a66ea9456a8f2b32553733.svg" alt="Helpdesk icon"></div>
+  <div class="help-desk-callout--body">
+    <div class="help-desk-callout--header community-content-card--header">Spiceworks Help Desk</div>
+    <div class="community-content-card--body help-desk-callout--body">
+      <p>The help desk software for IT. Free.</p>
+      <p>Track users' IT needs, easily, and with only the features you need.</p>
+      <div class="help-desk-callout--register">
+      <a href="https://www.spiceworks.com/free-help-desk-software/?utm_medium=internal&amp;utm_source=community_next__steps">
+        Learn More »
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</div>
+
+
+  
+
+    <div class="sui-alert sui-alert--info join-promotion"><div class="sui-alert_body"><div class="sui-alert_text">
+      <div class="join-promotion-message"><strong>Join the Community!</strong> Creating your account only takes a few minutes.</div>
+    <a data-toggle="modal" data-modal-name="join" data-target="#" onclick="GoogleAnalytics.trackEvent(&#39;Topic&#39;,&#39;click&#39;,&#39;Join Now&#39;); Join.setSignupType(SignupTypes.fromPanel);" class="sui-bttn sui-bttn--small sui-bttn--orange join-promotion_join-button" href="https://community.spiceworks.com/login">Join Now</a>
+</div></div></div>
+
+  
+
+  <div class="sui-opt-in root-post post   their-post" id="root_post" data-post-id="6358542">
+
+
+
+    <p>Good Morning everyone!</p><p>
+
+</p><p>I am currently creating a script that pulls multiple reports such as the current SEP date, Last boot time, inactive computers, ect, and the info is divided into different CSV files so that way they can have their own sets of info. Now I would like to export these CSV's into a HTML format so I can have it automatically sent out in an email every morning. However, whenever I run "import-csv .\file.csv | convertTo-HTML | Out-File .\file.html" I do run some additional -Head and -Body commands just to pretty it up, however whenever I run the import command for the second csv it overwrites the first, is there a way so it will just combine? (I know it can be accomplished with VBS I am just trying to stick to powershell at the moment).</p><p>Thank you for your time!</p>
+
+<br>
+
+
+
+
+
+
+
+    
+  <div class="js-tag-reveal-link tag-reveal-link"></div>
+
+  <div class="footer">
+
+    <div class="root-post_footer-controls" data-placeholder="root-post-footer-controls"><div>
+<a class="sui-bttn sui-bttn--small" data-reply="true" href="javascript:void(0)" size="small">Reply</a>
+
+<a class="sui-bttn sui-bttn--small foobar" data-action="subscribe" href="javascript:void(0)">
+  <i class="sui-icon sui-icon-email sui-icon--gray sui-icon--16 "></i><span>Subscribe</span>
+</a>
+</div></div>
+
+    <span class="social-list">
+	<a target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;t=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=Powershell%20with%20CSV%20and%20HTML%20https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html"></a>
+	<a target="_blank" class="reddit" href="http://www.reddit.com/submit?url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="google-plus" href="https://plus.google.com/share?url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="linked-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+</span>
+  </div>
+
+
+  
+
+</div>
+
+<hr class="hr-dashed">
+
+  <div class="best-answer-under-root-post">
+    <div class="topic-answer-tag">
+      <a data-best_answer_id="6358632" href="https://community.spiceworks.com/posts/6358632"><i class="sui-icon sui-icon-check sui-icon--white sui-icon--16 "></i> Best Answer</a>
+    </div>
+
+    <div class="avatar" data-popup-url="/profile/popup/Gungnir?redirect=/topic/post/6358632&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=best_answer" data-author-id="3043876" data-align-to-activator="" data-original-title="" title="">
+ <a href="https://community.spiceworks.com/people/gungnir"><img alt="Gungnir" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20141212-12310-14n54ew_big.jpg"></a>
+ <div class="rank_title align-center"><span class="datil">Datil</span></div>
+
+ <div class="original-poster"><span>OP</span></div>
+</div>
+
+<h5>
+  <span class="author" data-popup-url="/profile/popup/Gungnir?redirect=/topic/post/6358632&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=best_answer" data-author-id="3043876" data-align-to-activator="bottom" data-original-title="" title="">
+	<a class="user profile_link--user" href="https://community.spiceworks.com/people/gungnir">Gungnir</a>
+</span>
+<span class="date">
+	<a rel="nofollow" class="post-date" href="https://community.spiceworks.com/topic/post/6358632"><span title="Nov 7, 2016 at  2:59 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 14:59:42 +0000">Nov 7, 2016 at 9:59 AM</span></a>
+</span>
+
+  
+</h5>
+
+<div class="post-body">
+  <p>You can use the -Append switch of Out-File to have it add to the HTML file.</p><div class="highlight"><div class="language-name">Powershell</div><pre><span class="nb">Import-Csv</span> <span class="p">.\</span><span class="n">file</span><span class="p">.</span><span class="n">csv</span> <span class="p">|</span> <span class="nb">ConvertTo-Html</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="p">.\</span><span class="n">file</span><span class="p">.</span><span class="n">html</span> <span class="n">-Append</span>
+</pre></div>
+<br>Another option, depending on your requirements, would be to use the -Fragment switch of ConvertTo-Html and build the entire HTML body before exporting it to a file.<br><div class="highlight"><div class="language-name">Powershell</div><pre><span class="nv">$Files</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">'C:\CSVDir'</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">csv</span>
+
+<span class="nv">$HTML</span> <span class="p">=</span> <span class="k">foreach</span><span class="p">(</span> <span class="nv">$File</span> <span class="k">in</span> <span class="nv">$Files</span> <span class="p">){</span>
+    <span class="nb">Import-Csv</span> <span class="n">-Path</span> <span class="nv">$File</span><span class="p">.</span><span class="n">FullName</span> <span class="p">|</span>
+        <span class="nb">ConvertTo-Html</span> <span class="n">-Fragment</span>
+    <span class="p">}</span>
+
+<span class="nv">$HTML</span> <span class="p">|</span>
+    <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="s1">'C:\Report.html'</span>
+</pre></div>
+<br>
+
+
+
+
+
+
+</div>
+
+
+    
+<div class="js-tag-reveal-link tag-reveal-link"></div>
+
+<div class="view-best-answer-link">
+  <a data-best_answer_id="6358632" class="link" href="https://community.spiceworks.com/posts/6358632">View this "Best Answer" in the replies below »</a>
+</div>
+
+
+
+  </div>
+
+
+
+
+
+
+  
+
+  
+
+  <script data-placeholder="below-root-post"></script>
+
+  
+
+  
+
+
+  <section class="replies ">
+
+    
+
+
+
+
+    <h2>4 Replies</h2>
+
+    <div class="posts-wrapper">
+        
+  <div id="slot_7" class="gekko_post" style="" data-google-query-id="CPubrfeu0tUCFZBTDAodWysKAQ">
+    <script>
+      gekko.cmd.push(function() {
+        gekko.defineUnit('slot_7', {
+          u: 'com/topic/comment',
+          
+          d: ['fluid'],
+          
+          h: 'slot_7',
+          
+         });
+        gekko.display('slot_7');
+      });
+    </script>
+<div id="google_ads_iframe_/8951970/com/topic/comment_0__container__" style="border: 0pt none; display: inline-block; width: 100%; height: auto;"><iframe frameborder="0" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/container.html" id="google_ads_iframe_/8951970/com/topic/comment_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="0" height="208" data-is-safeframe="true" style="border: 0px; vertical-align: bottom; min-width: 100%;"></iframe></div></div>
+        <div class="post    their-post" data-id="6358616">
+    <a class="expand-mute" href="javascript:void(0)" rel="sui_tooltip" data-original-title="Hidden Posts">
+      <div class="ellipsis">· · ·</div>
+    </a>
+
+      <div class="post-content-wrapper">
+  <div class="avatar" data-popup-url="/profile/popup/Kyle%20Parrish?redirect=/topic/post/6358616&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="1504764" data-align-to-activator="" data-original-title="" title="">
+ <a href="https://community.spiceworks.com/people/kyleparrish"><img alt="Kyle Parrish" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20151030-23576-rmth1r_big.jpeg"></a>
+ <div class="rank_title align-center"><span class="thai_pepper">Thai Pepper</span></div>
+
+ <div class="original-poster"><span>OP</span></div>
+</div>
+
+
+  <div class="post-content post_content">
+
+
+    <h5>
+      <span class="author" data-popup-url="/profile/popup/Kyle%20Parrish?redirect=/topic/post/6358616&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="1504764" data-align-to-activator="bottom" data-original-title="" title="">
+	<a class="user profile_link--user" href="https://community.spiceworks.com/people/kyleparrish">Kyle Parrish</a>
+</span>
+<span class="date">
+	<a rel="nofollow" class="post-date" href="https://community.spiceworks.com/topic/post/6358616"><span title="Nov 7, 2016 at  2:57 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 14:57:32 +0000">Nov 7, 2016 at 9:57 AM</span></a>
+</span>
+     
+      <div class="extra-post-marker-wrapper">
+      </div>
+
+      
+    </h5>
+
+    <div class="post-body">
+      <p>Good morning!</p><p>Are you saying it is overwriting the html file?</p><p>You may need to have them exported as two separate files first and then combine them...</p><p>I would combine the CSV's first and then export the final one to HTML. You can achieve that with something like:</p><div class="highlight"><div class="language-name">Powershell</div><pre><span class="nv">$csv1</span> <span class="p">=</span> <span class="p">@(</span><span class="n">gc</span> <span class="n">File1</span><span class="p">.</span><span class="n">csv</span><span class="p">)</span>
+<span class="nv">$csv2</span> <span class="p">=</span> <span class="p">@(</span><span class="n">gc</span> <span class="n">File2</span><span class="p">.</span><span class="n">csv</span><span class="p">)</span>
+<span class="nv">$csv3</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="p">=</span><span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="nv">$csv1</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+    <span class="nv">$csv3</span> <span class="p">+=</span> <span class="nv">$csv1</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="p">+</span> <span class="s1">','</span> <span class="p">+</span> <span class="nv">$csv2</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span>
+    <span class="p">}</span>
+
+<span class="nv">$csv3</span>
+</pre></div>
+<div class="highlight"><div class="language-name">Powershell</div><pre><span class="nv">$csv4</span> <span class="p">|</span> <span class="nb">convertto-HTML</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">file</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+Adapted from an article here:&nbsp;<a target="_blank" rel="nofollow  noopener" href="https://social.technet.microsoft.com/Forums/windowsserver/en-US/e242e1e9-6a8f-4a46-a884-8bd6811b5e35/combining-multiple-csv-files-with-powershell?forum=winserverpowershell">https://social.technet.microsoft.com/Forums/windowsserver/en-US/e242e1e9-6a8f-4a46-a884-8bd6811b5e35...</a><br><br>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    <div class="js-tag-reveal-link tag-reveal-link"></div>
+
+
+
+    <div class="post-controls js-post-controls"><div><ul class="controls">
+
+  
+    <li>
+      <div class="sui-spicebttn-wrap">
+        <a href="javascript:void(0);" class="sui-spicebttn sui-spicelink" data-dir="true" rel="" title="" data-original-title="Spice this!">
+          <span class="sui-spicelink-text">Spice</span>
+        </a>
+      </div>
+    </li>
+  
+
+  <li>
+    <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="reply_post">Reply</a>
+  </li>
+
+  <li style="display: none;">
+    <div class="sui-dropdown is-closed">
+      <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="sui-dropdown_trigger" data-toggle="sui_dropdown" onclick="return false;">Manage <span class="sui-caret"></span></a>
+      <div class="sui-dropdown_content-caret"></div>
+      <ul class="sui-dropdown_content is-hidden">
+        
+        
+
+        
+
+        
+
+        
+
+        
+      </ul>
+    </div>
+  </li>
+
+
+  
+  <li class="flag"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="report_post" title="" data-original-title="Report Post"><i class="sui-icon sui-icon-topic-flag"></i></a></li>
+  
+
+  <li class="sentiment-face"></li>
+
+  
+</ul>
+
+<span class="spice-count-wrapper js-spice-count" on-click="all_voters_modal"><div><span class="spice-count" data-count="1"><i class="sui-icon icon-graypepper_small"></i>1</span></div></span>
+</div></div>
+
+    <div id="replyMarketer_6358616" class="post_marketerCantReply_form" style="display: none;"></div> 
+
+  </div>
+</div> 
+<div class="discover-questions-wrapper"></div>
+
+
+  </div>
+
+  <div class="post    their-post" data-id="6358632">
+    <a class="expand-mute" href="javascript:void(0)" rel="sui_tooltip" data-original-title="Hidden Posts">
+      <div class="ellipsis">· · ·</div>
+    </a>
+
+      <div class="post-content-wrapper">
+  <div class="avatar" data-popup-url="/profile/popup/Gungnir?redirect=/topic/post/6358632&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=best_answer" data-author-id="3043876" data-align-to-activator="" data-original-title="" title="">
+ <a href="https://community.spiceworks.com/people/gungnir"><img alt="Gungnir" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20141212-12310-14n54ew_big.jpg"></a>
+ <div class="rank_title align-center"><span class="datil">Datil</span></div>
+
+ <div class="original-poster"><span>OP</span></div>
+</div>
+
+
+  <div class="post-content post_content">
+
+      <div class="best-answer"><i class="sui-icon sui-icon-event-best-answer sui-icon--gray sui-icon--16 "></i>Best Answer</div>
+
+    <h5>
+      <span class="author" data-popup-url="/profile/popup/Gungnir?redirect=/topic/post/6358632&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=best_answer" data-author-id="3043876" data-align-to-activator="bottom" data-original-title="" title="">
+	<a class="user profile_link--user" href="https://community.spiceworks.com/people/gungnir">Gungnir</a>
+</span>
+<span class="date">
+	<a rel="nofollow" class="post-date" href="https://community.spiceworks.com/topic/post/6358632"><span title="Nov 7, 2016 at  2:59 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 14:59:42 +0000">Nov 7, 2016 at 9:59 AM</span></a>
+</span>
+     
+      <div class="extra-post-marker-wrapper">
+      </div>
+
+      
+    </h5>
+
+    <div class="post-body">
+      <p>You can use the -Append switch of Out-File to have it add to the HTML file.</p><div class="highlight"><div class="language-name">Powershell</div><pre><span class="nb">Import-Csv</span> <span class="p">.\</span><span class="n">file</span><span class="p">.</span><span class="n">csv</span> <span class="p">|</span> <span class="nb">ConvertTo-Html</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="p">.\</span><span class="n">file</span><span class="p">.</span><span class="n">html</span> <span class="n">-Append</span>
+</pre></div>
+<br>Another option, depending on your requirements, would be to use the -Fragment switch of ConvertTo-Html and build the entire HTML body before exporting it to a file.<br><div class="highlight"><div class="language-name">Powershell</div><pre><span class="nv">$Files</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">'C:\CSVDir'</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">csv</span>
+
+<span class="nv">$HTML</span> <span class="p">=</span> <span class="k">foreach</span><span class="p">(</span> <span class="nv">$File</span> <span class="k">in</span> <span class="nv">$Files</span> <span class="p">){</span>
+    <span class="nb">Import-Csv</span> <span class="n">-Path</span> <span class="nv">$File</span><span class="p">.</span><span class="n">FullName</span> <span class="p">|</span>
+        <span class="nb">ConvertTo-Html</span> <span class="n">-Fragment</span>
+    <span class="p">}</span>
+
+<span class="nv">$HTML</span> <span class="p">|</span>
+    <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="s1">'C:\Report.html'</span>
+</pre></div>
+<br>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    <div class="js-tag-reveal-link tag-reveal-link"></div>
+
+
+
+    <div class="post-controls js-post-controls"><div><ul class="controls">
+
+  
+    <li>
+      <div class="sui-spicebttn-wrap">
+        <a href="javascript:void(0);" class="sui-spicebttn sui-spicelink" data-dir="true" rel="" title="" data-original-title="Spice this!">
+          <span class="sui-spicelink-text">Spice</span>
+        </a>
+      </div>
+    </li>
+  
+
+  <li>
+    <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="reply_post">Reply</a>
+  </li>
+
+  <li style="display: none;">
+    <div class="sui-dropdown is-closed">
+      <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="sui-dropdown_trigger" data-toggle="sui_dropdown" onclick="return false;">Manage <span class="sui-caret"></span></a>
+      <div class="sui-dropdown_content-caret"></div>
+      <ul class="sui-dropdown_content is-hidden">
+        
+        
+
+        
+
+        
+
+        
+
+        
+      </ul>
+    </div>
+  </li>
+
+
+  
+  <li class="flag"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="report_post" title="" data-original-title="Report Post"><i class="sui-icon sui-icon-topic-flag"></i></a></li>
+  
+
+  <li class="sentiment-face"></li>
+
+  
+</ul>
+
+<span class="spice-count-wrapper js-spice-count" on-click="all_voters_modal"><div><span class="spice-count" data-count="1"><i class="sui-icon icon-graypepper_small"></i>1</span></div></span>
+</div></div>
+
+    <div id="replyMarketer_6358632" class="post_marketerCantReply_form" style="display: none;"></div> 
+
+  </div>
+</div> 
+<div class="discover-questions-wrapper"></div>
+
+
+  </div>
+
+  <div class="post    their-post" data-id="6358847">
+    <a class="expand-mute" href="javascript:void(0)" rel="sui_tooltip" data-original-title="Hidden Posts">
+      <div class="ellipsis">· · ·</div>
+    </a>
+
+      <div class="post-content-wrapper">
+  <div class="avatar is-OP" data-popup-url="/profile/popup/kharper?redirect=/topic/post/6358847&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="5252630" data-align-to-activator="" data-original-title="" title="">
+ <a href="https://community.spiceworks.com/people/khristopherharper2"><img alt="kharper" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20160916-2519-1n52uos_big.jpg"></a>
+ <div class="rank_title align-center"><span class="sonora">Sonora</span></div>
+
+ <div class="original-poster"><span>OP</span></div>
+</div>
+
+
+  <div class="post-content post_content">
+
+
+    <h5>
+      <span class="author" data-popup-url="/profile/popup/kharper?redirect=/topic/post/6358847&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="5252630" data-align-to-activator="bottom" data-original-title="" title="">
+	<a class="user profile_link--user" href="https://community.spiceworks.com/people/khristopherharper2">kharper</a>
+</span>
+<span class="date">
+	<a rel="nofollow" class="post-date" href="https://community.spiceworks.com/topic/post/6358847"><span title="Nov 7, 2016 at  3:38 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 15:38:52 +0000">Nov 7, 2016 at 10:38 AM</span></a>
+</span>
+     
+      <div class="extra-post-marker-wrapper">
+      </div>
+
+      
+    </h5>
+
+    <div class="post-body">
+      <p>Thank you Gungnir! The -Append option worked perfectly</p>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    <div class="js-tag-reveal-link tag-reveal-link"></div>
+
+
+
+    <div class="post-controls js-post-controls"><div><ul class="controls">
+
+  
+    <li>
+      <div class="sui-spicebttn-wrap">
+        <a href="javascript:void(0);" class="sui-spicebttn sui-spicelink" data-dir="true" rel="" title="" data-original-title="Spice this!">
+          <span class="sui-spicelink-text">Spice</span>
+        </a>
+      </div>
+    </li>
+  
+
+  <li>
+    <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="reply_post">Reply</a>
+  </li>
+
+  <li style="display: none;">
+    <div class="sui-dropdown is-closed">
+      <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="sui-dropdown_trigger" data-toggle="sui_dropdown" onclick="return false;">Manage <span class="sui-caret"></span></a>
+      <div class="sui-dropdown_content-caret"></div>
+      <ul class="sui-dropdown_content is-hidden">
+        
+        
+
+        
+
+        
+
+        
+
+        
+      </ul>
+    </div>
+  </li>
+
+
+  
+  <li class="flag"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="report_post" title="" data-original-title="Report Post"><i class="sui-icon sui-icon-topic-flag"></i></a></li>
+  
+
+  <li class="sentiment-face"></li>
+
+  
+</ul>
+
+<span class="spice-count-wrapper js-spice-count" on-click="all_voters_modal"><div><span class="spice-count" data-count="0"><i class="sui-icon icon-graypepper_small"></i>0</span></div></span>
+</div></div>
+
+    <div id="replyMarketer_6358847" class="post_marketerCantReply_form" style="display: none;"></div> 
+
+  </div>
+</div> 
+<div class="discover-questions-wrapper"></div>
+
+
+  </div>
+
+  <div class="post    their-post" data-id="6359605">
+    <a class="expand-mute" href="javascript:void(0)" rel="sui_tooltip" data-original-title="Hidden Posts">
+      <div class="ellipsis">· · ·</div>
+    </a>
+
+      <div class="post-content-wrapper">
+  <div class="avatar" data-popup-url="/profile/popup/JD%20Stanberry?redirect=/topic/post/6359605&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="374450" data-align-to-activator="" data-original-title="" title="">
+ <a href="https://community.spiceworks.com/people/justinstanberry"><img alt="JD Stanberry" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/mini_magick20151001-6619-11tpj1k_big.jpg"></a>
+ <div class="rank_title align-center"><span class="poblano">Poblano</span></div>
+
+ <div class="original-poster"><span>OP</span></div>
+</div>
+
+
+  <div class="post-content post_content">
+
+
+    <h5>
+      <span class="author" data-popup-url="/profile/popup/JD%20Stanberry?redirect=/topic/post/6359605&amp;from_url=%2Ftopic%2F1910571-powershell-with-csv-and-html%3Fescape%3Dfalse&amp;from_meta=post" data-author-id="374450" data-align-to-activator="bottom" data-original-title="" title="">
+	<a class="user profile_link--user" href="https://community.spiceworks.com/people/justinstanberry">JD Stanberry</a>
+</span>
+<span class="date">
+	<a rel="nofollow" class="post-date" href="https://community.spiceworks.com/topic/post/6359605"><span title="Nov 7, 2016 at  5:39 UTC" data-js-postprocess="timestamp" datetime="Mon, 07 Nov 2016 17:39:10 +0000">Nov 7, 2016 at 12:39 PM</span></a>
+</span>
+     
+      <div class="extra-post-marker-wrapper">
+          <div class="extra-post-marker first-post-marker" title="JD Stanberry&#39;s 1st post in the Community">1st Post</div>
+      </div>
+
+      
+    </h5>
+
+    <div class="post-body">
+      <p>You can skip the foreach and just pipe multiple filenames to Import-csv&nbsp;such as:</p><div class="highlight"><div class="language-name">Powershell</div><pre><span class="p">(</span><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s1">'c:\CSVDir'</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">csv</span><span class="p">).</span><span class="n">FullName</span> <span class="p">|</span> <span class="nb">Import-Csv</span> <span class="p">|</span> <span class="nb">ConvertTo-HTML</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">out</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+or&nbsp;<div class="highlight"><div class="language-name">Powershell</div><pre><span class="s2">"file1.csv"</span><span class="p">,</span> <span class="s2">"file2.csv"</span> <span class="p">|</span> <span class="nb">Import-csv</span> <span class="p">|</span> <span class="n">pipe</span> <span class="n">to</span> <span class="n">other</span> <span class="n">commands</span>
+</pre></div>
+<br><br><br>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    <div class="js-tag-reveal-link tag-reveal-link"></div>
+
+
+
+    <div class="post-controls js-post-controls"><div><ul class="controls">
+
+  
+    <li>
+      <div class="sui-spicebttn-wrap">
+        <a href="javascript:void(0);" class="sui-spicebttn sui-spicelink" data-dir="true" rel="" title="" data-original-title="Spice this!">
+          <span class="sui-spicelink-text">Spice</span>
+        </a>
+      </div>
+    </li>
+  
+
+  <li>
+    <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="reply_post">Reply</a>
+  </li>
+
+  <li style="display: none;">
+    <div class="sui-dropdown is-closed">
+      <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="sui-dropdown_trigger" data-toggle="sui_dropdown" onclick="return false;">Manage <span class="sui-caret"></span></a>
+      <div class="sui-dropdown_content-caret"></div>
+      <ul class="sui-dropdown_content is-hidden">
+        
+        
+
+        
+
+        
+
+        
+
+        
+      </ul>
+    </div>
+  </li>
+
+
+  
+  <li class="flag"><a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" on-click="report_post" title="" data-original-title="Report Post"><i class="sui-icon sui-icon-topic-flag"></i></a></li>
+  
+
+  <li class="sentiment-face"></li>
+
+  
+</ul>
+
+<span class="spice-count-wrapper js-spice-count" on-click="all_voters_modal"><div><span class="spice-count" data-count="1"><i class="sui-icon icon-graypepper_small"></i>1</span></div></span>
+</div></div>
+
+    <div id="replyMarketer_6359605" class="post_marketerCantReply_form" style="display: none;"></div> 
+
+  </div>
+</div> 
+<div class="discover-questions-wrapper"></div>
+
+
+  </div>
+
+
+    </div>
+
+    <div class="replies_footer">
+      <div class="root-post_footer-controls" data-placeholder="replies-footer-controls"><div>
+<a class="sui-bttn sui-bttn--small foobar" data-action="subscribe" href="javascript:void(0)">
+  <i class="sui-icon sui-icon-email sui-icon--gray sui-icon--16 "></i><span>Subscribe</span>
+</a>
+</div></div>
+      <span class="social-list">
+	<a target="_blank" class="facebook" href="http://www.facebook.com/sharer.php?u=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;t=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=Powershell%20with%20CSV%20and%20HTML%20https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html"></a>
+	<a target="_blank" class="reddit" href="http://www.reddit.com/submit?url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="google-plus" href="https://plus.google.com/share?url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+	<a target="_blank" class="linked-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html&amp;title=Powershell%20with%20CSV%20and%20HTML"></a>
+</span>
+      
+
+
+
+    </div>
+  </section>
+
+
+  
+
+
+  <script data-placeholder="employee-moderated-msg-bottom"></script>
+
+  
+
+
+      <div class="reply-form js-reply-form " id="postform">
+        
+<form class="post_form  form-vertical" data-remote-json="true" id="new_post" enctype="multipart/form-data" action="https://community.spiceworks.com/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" class="hidden"><input type="hidden" name="authenticity_token" value="P99OOWKQvrHbxgUBdr8Fc4cIOMz/IeQ6QDStBhTQ01QBB9eZn/a3gLpa2QD8fo48gPlXcDjfE5Af6ksL0/0gYA==" class="hidden">
+  <input type="hidden" value="6358542" name="post[parent_id]" id="post_parent_id" class="hidden">
+  <input type="hidden" value="1910571" name="post[topic_id]" id="post_topic_id" class="hidden">
+  
+  <input type="hidden" name="original_post_id" id="original_post_id" value="6358542" class="hidden">
+
+  <div class="sui-alert sui-alert--error generic-error  "><div class="sui-alert_icon sui-icon-alert-error sui-icon--32"></div><div class="sui-alert_body"><div class="sui-alert_text">Oops, something's wrong below.</div></div></div>
+
+
+  <div class=" control-group "><label class="control-label" for="post_text">Text</label><div class="controls sui-input-validity"><textarea data-field="reply-text" name="post[text]" id="post_text"></textarea></div></div>
+    
+
+<div id="post_text-wysihtml5-toolbar-wrapper">
+  <ul id="post_text-wysihtml5-toolbar" class="wysihtml5-toolbar sui-opt-in">
+      <li>
+        <div class="sui-bttn-group">
+          <a data-wysihtml5-command="bold" title="CTRL+B">
+            <i class="icon-bold"></i>
+          </a>
+          <a data-wysihtml5-command="italic" title="CTRL+I">
+            <i class="icon-italic"></i>
+          </a>
+          <a data-wysihtml5-command="insertUnorderedList" title="Unordered List">
+            <i class="icon-unordered-list"></i>
+          </a>
+          <a data-wysihtml5-command="insertOrderedList" title="Ordered List">
+            <i class="icon-ordered-list"></i>
+          </a>
+          <a id="create_link" title="Link">
+            <i class="icon-link"></i>
+          </a>
+        </div>
+      </li>
+      <li>
+        <a data-wysihtml5-command="justifyLeft" title="Justify left">
+          <i class="icon-align-left"></i>
+        </a>
+        <a data-wysihtml5-command="justifyCenter" title="Justify center">
+          <i class="icon-align-center"></i>
+        </a>
+        <a data-wysihtml5-command="justifyRight" title="Justify right">
+          <i class="icon-align-right"></i>
+        </a>
+      </li>
+      <li>
+          <span class="attachment-input-container">
+            <input class="text file" id="post_attachment_attached_file" name="post_attachment[attached_file]" type="file">
+          </span>
+          <a data-wysihtml5-command="attachment" title="Add attachment">
+            <i class="icon-attachment"></i>
+          </a>
+        <a id="insert_code" title="Insert code">
+          <i class="icon-code"></i>
+        </a>
+      </li>
+      <li>
+        <div class="sui-bttn-group">
+          <a data-wysihtml5-command="undo" title="Undo">
+            <i class="icon-undo"></i>
+          </a>
+          <a data-wysihtml5-command="redo" title="Redo">
+            <i class="icon-redo"></i>
+          </a>
+        </div>
+      </li>
+      <li class="quote-li">
+        <a title="Quote Post" class="quote-button">
+          <p class="quote-text">Quote Post</p>
+        </a>
+      </li>
+    <div class="sui-clearfix"></div>
+  </ul>
+  <div class="wysiwyg-progress-container">
+    <div class="wysiwyg-progress-bar"></div>
+  </div>
+  <div class="wysiwyg-error-message closed">
+    <div class="wsyiwyg-error-message-inner">
+      <span class="error-message"></span>
+      <i class="sui-icon-close sui-icon--white"></i>
+    </div>
+  </div>
+</div>
+    <div class="attachment-wrapper" style="display:none;">
+      <div class="sui-well attachment-container" style="display: block;">
+  <img src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/paper_clip-6b2f11f92aa4d893a4fca7e1b2b11e31e4e52ea8d17a9fd5ab8227248a080a5a.png" class="paperclip">
+  <div class="filename-container"><span class="filename"></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="replace-attachment">Replace Attachment</span></div>
+  <i class="sui-icon sui-icon-close sui-icon--16"></i>
+</div>
+
+    </div>
+<div id="post_text-wysiwyg-modals" class="wysiwyg-modals">
+  <div id="insert_link_dialog" class="sui-opt-in bootstrap-wysihtml5-insert-link-dialog closed">
+  <i class="sui-icon sui-icon-close sui-icon--gray sui-icon--16 "></i>
+
+  <span class="wysiwyg-add-link">Add link</span>
+
+  <label for="link_text">Text to display:</label>
+  <input type="text" name="link_text" id="link_text" class="text">
+
+  <label for="link_url">Where should this link go?</label>
+  <input type="text" name="link_url" id="link_url" class="text">
+
+  <div class="footer-buttons">
+    <a class="sui-bttn insert-link-add" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" onclick="; return false;">Add</a>
+    <a class="sui-bttn insert-link-cancel" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" onclick="; return false;">Cancel</a>
+  </div>
+</div>
+
+    <div data-closeable="true" data-modal-el="overlay" id="post_text_insert_code_modal" class="sui-modal_overlay sui-u-fadeable  bootstrap-wysihtml5-code-modal"><div class="sui-modal_content sui-modal_content--overflow" role="dialog" data-modal-el="content"><button class="sui-modal_close sui-icon sui-icon-close-circular sui-icon--24 sui-icon--blue" data-dismiss="modal"></button><div class="sui-modal_header">Insert code</div><div class="sui-modal_body">
+  <div class="sui-opt-in">
+    <label for="code_brush_select">Language</label>
+    <select name="code_brush_select" class="code_brush_select">
+        <option value="apache">Apache</option>
+        <option value="applescript">AppleScript</option>
+        <option value="awk">Awk</option>
+        <option value="bash">BASH</option>
+        <option value="winbatch">Batchfile</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="csharp">C#</option>
+        <option value="css">CSS</option>
+        <option value="erb">ERB</option>
+        <option value="html">HTML</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="lua">Lua</option>
+        <option value="objectivec">ObjectiveC</option>
+        <option value="php">PHP</option>
+        <option value="perl">Perl</option>
+        <option value="text">Text</option>
+        <option value="powershell">Powershell</option>
+        <option value="python">Python</option>
+        <option value="r">R</option>
+        <option value="ruby">Ruby</option>
+        <option value="scss">Sass</option>
+        <option value="scala">Scala</option>
+        <option value="sql">SQL</option>
+        <option value="vbnet">VB.net</option>
+        <option value="vim">Vimscript</option>
+        <option value="xml">XML</option>
+        <option value="yaml">YAML</option>
+    </select>
+    <textarea name="code_block" id="code_block"></textarea>
+    <div class="sui-modal_footer">
+      <button type="submit" class="sui-bttn--primary sui-bttn " data-primary="true" data-button-type="submit">Insert</button>
+      <a data-dismiss="modal" data-button-type="cancel" class="sui-bttn--cancel sui-bttn " href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Cancel</a>
+</div>  </div>
+</div></div></div>
+</div>
+
+<script type="application/json" data-wysihtml="post_text">
+  {"fontStyles":false,"formatting":true,"image":false,"alignment":true,"tools":true,"history":true,"html":false,"quote":true,"imageModel":"post","resizable":false,"maxImages":5,"events":{},"lazyLoad":true,"topic":true,"stylesheet":"//static.spiceworks.com/assets/wysihtml5_editor-f6c8cb814eb66a8177f80739479bc8d809400c6e4906175eea06ac2574f266fc.css","attachment":true,"video":false,"lazyLoadCss":"//static.spiceworks.com/assets/wysihtml5_3rd_party-9732734da219d824eeac0c1a0c6bbfd0c0d560ff944f22cefac4d05079b4ee64.css","lazyLoadJs":"//static.spiceworks.com/assets/rich_text_editor-91df295799e25d81c1abb19db4f97e7622328bc1cc507f1e28c936d3868ed662.js"}
+</script>
+
+    
+<input type="hidden" name="include_attachment" id="include_attachment" value="false" class="hidden">
+
+
+    <div class="additional-reply-fields">
+         <div id="tag-editor">
+
+
+  <ul class="tag-editor">
+
+
+  <li class="add">Use + to tag people and products and vendors...</li></ul>
+
+  <input value="" id="post_tags" type="hidden" name="post[tags]" class="hidden">
+
+</div>
+
+
+
+      <div class="subscribe-controls js-subscribe-controls"><div><input id="enable_notify" name="enable_notify" type="hidden" value="f" class="hidden">
+<input id="enable_notify" name="enable_notify" type="checkbox" value="t" class="checkbox">
+<label for="enable_notify">Email me when someone responds</label>
+
+
+  <span class="subscribe-on-reply">(<a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" class="js-subscribe-on-reply">Check by default</a>)</span>
+
+</div></div>
+
+          <div class="post-join-group postform-choice">
+            <input type="hidden" name="join_group" id="join_group" value="f" class="hidden">
+            <input type="checkbox" name="join_group" id="join_group" value="t" class="checkbox">
+            <label for="join-group">Join me to this group</label>
+          </div>
+
+    </div>
+
+  <button onclick="Topic.allowPrompt = false;" id="post-reply-submit" type="submit" class="sui-bttn--primary sui-bttn sui-bttn--small" data-primary="true" data-button-type="submit">Reply</button>
+  <em class="highlight" id="draft-saved-info"></em>
+</form>
+  <script type="text/javascript">
+  window.TopicConfig = window.TopicConfig || {};
+  window.TopicConfig.allow_prompt = true;
+  window.TopicConfig.call_check_leaving = true;
+</script>
+
+
+
+
+      </div>
+
+  <div class="js-events-placeholder"></div>
+
+  <script data-placeholder="topic-reads-and-subs"></script>
+  <script data-placeholder="topic-activity"></script>
+
+    <div class="slot-8-wrapper">
+      <div class="slot-8-background animate">
+      
+  <div id="slot_8" class="gekko_wide" style="" data-google-query-id="CPybrfeu0tUCFZBTDAodWysKAQ">
+    <script>
+      gekko.cmd.push(function() {
+        gekko.defineUnit('slot_8', {
+          u: 'com/topic/leaderboard',
+          
+          
+          d: [[728, 90],[970, 90],[1, 1]],
+          h: 'slot-8-wrapper',
+          
+         });
+          gekko.setTargeting('pos', 'bottom', 10, 'slot_8');
+        gekko.display('slot_8');
+      });
+    </script>
+<div id="google_ads_iframe_/8951970/com/topic/leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/8951970/com/topic/leaderboard_0" title="3rd party ad content" name="google_ads_iframe_/8951970/com/topic/leaderboard_0" width="970" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/saved_resource(2).html"></iframe></div></div>
+      </div>
+    </div>
+
+</article>
+
+
+<div class="js-invite-controls"></div>
+
+<div class="js-curated-item-editor"></div>
+
+<script type="text/javascript">
+  window.stickyAdTimeout = 50
+</script>
+
+    <script type="text/javascript">
+    window.SplashModalConfig = { show: true, fromDigest: false };
+    </script>
+
+
+<!-- iOS smart banner for Community app -->
+<script data-placeholder="employee-moderation-modal"></script>
+
+  <script type="application/json" data-config="topicData">
+    {"id":1910571,"subject":"Powershell with CSV and HTML","ranking":5,"root_post_id":6358542,"needs_answer":true,"needs_helpful_posts":true,"answered_post_id":6358632,"author_id":5252630,"deleted":false,"spotlight":false,"sticky":false,"moderation_status":null,"locked":false,"tagging_enabled":true,"has_best_answer":true}
+  </script>
+
+
+<script type="application/json" data-config="postsData">
+[
+    
+      {"id":6358616,"vote_count":1,"user_id":1504764,"is_answer":false,"is_helpful_post":false,"moderation_status":null,"deleted":false,"muted_by_admin":false,"hidden":false}
+    ,
+      {"id":6358632,"vote_count":1,"user_id":3043876,"is_answer":true,"is_helpful_post":false,"moderation_status":null,"deleted":false,"muted_by_admin":false,"hidden":false}
+    ,
+      {"id":6358847,"vote_count":0,"user_id":5252630,"is_answer":false,"is_helpful_post":false,"moderation_status":null,"deleted":false,"muted_by_admin":false,"hidden":false}
+    ,
+      {"id":6359605,"vote_count":1,"user_id":374450,"is_answer":false,"is_helpful_post":false,"moderation_status":null,"deleted":false,"muted_by_admin":false,"hidden":false}
+]
+</script>
+
+                </div>
+              </div> <!-- /#content -->
+
+                  <div class="hide_a_sidebar">
+        
+    </div>
+
+              <div class="sui-clearfix"></div>
+            </div><!-- /#content_wrapper -->
+          </section>
+          <div class="sui-clearfix"></div>
+        </div>
+      </div>
+
+      <footer class="sui-footer sui-opt-in">
+
+
+  <div class="sui-custom-footer">
+        <div class="read-next-footer js-read-next-footer constrained-content curated-items">
+  <div class="read-next-header">Read these next...</div>
+
+  <ul class="card-columns">
+        <li class="card-column" style="height: 10px;">
+        </li>
+        <li class="card-column" style="height: 10px;">
+        </li>
+        <li class="card-column" style="height: 10px;">
+        </li>
+  </ul>
+</div>
+
+
+  </div>
+  <hr>
+  <div class="constrained-content">
+    <section class="sui-footer-left">
+      <span class="sui-copyright">© Copyright 2006-2017 Spiceworks Inc.</span>
+    </section>
+    <section class="sui-footer-right">
+      <span class="sui-link-group">
+        <a href="https://www.spiceworks.com/about/">About</a>
+        <a href="https://www.spiceworks.com/marketing/">Advertising</a>
+        <a href="https://www.spiceworks.com/privacy/">Privacy</a>
+        <a href="https://www.spiceworks.com/terms/">Terms</a>
+        <a href="https://community.spiceworks.com/support">Help</a>
+        <a href="https://community.spiceworks.com/launch/see_all">Sitemap</a>
+      </span>
+    </section>
+  </div>
+
+    
+
+
+</footer>
+
+    </div>
+    
+  <div id="join-login-modal">
+<div class="sui-modal_overlay is-hidden sui-u-fadeable is-hidden" data-modal-el="overlay" data-closeable="true">
+  <div class="sui-modal_content sui-modal_content--overflow join-login-box join-mode sui-opt-in  " data-modal-el="content">
+    <button class="sui-modal_close sui-icon sui-icon-close-circular sui-icon--24 sui-icon--blue" data-dismiss="modal"></button>
+
+    
+    <div class="sui-modal_header" data-modal-el="header">
+      <div class="join-header">
+        Join millions of IT pros like you      </div>
+      <div class="login-header">
+        Log in to Spiceworks
+      </div>
+      <div class="reset-header">
+        Reset community password
+      </div>
+      <div class="two-step">
+        Agree to Terms of Service
+      </div>
+    </div>
+
+    <div class="sui-modal_body join-body">
+      <div style="display:none;" class="message-panel message-panel-info message">
+        <!-- Filled in by JS calls for e.g. "guest state" -->
+</div>
+        
+<div class="social-register">
+  <div class="social-register-connect">Connect with</div>
+  <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-social-join="facebook" class="social-connect facebook-connect" data-join-form="default">
+      <img alt="Login with Facebook" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/facebook_thin.png">
+  </a>
+  <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-social-join="linkedin" class="social-connect linkedin-connect" data-join-form="default">
+      <img alt="Login with LinkedIn" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/linkedin_thin.png">
+  </a>
+</div>
+
+        <div class="or-divider"><div>Or</div></div>
+        <div class="sign-up-header">Sign up with your email address</div>
+        
+<form class="form-vertical register-form new-registration form-vertical" data-remote-json="true" target="_parent" id="new_registration" action="https://community.spiceworks.com/join/register" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" class="hidden"><input type="hidden" name="authenticity_token" value="P99OOWKQvrHbxgUBdr8Fc4cIOMz/IeQ6QDStBhTQ01QBB9eZn/a3gLpa2QD8fo48gPlXcDjfE5Af6ksL0/0gYA==" class="hidden">
+
+  <input value="/topic/1910571-powershell-with-csv-and-html" type="hidden" name="registration[referer]" id="registration_referer" class="hidden">
+
+  <div class="sui-alert sui-alert--error sui-alert--hidden-unless-active  "><div class="sui-alert_icon sui-icon-alert-error sui-icon--32"></div><div class="sui-alert_body"><div class="sui-alert_text">Oops, something's wrong below.</div></div></div>
+
+  <div class=" sui-control-group "><label class="sui-control-group_label" for="registration_first_name">First Name</label><div class="sui-control-group_controls sui-input-validity"><input autofocus="autofocus" type="text" name="registration[first_name]" id="registration_first_name" class="text"></div></div>
+  <div class=" sui-control-group "><label class="sui-control-group_label" for="registration_last_name">Last Name</label><div class="sui-control-group_controls sui-input-validity"><input type="text" name="registration[last_name]" id="registration_last_name" class="text"></div></div>
+  <div class=" sui-control-group "><label class="sui-control-group_label" for="registration_email">Email</label><div class="sui-control-group_controls sui-input-validity"><input type="email" name="registration[email]" id="registration_email" class="email"></div></div>
+  <input value="1" type="hidden" name="registration[terms]" id="registration_terms" class="hidden">
+  <input value="0" type="hidden" name="registration[two_step]" id="registration_two_step" class="hidden">
+  <input value="0" type="hidden" name="registration[two_step_agree]" id="registration_two_step_agree" class="hidden">
+  <input value="default" type="hidden" name="registration[signup_type]" id="registration_signup_type" class="hidden">
+  <input type="hidden" name="registration[join_message]" id="registration_join_message" class="hidden">
+  <div class="sui-control-group sui-form-actions blue-permission-granted action-buttons">
+    <button type="submit" class="sui-bttn--primary sui-bttn form-action-button" data-primary="true" data-button-type="submit">Join Now</button>
+    <span class="or-login-prompt">
+      <span class="or-login-text">or</span>
+      <div class="login-toggle">
+        <a href="https://community.spiceworks.com/login">Log In</a>
+      </div>
+    </span>
+</div>
+</form>
+
+      
+<form class="form-horizontal login-form" action="https://community.spiceworks.com/login/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" class="hidden"><input type="hidden" name="authenticity_token" value="P99OOWKQvrHbxgUBdr8Fc4cIOMz/IeQ6QDStBhTQ01QBB9eZn/a3gLpa2QD8fo48gPlXcDjfE5Af6ksL0/0gYA==" class="hidden">
+
+    
+    
+    
+    
+    
+
+  
+  <input type="hidden" value="/topic/1910571-powershell-with-csv-and-html" name="login[referer]" id="login_referer" class="hidden">
+
+  <div class="sui-alert sui-alert--error sui-alert--hidden-unless-active  "><div class="sui-alert_icon sui-icon-alert-error sui-icon--32"></div><div class="sui-alert_body"><div class="sui-alert_text">Oops, something's wrong below.</div></div></div>
+  <div class=" sui-control-group "><label class="sui-control-group_label" for="login_email">Email</label><div class="sui-control-group_controls sui-input-validity"><input autofocus="autofocus" type="email" value="" name="login[email]" id="login_email" class="email"></div></div>
+  <div class=" sui-control-group "><label class="sui-control-group_label" for="login_password">Password</label><div class="sui-control-group_controls sui-input-validity"><input type="password" name="login[password]" id="login_password" class="password"></div></div>
+
+  <div class="sui-control-group sui-form-actions ">
+    <button type="submit" class="sui-bttn--primary sui-bttn form-action-button" data-primary="true" data-button-type="submit">Log In</button>
+</div>
+  <div class="sui-control-group no-required-label password-reset-link_wrapper"><label class="sui-control-group_label"></label><div class="sui-control-group_controls sui-input-validity">
+    <a data-toggle="password_reset" class="password-reset-link" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Forgot your password?</a>
+</div></div></form>
+      
+<form class="form-horizontal reset-form" data-remote-json="true" action="https://community.spiceworks.com/login/reset" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" class="hidden"><input type="hidden" name="authenticity_token" value="P99OOWKQvrHbxgUBdr8Fc4cIOMz/IeQ6QDStBhTQ01QBB9eZn/a3gLpa2QD8fo48gPlXcDjfE5Af6ksL0/0gYA==" class="hidden">
+
+  
+  <input type="hidden" value="/topic/1910571-powershell-with-csv-and-html" name="login[referer]" id="login_referer" class="hidden">
+
+  <div class="sui-alert sui-alert--error generic-error  "><div class="sui-alert_icon sui-icon-alert-error sui-icon--32"></div><div class="sui-alert_body"><div class="sui-alert_text">Oops, something's wrong below.</div></div></div>
+  <div class=" control-group "><label class="control-label" for="login_email">Email</label><div class="controls sui-input-validity"><input type="email" value="" name="login[email]" id="login_email" class="email"></div></div>
+
+  <div class="control-group form-actions ">
+    <button type="submit" class="sui-bttn--primary sui-bttn password-reset-submit form-action-button" data-primary="true" data-button-type="submit">Reset Password</button>
+    <a data-toggle="password_return" data-return="login" class="sui-bttn password-reset-cancel form-cancel-button" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Cancel</a>
+</div>
+  <div class="control-group no-required-label desktop-password-reset_wrapper"><label class="control-label"></label><div class="controls sui-input-validity">
+     <div class="desktop-password-reset">
+      Need to recover your <a href="https://community.spiceworks.com/help/Resetting_Your_Password_Outside_The_Spiceworks_Desktop">Spiceworks IT Desktop password</a>?
+    </div>
+</div></div></form>
+      <div class="two-step container">
+  <div class="message">
+    By creating an account, you're agreeing to our <a href="https://www.spiceworks.com/terms/" target="_blank">Terms of Use</a>,
+    <a href="https://www.spiceworks.com/privacy/" target="_blank">Privacy Policy</a> and to receive emails from Spiceworks.
+  </div>
+</div>
+    </div>
+
+    <div class="sui-modal_footer footer-actions">
+      <div class="terms">
+          By creating an account, you're agreeing to our <a href="https://www.spiceworks.com/terms/" target="_blank">Terms of Use</a>
+          and our <a href="https://www.spiceworks.com/privacy/" target="_blank">Privacy Policy</a>
+      </div>
+      <div class="join-toggle">
+        Not a member? <a href="https://community.spiceworks.com/join">Join the community</a>
+      </div>
+      <div class="two-step actions">
+        <a class="sui-bttn two-step back bttn" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">Back</a>
+        <a class="sui-bttn two-step agree bttn sui-bttn--primary" href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#">I agree</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+  
+
+
+
+
+
+
+
+<!-- Google Code for Spiceworks Remarketed Ads (30 Days) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1065803588;
+var google_conversion_label = "i0XnCIjo2gEQxL6b_AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/conversion.js.download">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/saved_resource(3).html" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"></iframe><iframe name="google_cookie_match_frame" title="Google cookie match frame" width="1" height="1" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/pixel.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" style="display:none" scrolling="no"></iframe>
+
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1065803588/?value=0&amp;amp;label=i0XnCIjo2gEQxL6b_AM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+
+
+
+
+    <!--  -->
+    
+
+
+      <!-- BEGIN TRACKJS -->
+      <script type="text/javascript">window._trackJs = { token: '72d35627d6b74e4298beddd6d5f94664', application: "community" };</script>
+      <script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/tracker.js.download"></script>
+      <!-- END TRACKJS -->
+
+        <script type="text/javascript">
+      Application = window.Application || {};
+      Application.runMode = 'production';
+      Application.name = 'community';
+
+      CurrentUser = window.CurrentUser || {};
+      CurrentUser.permissionClass = 'guest';
+
+      User = window.User || {};
+
+      window.$UI_ENV = window.$UI_ENV || {};
+      window.$UI_ENV.environment = 'production';
+      window.$UI = window.$UI || {};
+      window.$UI.useMobile = false;
+    </script>
+
+
+      <script src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/discussions-6d9f9368a39e3320f7a9bf134dfbab55cd06d69519b1100b76181d74277fa16a.js.download" async="async"></script>
+
+    
+      
+      <script>
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+      </script>
+  <script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script>
+
+<script>
+  !function() {
+    function nonRecursiveExtend(target, source) {
+      for( var key in source ) {
+        if( source.hasOwnProperty(key) ) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    window.User = window.User || {};
+    window.UserPermissions = window.UserPermissions || {};
+    window.Application = window.Application || {};
+
+    nonRecursiveExtend(User, {
+      spices: {"Topic":{"1910571":null},"Post":{}},
+      kind: "guest",
+      verified: false,
+      desktop_url: null
+    });
+    nonRecursiveExtend(User, null);
+    nonRecursiveExtend(UserPermissions, {
+      admin: false
+    });
+
+    nonRecursiveExtend(User, {
+    });
+    nonRecursiveExtend(UserPermissions, {
+      moderator: false,
+      admin: false,
+      super_admin: false
+    });
+
+    nonRecursiveExtend( Application, { messages: [] } );
+
+    window.JsLoggerEnabled = true;
+    window.FrontendLoggerEnabled = false;
+    window.CssLoggerEnabled = false;
+
+    window.GroupStats = window.GroupStats || {};
+    window.GroupStats.mainGroupId = 340;
+    window.GroupStats.groupIds = [340];
+  }();
+</script>
+
+<iframe src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/9082.html" style="visibility: hidden; position: absolute; height: 1px; width: 1px; border: 0px;"></iframe><iframe id="google_osd_static_frame_9762424514577" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/saved_resource(4).html"></iframe><div>
+        <link rel="stylesheet" media="screen" href="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/discussions-lazyload-26c1e156cfa10faa8df04505f878e2dc2a524e545d2494ab7622cfc3a7799bca.css">
+        <link rel="stylesheet" media="print" href="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/print-2b7c94c46e7154806d266e52362cccf5de50704e2dd15aea6f64f7df7220a729.css">
+      </div><iframe src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/1567.html" style="visibility: hidden; position: absolute; height: 1px; width: 1px; border: 0px;"></iframe><iframe src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/2349.html" style="visibility: hidden; position: absolute; height: 1px; width: 1px; border: 0px;"></iframe><iframe src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/5098.html" style="visibility: hidden; position: absolute; height: 1px; width: 1px; border: 0px;"></iframe><div id="lightboxOverlay" style="display: none;"></div><div id="lightbox" style="display: none;"><div class="outerContainer"><div class="container"><img class="image"><div class="nav"><a class="prev"></a><a class="next"></a></div><div class="loader"><a class="cancel"><img src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/loading-81ea81be1d862d36c34b6dc4f12aefb87b656e319003263d8274974b48ccf869.gif"></a></div></div></div><div class="dataContainer"><div class="data"><div class="details"><span class="caption"></span><span class="number"></span></div><div class="closeContainer"><a class="close"><img src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/closelabel-cc3c8f67291b46b0b7c26148f146db5c486d049c5a4996643bcdbfb005917082.gif"></a></div></div></div></div>
+  <div class="sui-modal_overlay sui-u-fadeable is-hidden" id="photo-join-modal" data-modal-el="overlay" style="display: none;">
+    <div class="sui-modal_content" data-modal-el="content" role="dialog" style="left: 299px; top: 81.5px;">
+      <button class="sui-modal_close sui-icon sui-icon-close-circular sui-icon--24 sui-icon--blue" data-dismiss="modal"></button>
+
+      <div class="photo-join-modal_left">
+        <div class="modal-content-header-overlay">
+          <div class="connect-header">IT's easier with help</div>
+          <div class="connect-subheader">Join millions of IT pros working smarter and faster together</div>
+        </div>
+        <div class="modal-footer-overlay">
+          <div class="modal-content-footer">
+            <div>COMMUNITY STATS</div>
+            <hr>
+            <table class="community-stats">
+              <tbody><tr class="community-stats-header">
+                <td>200K+</td>
+                <td>10K+</td>
+                <td>5M+</td>
+              </tr>
+              <tr class="community-stats-subheader">
+                <td>Product Reviews</td>
+                <td>How-tos &amp; Scripts</td>
+                <td>Posts</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="modal-form">
+  
+<div class="social-register">
+  <div class="social-register-connect">Connect with</div>
+  <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-social-join="facebook" class="social-connect facebook-connect" data-join-form="6 seconds">
+      <img alt="Login with Facebook" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/facebook_thin.png">
+  </a>
+  <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" data-social-join="linkedin" class="social-connect linkedin-connect" data-join-form="6 seconds">
+      <img alt="Login with LinkedIn" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/linkedin_thin.png">
+  </a>
+</div>
+
+  <div class="or-divider">
+    <div>OR</div>
+  </div>
+
+  <form id="registration_splash" class="form-horizontal register-form splash-form" data-remote-json="true" action="https://community.spiceworks.com/join/register" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="gQ6Ddb72XzWImCC2jVMae6Mv0pc56SMnAiV3vhEGP9m/1hrVQ5BWBOkE/LcHkpE0pN69K/4X1I1d+5Gz1ivM7Q==">
+
+      <div class="sui-alert sui-alert--error generic-error  "><div class="sui-alert_icon sui-icon-alert-error sui-icon--32"></div><div class="sui-alert_body"><div class="sui-alert_text"></div></div></div>
+
+      <input value="/topic/1910571-powershell-with-csv-and-html" type="hidden" name="registration[referer]" id="registration_referer">
+
+      <input value="0" type="hidden" name="registration[two_step]" id="registration_two_step">
+      <input value="0" type="hidden" name="registration[two_step_agree]" id="registration_two_step_agree">
+
+      <input value="6 seconds" type="hidden" name="registration[signup_type]" id="registration_signup_type">
+
+      <input type="hidden" name="registration[first_name]" value="First Name Placeholder">
+      <input type="hidden" name="registration[last_name]" value="Last Name Placeholder">
+      <div class="control-group email">
+        <div class="controls join">
+          <input type="email" name="registration[email]" placeholder="name@company.com">
+        </div>
+      </div>
+      <div class="control-group email">
+        <div class="controls">
+          <button class="sui-bttn--primary sui-bttn " data-button-type="submit" data-primary="true" type="submit">Join - It's Free</button>
+          <p class="join-msg">
+            Have an account? <a href="https://community.spiceworks.com/topic/1910571-powershell-with-csv-and-html#" onclick="Join.hideSixSecondModal(); JoinAndLogin.showLogin(); Join.trackSixSecondModalEventFromDOM(&#39;Switch to Login&#39;); Join.setSignupType(SignupTypes.fromPhoto); return false;">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <input value="1" type="hidden" name="registration[terms]" id="registration_terms">
+</form>
+</div>
+
+      
+<div class="photo-join-modal_footer">
+  <div class="terms">
+        By creating an account, you're agreeing to our <a href="https://www.spiceworks.com/terms" target="_blank">Terms of Use</a>
+        and our <a href="https://www.spiceworks.com/privacy" target="_blank">Privacy Policy</a>
+  </div>
+</div>
+    </div>
+  </div>
+<iframe id="gekko_t" src="./[SOLVED] Powershell with CSV and HTML - Spiceworks_files/taylor.html" style="height: 1px; width: 1px; border: none; position: absolute;"></iframe></body></html>

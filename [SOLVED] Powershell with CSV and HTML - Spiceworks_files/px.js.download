@@ -1,0 +1,2 @@
+
+gekko.cmd.push(function() { gekko.checkABP.stateFromChannel(1); });
