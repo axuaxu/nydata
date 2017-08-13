@@ -386,7 +386,7 @@ function alphaL(alist,items,divID)
              });
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
-      dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where= year_admitted  = '+$(this).text()+'&$limit=10000';
+      dtUrl = 'https://data.ny.gov/resource/cdhq-buk7.json?$where= year_admitted  = '+$(this).text()+'&$limit=20000';
         var table=myDT('#lawyerTable',dtUrl);
     //      console.log($(this).text()+" : "+dtUrl);//
         });
@@ -400,7 +400,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var zStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= zip  = %27"+zStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= zip  = %27"+zStr+"%27&$limit=20000";
         var table=myDT('#zTable',dtUrl);
       //    console.log($(this).text()+" : "+dtUrl);//
         });
@@ -414,7 +414,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var sStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= law_school  = %27"+sStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= law_school  = %27"+sStr+"%27&$limit=20000";
         var table=myDT('#sTable',dtUrl);
        //   console.log($(this).text()+" : "+dtUrl);//
         });
@@ -428,7 +428,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var cityStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= city  = %27"+cityStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= city  = %27"+cityStr+"%27&$limit=20000";
         var table=myDT('#cityTable',dtUrl);
         //  console.log($(this).text()+" : "+dtUrl);//
         });
@@ -445,7 +445,7 @@ function alphaL(alist,items,divID)
         var companyStr = $.trim($(this).text());
         companyStr = companyStr.replace('&',' ');
          companyStr = companyStr.replace("'"," ");
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= company_name  = %27"+companyStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= company_name  = %27"+companyStr+"%27&$limit=20000";
         var table=myDT('#cTable',dtUrl);
         //  console.log($(this).text()+" : "+dtUrl);//
         });
@@ -461,7 +461,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var firstStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= first_name  = %27"+firstStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= first_name  = %27"+firstStr+"%27&$limit=20000";
         var table=myDT('#fTable',dtUrl);
       //    console.log($(this).text()+" : "+dtUrl);//
         });
@@ -475,7 +475,7 @@ function alphaL(alist,items,divID)
                   // $(this).parent().remove();
         //alert("this is it"+$(this).text());
         var lastStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= last_name  = %27"+lastStr+"%27&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$where= last_name  = %27"+lastStr+"%27&$limit=20000";
         var table=myDT('#lTable',dtUrl);
        //   console.log($(this).text()+" : "+dtUrl);//
         });
@@ -490,7 +490,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(last_name)&$where= starts_with(last_name, %27"+fStr+"%27)&$order=last_name ASC&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(last_name)&$where= starts_with(last_name, %27"+fStr+"%27)&$order=last_name ASC&$limit=20000";
        
      // console.log(fStr,dtUrl);
        
@@ -579,7 +579,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(law_school)&$where= starts_with(law_school, %27"+fStr+"%27)&$order=law_school ASC&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(law_school)&$where= starts_with(law_school, %27"+fStr+"%27)&$order=law_school ASC&$limit=s20000";
        
      // console.log(fStr,dtUrl);
        
@@ -609,7 +609,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&$where= starts_with(zip, %27"+fStr+"%27)&$order=zip ASC&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(zip)&$where= starts_with(zip, %27"+fStr+"%27)&$order=zip ASC&$limit=20000";
        
      // console.log(fStr,dtUrl);
        
@@ -639,7 +639,7 @@ function alphaL(alist,items,divID)
              });
                   
         var fStr = $.trim($(this).text());
-      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=10000";
+      dtUrl = "https://data.ny.gov/resource/cdhq-buk7.json?$select=distinct(first_name)&$where= starts_with(first_name, %27"+fStr+"%27)&$order=first_name ASC&$limit=20000";
        
      // console.log(fStr,dtUrl);
        
