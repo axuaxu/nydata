@@ -1,11 +1,10 @@
-$filen = @()
-for ($i=0; $i -le 64; $i++)
+
+ $filen = @()
+for ($i=0; $i -le 9; $i++)
 {
     $j = 1999 - $i
     $filen += "ny" + $j+".html"
 }
-
- 
 
 foreach ($fileName in $filen) {
    (Get-Content $fileName) | 
@@ -14,7 +13,7 @@ foreach ($fileName in $filen) {
         if ($_ -match "<body>") 
         {
             #Add Lines after the selected pattern 
-            '<h4 align="center" ><a href="http://gurukoala.com">gurukoala.com</a> 
+            '  <h4 align="center" ><a href="http://gurukoala.com">gurukoala.com</a> 
           <a href="search.html">Search New York State Attorney Registry</a>   
   
            <a href="browse.html">Browse New York State Attorney Registry</a>
