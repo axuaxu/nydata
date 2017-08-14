@@ -1,0 +1,1 @@
+(Get-Content .\test.txt).replace('abcd', 'xyz') | Set-Content .\test.txt
