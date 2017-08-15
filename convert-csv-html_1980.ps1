@@ -1,0 +1,10 @@
+Import-Csv .\ny1989.csv | ConvertTo-Html | Out-File .\ny1989.html -Append
+Import-Csv .\ny1988.csv | ConvertTo-Html | Out-File .\ny1988.html -Append
+Import-Csv .\ny1987.csv | ConvertTo-Html | Out-File .\ny1987.html -Append
+Import-Csv .\ny1986.csv | ConvertTo-Html | Out-File .\ny1986.html -Append
+Import-Csv .\ny1985.csv | ConvertTo-Html | Out-File .\ny1985.html -Append
+Import-Csv .\ny1984.csv | ConvertTo-Html | Out-File .\ny1984.html -Append
+Import-Csv .\ny1983.csv | ConvertTo-Html | Out-File .\ny1983.html -Append
+Import-Csv .\ny1982.csv | ConvertTo-Html | Out-File .\ny1982.html -Append
+Import-Csv .\ny1981.csv | ConvertTo-Html | Out-File .\ny1981.html -Append
+Import-Csv .\ny1980.csv | ConvertTo-Html | Out-File .\ny1980.html -Append
