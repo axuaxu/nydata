@@ -1,10 +1,11 @@
 
  $filen = @()
-for ($i=0; $i -le 9; $i++)
+for ($i=0; $i -le 27; $i++)
 {
-    $j = 1999 - $i
+    $j = 2017 - $i
     $filen += "ny" + $j+".html"
 }
+
 
  
  
