@@ -1,0 +1,1 @@
+Get-ChildItem -Filter "*ny*" -Recurse | Rename-Item -NewName {$_.name -replace 'ny','new york attorney admitted in year ' }
